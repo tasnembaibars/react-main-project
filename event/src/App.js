@@ -9,7 +9,6 @@ import Register from './components/Register';
 import Login from './components/Login';
 function App() {
   return (
-
     <Router>
       <NavBar />
     <Routes>
@@ -17,11 +16,8 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-
-
     </Routes>
     <Footer />
-
   </Router>
 
   );
