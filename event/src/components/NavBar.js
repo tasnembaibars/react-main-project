@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+import {  Link  } from 'react-router-dom';
+=======
 
+>>>>>>> b05c2377d7e79bbfce77c3e675d5ea12d58635fc
 const NavBar = () => {
     return ( 
         <>
