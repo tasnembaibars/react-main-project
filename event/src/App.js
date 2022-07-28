@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link ,NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Contact from './components/contact';
+import Contact from './contact';
+import About from './components/About';
+import Single from './components/Single';
+import Shop from './components/Shop';
 function App() {
   return (
 
@@ -15,6 +18,14 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
 
+
+
+
+
+{/* routes */}
+<Route path="/about" element={<About />} />
+<Route path="/post" element={<Single />} />
+<Route path="/shop" element={<Shop />} />
 
     </Routes>
 
