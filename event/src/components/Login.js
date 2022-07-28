@@ -5,7 +5,7 @@ function Login(){
     return(
         <>
          {/* <!-- start preloader --> */}
-    <div class="preloader">
+    {/* <div class="preloader">
         <div class="vertical-centered-box">
             <div class="content">
                 <div class="loader-circle"></div>
@@ -15,7 +15,7 @@ function Login(){
                 <img src="assets/images/favicon.png" alt=""/>
             </div>
         </div>
-    </div>
+    </div> */}
     {/* <!-- end preloader --> */}
     <div class="wpo-login-area">
         <div class="container">
