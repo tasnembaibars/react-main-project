@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-
-
-import React from 'react'
-
- const Contact = () => {
-    return (
-
-        <div class="page-wrapper">
-
-=======
 import React from 'react';
 const Contact = () => {
     return ( 
@@ -209,7 +198,6 @@ const Contact = () => {
                     </nav>
                 </div>
             </header>
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
             {/* <!-- end of header --> */}
             {/* <!-- start wpo-page-title --> */}
             <section class="wpo-page-title">
@@ -355,38 +343,22 @@ const Contact = () => {
                                         Process</p>
                                     <ul>
                                         <li>
-<<<<<<< HEAD
-                                            <a href="">
-=======
                                             <a href="#">
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
                                                 <i class="ti-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-<<<<<<< HEAD
-                                            <a href="">
-=======
                                             <a href="#">
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
                                                 <i class="ti-twitter-alt"></i>
                                             </a>
                                         </li>
                                         <li>
-<<<<<<< HEAD
-                                            <a href="">
-=======
                                             <a href="#">
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
                                                 <i class="ti-instagram"></i>
                                             </a>
                                         </li>
                                         <li>
-<<<<<<< HEAD
-                                            <a href="">
-=======
                                             <a href="#">
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
                                                 <i class="ti-google"></i>
                                             </a>
                                         </li>
@@ -486,16 +458,8 @@ const Contact = () => {
 
         </div>
 
-<<<<<<< HEAD
-    )
-}
-
-
-export default Contact;
-=======
         </>
      );
 }
  
 export default Contact;
->>>>>>> 40e1ba3e497192f58505849841545d3ee96eac27
