@@ -1,38 +1,38 @@
 import React from 'react';
 
 const NavBar = () => {
-    return ( 
+    return (
         <>
-      
-     <section class="topbar">
-     <h2 class="hidden">some</h2>
-     <div class="container-fluid">
-         <div class="row">
-             <div class="col col-lg-7 col-md-12 col-12">
-                 <div class="contact-intro">
-                     <ul>
-                         <li><i class="fi flaticon-email"></i>loveme@gmail.com</li>
-                         <li><i class="fi flaticon-phone-call"></i> +888 (123) 869523</li>
-                         <li><i class="fi flaticon-maps-and-flags"></i> New York – 1075 Firs Avenue</li>
-                     </ul>
-                 </div>
-             </div>
-             <div class="col col-lg-5 col-md-12 col-12">
-                 <div class="contact-info">
-                     <ul>
-                         <li><a href="#"><i class="fi flaticon-facebook-app-symbol"></i></a></li>
-                         <li><a href="#"><i class="fi flaticon-twitter"></i></a></li>
-                         <li><a href="#"><i class="fi flaticon-linkedin"></i></a></li>
-                         <li><a href="#"><i class="fi flaticon-instagram-1"></i></a></li>
-                         <li><a href="#"><i class="fi flaticon-pinterest"></i></a></li>
-                         <li><a href="#"><i class="fi flaticon-youtube"></i></a></li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </div>
- </section>
-          <header id="header">
+
+            <section class="topbar">
+                <h2 class="hidden">some</h2>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col col-lg-7 col-md-12 col-12">
+                            <div class="contact-intro">
+                                <ul>
+                                    <li><i class="fi flaticon-email"></i>loveme@gmail.com</li>
+                                    <li><i class="fi flaticon-phone-call"></i> +888 (123) 869523</li>
+                                    <li><i class="fi flaticon-maps-and-flags"></i> New York – 1075 Firs Avenue</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-lg-5 col-md-12 col-12">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><a href="#"><i class="fi flaticon-facebook-app-symbol"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-instagram-1"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fi flaticon-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <header id="header">
                 <div class="wpo-site-header">
                     <nav class="navigation navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
@@ -50,7 +50,7 @@ const NavBar = () => {
                                 <div class="col-lg-2 col-md-6 col-6">
                                     <div class="navbar-header">
                                         <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"
-                                                alt=""/></a>
+                                            alt="" /></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-8 col-md-1 col-1">
@@ -127,13 +127,13 @@ const NavBar = () => {
                                                         <a href="#">Blog details</a>
                                                         <ul class="sub-menu">
                                                             <li><a href="blog-single.html">Blog details right
-                                                                    sidebar</a>
+                                                                sidebar</a>
                                                             </li>
                                                             <li><a href="blog-single-left-sidebar.html">Blog details
-                                                                    left
-                                                                    sidebar</a></li>
+                                                                left
+                                                                sidebar</a></li>
                                                             <li><a href="blog-single-fullwidth.html">Blog details
-                                                                    fullwidth</a></li>
+                                                                fullwidth</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -148,14 +148,14 @@ const NavBar = () => {
                                         <div class="header-search-form-wrapper">
                                             <div class="cart-search-contact">
                                                 <button class="search-toggle-btn"><i
-                                                        class="fi flaticon-search"></i></button>
+                                                    class="fi flaticon-search"></i></button>
                                                 <div class="header-search-form">
                                                     <form>
                                                         <div>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Search here..."/>
+                                                                placeholder="Search here..." />
                                                             <button type="submit"><i
-                                                                    class="fi flaticon-search"></i></button>
+                                                                class="fi flaticon-search"></i></button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -170,27 +170,27 @@ const NavBar = () => {
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
                                                             <a href="shop.html"><img
-                                                                    src="assets/images/shop/mini-cart/img-1.jpg"
-                                                                    alt/></a>
+                                                                src="assets/images/shop/mini-cart/img-1.jpg"
+                                                                alt /></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
                                                             <a href="shop.html">Wedding Gown</a>
                                                             <span class="mini-cart-item-price">$20.15 x 1</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
-                                                                        class="ti-close"></i></a></span>
+                                                                class="ti-close"></i></a></span>
                                                         </div>
                                                     </div>
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
                                                             <a href="shop.html"><img
-                                                                    src="assets/images/shop/mini-cart/img-2.jpg"
-                                                                    alt/></a>
+                                                                src="assets/images/shop/mini-cart/img-2.jpg"
+                                                                alt /></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
                                                             <a href="shop.html">Bridal Flower</a>
                                                             <span class="mini-cart-item-price">$13.25 x 2</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
-                                                                        class="ti-close"></i></a></span>
+                                                                class="ti-close"></i></a></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -211,8 +211,8 @@ const NavBar = () => {
                     </nav>
                 </div>
             </header>
-            </>
-     );
+        </>
+    );
 }
- 
+
 export default NavBar;
