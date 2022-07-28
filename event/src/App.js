@@ -8,15 +8,21 @@ import Contact from './contact';
 import About from './components/About';
 import Single from './components/Single';
 import Shop from './components/Shop';
+import Index from './components/Index';
+import Contact from './components/contact';
+import Register from './components/Register';
+import Login from './components/Login';
 function App() {
   return (
 
     <Router>
+      
       <NavBar />
     <Routes>
-
-      <Route path="/" element={<Home />} />
+    <Route path="/" element={<Index />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
 
 
 
@@ -28,8 +34,6 @@ function App() {
 <Route path="/shop" element={<Shop />} />
 
     </Routes>
-
-
     <Footer />
 
   </Router>
