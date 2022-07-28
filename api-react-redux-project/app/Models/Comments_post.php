@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comments_post extends Model
 {
     use HasFactory;
+    protected $table="comments_posts";
+
+    protected $fillable=[
+        'comment'
+    ] ;
 }
