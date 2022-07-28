@@ -134,7 +134,7 @@ const Contact = () => {
 
 
 
-
+{/* 
             <footer class="wpo-site-footer">
                 <div class="wpo-upper-footer">
                     <div class="container-fluid">
@@ -235,7 +235,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
             {/* <!-- end of wpo-site-footer-section --> */}
 
             {/* <!-- color-switcher --> */}
