@@ -4,22 +4,7 @@ const Contact = () => {
         <>
         
         <div class="page-wrapper">
-            {/* <!-- start preloader --> */}
-            {/* <div class="preloader">
-                <div class="vertical-centered-box">
-                    <div class="content">
-                        <div class="loader-circle"></div>
-                        <div class="loader-line-mask">
-                            <div class="loader-line"></div>
-                        </div>
-                        <img src="assets/images/favicon.png" alt="" />
-                    </div>
-                </div>
-            </div> */}
-            {/* <!-- end preloader --> */}
-            {/* <!-- Start header --> */}
-          
-            {/* <!-- start wpo-page-title --> */}
+      
             <section class="wpo-page-title">
                 <div class="container">
                     <div class="row">
@@ -149,8 +134,132 @@ const Contact = () => {
 
 
 
+{/* 
+            <footer class="wpo-site-footer">
+                <div class="wpo-upper-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="widget about-widget">
+                                    <div class="logo widget-title">
+                                        <img src="assets/images/logo.png" alt="blog" />
+                                    </div>
+                                    <p>Welcome and open yourself to your truest love this year with us! With the Release
+                                        Process</p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="widget link-widget">
+                                    <div class="widget-title">
+                                        <h3>Information</h3>
+                                    </div>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="blog.html">Latest News</a></li>
+                                        <li><a href="contact.html">Contact us</a></li>
+                                        <li><a href="service.html">Our Services</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="widget wpo-service-link-widget">
+                                    <div class="widget-title">
+                                        <h3>Contact </h3>
+                                    </div>
+                                    <div class="contact-ft">
+                                        <p>Would you have any enquiries.Please feel free to contuct us</p>
+                                        <ul>
+                                            <li><i class="fi flaticon-email"></i>loveme@gmail.com</li>
+                                            <li><i class="fi flaticon-phone-call"></i>+888 (123) 869523</li>
+                                            <li><i class="fi flaticon-maps-and-flags"></i>New York – 1075 Firs Avenue
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-           
+                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="widget instagram">
+                                    <div class="widget-title">
+                                        <h3>Instagram</h3>
+                                    </div>
+                                    <ul class="d-flex">
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/1.jpg"
+                                            alt="" /></a></li>
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/2.jpg"
+                                            alt="" /></a></li>
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/3.jpg"
+                                            alt="" /></a></li>
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/4.jpg"
+                                            alt="" /></a></li>
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/5.jpg"
+                                            alt="" /></a></li>
+                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/6.jpg"
+                                            alt="" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <p class="copyright"> &copy; 2021 Loveme Template. Design By <a
+                                    href="index.html">wpOceans</a>. All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer> */}
+            {/* <!-- end of wpo-site-footer-section --> */}
+
+            {/* <!-- color-switcher --> */}
+            <div class="color-switcher-wrap">
+                <div class="color-switcher-item">
+                    <div class="color-toggle-btn">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <ul id="switcher">
+                        <li class="btn btn1" id="Button1"></li>
+                        <li class="btn btn2" id="Button2"></li>
+                        <li class="btn btn3" id="Button3"></li>
+                        <li class="btn btn4" id="Button4"></li>
+                        <li class="btn btn5" id="Button5"></li>
+                        <li class="btn btn6" id="Button6"></li>
+                        <li class="btn btn7" id="Button7"></li>
+                        <li class="btn btn8" id="Button8"></li>
+                        <li class="btn btn9" id="Button9"></li>
+                        <li class="btn btn10" id="Button10"></li>
+                        <li class="btn btn11" id="Button11"></li>
+                        <li class="btn btn12" id="Button12"></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
 
