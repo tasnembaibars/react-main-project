@@ -121,7 +121,7 @@ const NavBar = () => {
                                                 </ul> */}
                                             </li>
                                             <li class="menu-item-has-children">
-                                            <NavLink  to="/post" >Posts</NavLink>
+                                            <NavLink  to="/Posts" >Posts</NavLink>
                                             </li>
                                             <li class="menu-item-has-children">
                                             
