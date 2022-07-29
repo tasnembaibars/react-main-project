@@ -1,6 +1,11 @@
 import React from 'react'
 
 function Single() {
+
+    const handleClick=()=>{
+
+    }
+
   return (
     // <!-- start page-wrapper -->
     <div className="page-wrapper">
@@ -225,15 +230,15 @@ function Single() {
                                  {/* <!-- end comments-section --> */}
 
                                 <div className="comment-respond">
-                                    <h3 className="comment-reply-title">Leave a reply</h3>
-                                    <form className="comment-form">
-                                        <div className="form-inputs">
+                                    <h3 className="comment-reply-title">Leave Comment</h3>
+                                    <form className="comment-form" onSubmit={handleClick}>
+                                        {/* <div className="form-inputs">
                                             <input placeholder="Name" type="text"/>
                                             <input placeholder="Email" type="email"/>
                                             <input placeholder="Website" type="url"/>
-                                        </div>
+                                        </div> */}
                                         <div className="form-textarea">
-                                            <textarea id="comment" placeholder="Write Your Comments..."></textarea>
+                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment'></textarea>
                                         </div>
                                         <div className="form-submit">
                                             <input id="submit" value="Post Comment" type="submit"/>
