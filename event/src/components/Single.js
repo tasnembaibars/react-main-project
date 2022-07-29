@@ -1,16 +1,50 @@
-import React from 'react'
-
+import React,{useEffect,useState} from 'react'
+import axios from 'axios'
 function Single() {
+    
+    // const[comment,setComment]=useState({})
+    const[post_id,setPost_id]=useState(1)
+    const[costumer_id,setCostumer_id]=useState(1)
+    const[postComment,setpostComment]=useState({
+        comment,
+        post_id,
+        costumer_id
+    })
+    const [selectedPost,setSelectedPost]=useState({
+      
+    })
+   
+    const handleClick=(e)=>{
+        e.preventDefault();
+        
+        axios.post(`http://127.0.0.1:8000/api/comments_post`,{comment})
+        console.log(postComment)
+   
 
-    const handleClick=()=>{
+   
 
     }
+
+    const [comment, setComment] = useState("");
+    const commentHandler = async (e) => {
+      e.preventDefault();
+      const response= await fetch(`http://127.0.0.1:8000/api/comments_post`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ comment:comment , userid:isLoggedIn.id }),
+      
+      });
+      if (response.ok){
+        window.alert("comment added successfully")
+      }
+      
+    };
 
   return (
     // <!-- start page-wrapper -->
     <div className="page-wrapper">
          {/* <!-- start preloader -->  */}
-        <div className="preloader">
+        {/* <div className="preloader">
             <div className="vertical-centered-box">
                 <div className="content">
                     <div className="loader-circle"></div>
@@ -20,7 +54,7 @@ function Single() {
                     <img src="assets/images/favicon.png" alt=""/>
                 </div>
             </div>
-        </div>
+        </div> */}
         {/* <!-- end preloader --> */}
        
         {/* <!-- start wpo-page-title --> */}
@@ -232,16 +266,13 @@ function Single() {
                                 <div className="comment-respond">
                                     <h3 className="comment-reply-title">Leave Comment</h3>
                                     <form className="comment-form" onSubmit={handleClick}>
-                                        {/* <div className="form-inputs">
-                                            <input placeholder="Name" type="text"/>
-                                            <input placeholder="Email" type="email"/>
-                                            <input placeholder="Website" type="url"/>
-                                        </div> */}
+                                     
                                         <div className="form-textarea">
-                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment'></textarea>
+                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment' onChange={(e)=>setpostComment(e.target.value)}></textarea>
                                         </div>
                                         <div className="form-submit">
-                                            <input id="submit" value="Post Comment" type="submit"/>
+                                           <button type="submit" style={{border:"none",background:"none"}}>Post Comment</button>
+                                           {/* <button type="submit" style={{border:"none",background:"none"}}><input id="submit" value="Post Comment"/></button> */}
                                         </div>
                                     </form>
                                 </div>

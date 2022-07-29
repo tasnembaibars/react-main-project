@@ -27,4 +27,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // comment on post
-Route::post('/post',[CommentsPostController::class,'store']);
+Route::post('/comments_post',[CommentsPostController::class,'store']);
