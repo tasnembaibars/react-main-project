@@ -1,12 +1,52 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+use App\Http\Controllers;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Costumers;
 
 class CostumersController extends Controller
 {
+
+    //
+
+    
+    public function registerAPI(Request $request)
+    {
+
+       
+
+      $validator = Validator:: make($request->all(),
+      
+      [
+        'name' => 'required',
+        'email' => 'required|unique:costumers,email',
+        'password' => 'required|max:8',
+      ],
+      
+      );
+
+           if ($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()->all()]);
+           }
+
+          $costumer = Costumers::create($request->all());
+
+          $costumer->save();
+
+        // $user = new Costumers();
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->save();
+
+        // return $user;
+    }
+
     //view user data in profile
     public function index($id)
     {
@@ -52,4 +92,5 @@ class CostumersController extends Controller
          $user->save();
          return $user;
       }
+
 }

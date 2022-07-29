@@ -1,10 +1,21 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 
 function Single() {
-
-    const handleClick=()=>{
-
-    }
+    const [comment, setComment] = useState("");
+    const handleClick = async (e) => {
+      e.preventDefault();
+      const response= await fetch(`http://127.0.0.1:8000/api/comments_post`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ comment:comment  }),
+      
+      });
+      if (response.ok){
+        window.alert("comment added successfully")
+      }
+      
+    };
+    console.log(comment)
 
   return (
     // <!-- start page-wrapper -->
@@ -232,16 +243,13 @@ function Single() {
                                 <div className="comment-respond">
                                     <h3 className="comment-reply-title">Leave Comment</h3>
                                     <form className="comment-form" onSubmit={handleClick}>
-                                        {/* <div className="form-inputs">
-                                            <input placeholder="Name" type="text"/>
-                                            <input placeholder="Email" type="email"/>
-                                            <input placeholder="Website" type="url"/>
-                                        </div> */}
+                                     
                                         <div className="form-textarea">
-                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment'></textarea>
+                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment' value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
                                         </div>
                                         <div className="form-submit">
-                                            <input id="submit" value="Post Comment" type="submit"/>
+                                           <button type="submit" style={{border:"none",background:"none"}}>Post Comment</button>
+                                           {/* <button type="submit" style={{border:"none",background:"none"}}><input id="submit" value="Post Comment"/></button> */}
                                         </div>
                                     </form>
                                 </div>

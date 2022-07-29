@@ -33,8 +33,18 @@ const add_Posts = async (e) => {
     if (response.ok){
       window.alert("comment added successfully")
     }
-
-  };
+}
+// const [posts , setPosts] = useState([]);
+// const add_Posts = (e) => {
+//     e.preventDefault();
+//       axios.post(`http://localhost:8000/api/post` ,
+//      { post ,
+//       rule , 
+//       likes ,
+//       costumer_id}
+//       );
+//       console.log(post);
+//   };
 
 
 
