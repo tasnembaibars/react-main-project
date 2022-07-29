@@ -43,5 +43,5 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 // Route::post('/post',[CommentsPostController::class,'store']);
 Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+ Route::get('/posts',[PostsController::class,'create']);
 // Route::post('/post',[CommentsPostController::class,'store']);

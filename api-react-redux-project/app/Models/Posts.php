@@ -9,10 +9,10 @@ class Posts extends Model
 {
     use HasFactory;
     protected $table="posts";
-    protected $fillable=[
-        'Date',
-        'post',
-        'rule',
-        'likes'
-    ] ;
+    // protected $fillable=[
+    //     // 'Date',
+    //     'post',
+    //     // 'rule',
+    //     // 'likes'
+    // ] ;
 }
