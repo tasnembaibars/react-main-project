@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommentsPostController;
+use App\Http\Controllers\CostumersController;
+
+// use CostumersController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +17,8 @@ use App\Http\Controllers\CommentsPostController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+/*Login and Register */
+ Route::post('register', [CostumersController::class, 'registerAPI']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
