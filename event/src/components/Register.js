@@ -11,8 +11,8 @@ function Register() {
     const [user, setUser] = useState({
         name: "",
         email: "",
-        password: ""
-    })
+        password: "",
+    });
     const [error, setError] = useState([]);
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -68,21 +68,25 @@ function Register() {
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <label for="name">Name</label>
                                             <input type="text" id="name" name="name" placeholder="Your name here.."
-                                                onChange={(e) => setUser({ name: e.target.value })}
+                                                onChange={(e) => setUser((prev)=>({...prev, name: e.target.value }))}
                                                 value={user.name}
                                                 required />
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <label>Email</label>
                                             <input type="email" id="email" name="email" placeholder="Your email here.."
-                                                onChange={(e) => setUser({ email: e.target.value })}
+                                                onChange={(e) => setUser((prev)=>({...prev, email: e.target.value }))}
                                                 value={user.email}
                                                 required />
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <label>Password</label>
-                                                <input class="pwd2" type="password" placeholder="Your password here.." name="pass" required />
+                                                <input
+                                                onChange={(e) => setUser((prev)=>({...prev, password: e.target.value }))}
+                                                value={user.password}
+                                                class="pwd2" type="password" placeholder="Your password here.." name="password" required 
+                                                />
                                                 <span class="input-group-btn">
                                                     <button class="btn btn-default reveal3" type="button"><i class="fa fa-eye"></i></button>
                                                 </span>

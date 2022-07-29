@@ -109,6 +109,18 @@ const NavBar = () => {
                                                     <li><a href="portfolio-single.html">Portfolio Single</a></li>
                                                 </ul> */}
                                             </li>
+
+                                            <li class="menu-item-has-children">
+                                                <NavLink to="/Posts2" >Post2</NavLink>
+
+                                                {/* <ul class="sub-menu">
+                                                    <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
+                                                    <li><a href="portfolio-mashonary.html">Portfolio Mashonary</a></li>
+                                                    <li><a href="portfolio-mashonary-s2.html">Portfolio Mashonary S2</a>
+                                                    </li>
+                                                    <li><a href="portfolio-single.html">Portfolio Single</a></li>
+                                                </ul> */}
+                                            </li>
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/about" >About</NavLink>
 

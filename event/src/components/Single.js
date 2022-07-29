@@ -10,7 +10,7 @@ function Single() {
     // <!-- start page-wrapper -->
     <div className="page-wrapper">
          {/* <!-- start preloader -->  */}
-        <div className="preloader">
+        {/* <div className="preloader">
             <div className="vertical-centered-box">
                 <div className="content">
                     <div className="loader-circle"></div>
@@ -20,7 +20,7 @@ function Single() {
                     <img src="assets/images/favicon.png" alt=""/>
                 </div>
             </div>
-        </div>
+        </div> */}
         {/* <!-- end preloader --> */}
        
         {/* <!-- start wpo-page-title --> */}

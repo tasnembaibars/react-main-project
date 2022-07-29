@@ -1,39 +1,96 @@
 <?php
-use App\Models\Costumers;
+
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Models\Costumers;
 
 class CostumersController extends Controller
 {
+
     //
 
     
     public function registerAPI(Request $request)
     {
 
-        // $validator = Validator::make(
-        //     $request->all(),
-        //     [
-        //         'name' => 'required|string',
-        //         'email' => 'email|required|unique:users',
-        //         'pass' => 'required|min:8',
-              
-        //     ]
-        // );
+       
 
-        // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors()->all()]);
-        // }
+      $validator = Validator:: make($request->all(),
+      
+      [
+        'name' => 'required',
+        'email' => 'required|unique:costumers,email',
+        'password' => 'required|max:8',
+      ],
+      
+      );
 
-        $user = new Costumers();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->password = Hash::make($request->input('pass'));
-        $user->save();
+           if ($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()->all()]);
+           }
 
-        return response($user, 201);
+          $costumer = Costumers::create($request->all());
+
+          $costumer->save();
+
+        // $user = new Costumers();
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->save();
+
+        // return $user;
     }
+
+    //view user data in profile
+    public function index($id)
+    {
+      return Costumers::find($id);
+     
+    }
+
+
+    public function store(Request $request ,User $User)
+    {
+        $request->validate([
+        'name',
+        'email',
+        'password',
+
+        ]);
+  
+        
+        $User->name=$request->name;
+         $User->email=$request->email;
+         $User->password=$request->password;
+       
+        $User->save(); 
+    }
+
+
+    public function edit($id)
+    {
+        return Costumers::find($id);
+  
+         }
+
+
+
+   public function update(Request $request,$id)
+         {
+             $user=Costumers::find($id);
+             $user->update([
+             'name'=>$request->input('name'),
+             'email'=>$request->input('email'),
+             'password'=>$request->input('password'),
+         ]);
+         $user->save();
+         return $user;
+      }
+
 }
