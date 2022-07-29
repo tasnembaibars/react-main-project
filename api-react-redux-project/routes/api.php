@@ -19,11 +19,12 @@ use App\Http\Controllers\PostsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+/*Login and Register */
+ Route::post('register', [CostumersController::class, 'registerAPI']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 
 Route::get('/profile/{id}',[CostumersController::class,'index']);
 
@@ -39,9 +40,11 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
 
+
 // comment on post
 
 // Route::post('/post',[CommentsPostController::class,'store']);
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
-Route::post('/comments_post',[CommentsPostController::class,'store']);
+Route::post('/post',[CommentsPostController::class,'store']);
+

@@ -35,11 +35,6 @@ function Profile() {
                
         }}
 
-
-
-
-
-
   return (
 
 
@@ -83,8 +78,7 @@ function Profile() {
                             </td>
                         </tr>
                         <button className="btn btn-primary" type='submit' style={{backgroundColor:'#86a0b6',marginTop:'10px'}} >Update</button>
-                        {/* <button class="book-a-table-btn scrollto d-none d-lg-flex " target="__blank" ><Link to={{ pathname: `/EditProfile/` }} >Edit Your Profile </Link></button> */}
-                        {/* <button class="book-a-table-btn scrollto d-none d-lg-flex " target="__blank" ><Link to={{ pathname: `/EditProfile/${ID}` }} >Edit Your Profile </Link></button> */}
+                      
                     </tbody>
                 </table>
                 </form>
@@ -149,7 +143,31 @@ function Profile() {
                         </div>
                      
                     </div>
-        
+       
+                    {/* <div class="stream-post">
+                        <div class="sp-author">
+                            <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png"/></a>
+                            <h6 class="sp-author-name"><a href="#">Palmira Guthridge</a></h6></div>
+                        <div class="sp-content">
+                            <div class="sp-info">posted 1h ago</div>
+                            <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
+                        </div>
+                 
+                    </div>
+              
+                    <div class="stream-post">
+                        <div class="sp-author">
+                            <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""/></a>
+                            <h6 class="sp-author-name"><a href="#">Meghann Fraser</a></h6></div>
+                        <div class="sp-content">
+                            <div class="sp-info">posted 2h ago</div>
+                            <p class="sp-paragraph mb-0">Auk Soldanella plainscraft acetonylidene wolfishness irrecognizant Candolleaceae provision Marsipobranchii arpen Paleoanthropus supersecular inidoneous autoplagiarism palmcrist occamy equestrianism periodontoclasia mucedin overchannel goelism decapsulation pourer zira</p>
+                        </div>
+                   
+                    </div> */}
+  
+         
+               
                 </div>
            
             </div>
