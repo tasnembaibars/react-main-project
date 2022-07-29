@@ -1,5 +1,6 @@
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Register(){
     return(
@@ -25,18 +26,21 @@ function Register(){
                         <div class="wpo-accountInfo">
                             <div class="wpo-accountInfoHeader">
                                 <a href="#"><img src="assets/images/logo-2.png" alt=""/></a>
-                                <a class="wpo-accountBtn" href="login.html">
+                                {/* <a class="wpo-accountBtn" href="login.html">
                                     <span class="">Log in</span>
-                                </a>
+                                </a> */}
+                                <NavLink className="wpo-accountBtn"  to="/login">
+                                     <span class="">Log in</span>
+                                </NavLink>
                             </div>
                             <div class="image">
                                 <img src="assets/images/login.svg" alt=""/>
                             </div>
-                            <div class="back-home">
-                                <a class="wpo-accountBtn" href="index.html">
+                             <div class="back-home">
+                                {/* <a class="wpo-accountBtn" href="index.html">
                                     <span class="">Back To Home</span>
-                                </a>
-                            </div>
+                                </a> */}
+                            </div> 
                         </div>
                         <div class="wpo-accountForm form-style">
                             <div class="fromTitle">
@@ -45,17 +49,17 @@ function Register(){
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-12">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Your name here.."/>
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your name here.." required/>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-12">
                                     <label>Email</label>
-                                    <input type="text" id="email" name="email" placeholder="Your email here.."/>
+                                    <input type="email" id="email" name="email" placeholder="Your email here.." required/>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-12">
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input class="pwd2" type="password" placeholder="Your password here.." value="" name="pass"/>
+                                        <input class="pwd2" type="password" placeholder="Your password here.." name="pass" required/>
                                         <span class="input-group-btn">
                                             <button class="btn btn-default reveal3" type="button"><i class="fa fa-eye"></i></button>
                                         </span>
@@ -64,7 +68,7 @@ function Register(){
                                 <div class="col-lg-12 col-md-12 col-12">
                                     <div class="form-group">
                                         <label>Confirm Password</label>
-                                        <input class="pwd3" type="password" placeholder="Your password here.." value="" name="pass"/>
+                                        <input class="pwd3" type="password" placeholder="Your password here.." name="pass" required/>
                                         <span class="input-group-btn">
                                             <button class="btn btn-default reveal2" type="button"><i class="fa fa-eye"></i></button>
                                         </span>
@@ -80,7 +84,7 @@ function Register(){
                                 <li><button class="twitter" tabindex="0" type="button"><span><i class="fa fa-twitter"></i></span></button></li>
                                 <li><button class="linkedin" tabindex="0" type="button"><span><i class="fa fa-linkedin"></i></span></button></li>
                             </ul>
-                            <p class="subText">Don't have an account? <a href="login.html">Create free account</a></p>
+                            {/* <p class="subText">Don't have an account? <a href="login.html">Create free account</a></p> */}
                         </div>
                     </form>
                 </div>

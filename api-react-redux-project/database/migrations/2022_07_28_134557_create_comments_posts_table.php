@@ -15,11 +15,8 @@ class CreateCommentsPostsTable extends Migration
     {
         Schema::create('comments_posts', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->timestamp('Date')->useCurrent();
             $table->text('comment');
-
-
-            
             $table->foreignId('post_id')->nullable()->constrained('posts');
             $table->foreignId('costumer_id')->nullable()->constrained('costumers');
             $table->timestamps();

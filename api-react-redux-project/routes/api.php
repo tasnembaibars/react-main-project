@@ -2,7 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\CostumersController;
+
 use App\Http\Controllers\CommentsPostController;
+
+use App\Http\Controllers\PostsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +25,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::get('/profile/{id}',[CostumersController::class,'index']);
+
+//edit
+Route::post('/profile',[CostumersController::class,'store']);
+Route::put('/profile/{id}',[CostumersController::class,'update']);
+Route::get('/profile/{id}',[CostumersController::class,'edit']);
+
 
 
 
@@ -27,4 +40,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // comment on post
-Route::post('/comments_post',[CommentsPostController::class,'store']);
+
+// Route::post('/post',[CommentsPostController::class,'store']);
+Route::post('/post',[PostsController::class,'store']);
+Route::get('/posts',[PostsController::class,'create']);
+Route::post('/post',[CommentsPostController::class,'store']);
