@@ -1,37 +1,13 @@
 import React,{useEffect,useState} from 'react'
-import axios from 'axios'
+
 function Single() {
-    
-    // const[comment,setComment]=useState({})
-    const[post_id,setPost_id]=useState(1)
-    const[costumer_id,setCostumer_id]=useState(1)
-    const[postComment,setpostComment]=useState({
-        comment,
-        post_id,
-        costumer_id
-    })
-    const [selectedPost,setSelectedPost]=useState({
-      
-    })
-   
-    const handleClick=(e)=>{
-        e.preventDefault();
-        
-        axios.post(`http://127.0.0.1:8000/api/comments_post`,{comment})
-        console.log(postComment)
-   
-
-   
-
-    }
-
     const [comment, setComment] = useState("");
-    const commentHandler = async (e) => {
+    const handleClick = async (e) => {
       e.preventDefault();
       const response= await fetch(`http://127.0.0.1:8000/api/comments_post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ comment:comment , userid:isLoggedIn.id }),
+        body: JSON.stringify({ comment:comment  }),
       
       });
       if (response.ok){
@@ -39,6 +15,7 @@ function Single() {
       }
       
     };
+    console.log(comment)
 
   return (
     // <!-- start page-wrapper -->
@@ -268,7 +245,7 @@ function Single() {
                                     <form className="comment-form" onSubmit={handleClick}>
                                      
                                         <div className="form-textarea">
-                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment' onChange={(e)=>setpostComment(e.target.value)}></textarea>
+                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment' value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
                                         </div>
                                         <div className="form-submit">
                                            <button type="submit" style={{border:"none",background:"none"}}>Post Comment</button>

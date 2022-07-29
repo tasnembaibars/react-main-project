@@ -8,7 +8,7 @@ const [likes , setLikes] = useState(0);
 const [costumer_id , setCostumer_id] = useState(1);
 const [posts , setPosts] = useState([]);
 const add_Posts = (e) => {
-    //  e.preventDefault();
+    e.preventDefault();
       axios.post(`http://localhost:8000/api/post` ,
      { post ,
       rule , 
