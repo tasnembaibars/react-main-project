@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 
 function Single() {
+    //insert comments
     const [comment, setComment] = useState("");
     const handleClick = async (e) => {
       e.preventDefault();
@@ -17,22 +18,38 @@ function Single() {
     };
     console.log(comment)
 
+
+    //fetch all comments
+    const [all,setAll]=useState([])
+    useEffect(()=>{
+      const fetchComments=async()=>{  
+      const response=await fetch (`http://127.0.0.1:8000/api/comments`)
+      const res=await response.json()
+      setAll(res)
+    }
+
+    fetchComments() },[])
+    console.log(all)   
+
+
+
+    //select users Infos
+    const[users,setUsers]=useState([])
+    useEffect(()=>{
+        const fetchUsers=async()=>{
+            const response=await fetch(`http://127.0.0.1:8000/api/commentor/1`)
+            const data=await response.json()
+            setUsers(data)
+        }
+        fetchUsers()
+    },[])
+    console.log(users)
+
+
   return (
     // <!-- start page-wrapper -->
     <div className="page-wrapper">
-         {/* <!-- start preloader -->  */}
-        {/* <div className="preloader">
-            <div className="vertical-centered-box">
-                <div className="content">
-                    <div className="loader-circle"></div>
-                    <div className="loader-line-mask">
-                        <div className="loader-line"></div>
-                    </div>
-                    <img src="assets/images/favicon.png" alt=""/>
-                </div>
-            </div>
-        </div> */}
-        {/* <!-- end preloader --> */}
+       
        
         {/* <!-- start wpo-page-title --> */}
         <section className="wpo-page-title">
@@ -152,14 +169,19 @@ function Single() {
                                     <h3 className="comments-title">5 Comments</h3>
                                     <ol className="comments">
                                         <li className="comment even thread-even depth-1" id="comment-1">
-                                            <div id="div-comment-1">
+                                            {users.map((user)=>{
+                                                    return( 
+                                                    <div id="div-comment-1">
                                                 <div className="comment-theme">
                                                     <div className="comment-image"><img src="assets/images/blog-details/comments-author/img-1.jpg" alt/></div>
                                                 </div>
+                                               
                                                 <div className="comment-main-area">
+                                                
                                                     <div className="comment-wrapper">
+                                                       
                                                         <div className="comments-meta">
-                                                            <h4>Robert Sonny <span className="comments-date">says Jul 21, 2021 at 10:00am</span></h4>
+                                                            <h4>{user.name} <span className="comments-date">{}</span></h4>
                                                         </div>
                                                         <div className="comment-area">
                                                             <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
@@ -168,8 +190,12 @@ function Single() {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                       
+
                                                 </div>
+                                           
                                             </div>
+                                             ) })}
                                             <ul className="children">
                                                 <li className="comment">
                                                     <div>

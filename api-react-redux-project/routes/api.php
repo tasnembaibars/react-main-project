@@ -41,10 +41,16 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
 
-// comment on post
 
-// Route::post('/post',[CommentsPostController::class,'store']);
+
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
+
+
+
+
+// comment on post
 Route::post('/comments_post',[CommentsPostController::class,'store']);
+Route::get('/comments',[CommentsPostController::class,'create']);
+Route::get('/commentor/{id}',[CostumersController::class,'view']);
 
