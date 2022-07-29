@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('post');
             $table->integer('rule');
             $table->integer('likes');
-            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+            $table->foreignId('costumer_id')->constrained('costumers');
             $table->timestamps();
         });
     }
