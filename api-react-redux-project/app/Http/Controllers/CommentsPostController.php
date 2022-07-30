@@ -23,6 +23,7 @@ class CommentsPostController extends Controller
         // $comments = DB::table('comments_posts')
          $comments= Comments_post::select('comments_posts.*','costumers.name')
         ->join('costumers','costumers.id','=','comments_posts.costumer_id')
+        ->join('posts','posts.id','=','comments_posts.post_id')
         ->get();
         return $comments;
 

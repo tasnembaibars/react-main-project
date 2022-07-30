@@ -1,14 +1,22 @@
 import React,{useEffect,useState} from 'react'
-
+import {useNavigate} from 'react-router-dom'
 function Single() {
     //insert comments
     const [comment, setComment] = useState("");
+    const [costumer_id, setCostumer_id] = useState(1);
+    const [post_id, setPost_id] = useState(1);
+    
+    const navigate = useNavigate();
+    // let isLoggedIn = JSON.parse(localStorage.getItem("user"));
+    // if (!isLoggedIn) {
+    //   navigate("/login");
+    // }
     const handleClick = async (e) => {
       e.preventDefault();
       const response= await fetch(`http://127.0.0.1:8000/api/comments_post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ comment:comment  }),
+        body: JSON.stringify({ comment:comment,costumer_id,post_id  }),
       
       });
       if (response.ok){
@@ -34,16 +42,16 @@ function Single() {
 
 
     //select users Infos
-    const[users,setUsers]=useState([])
-    useEffect(()=>{
-        const fetchUsers=async()=>{
-            const response=await fetch(`http://127.0.0.1:8000/api/commentor/1`)
-            const data=await response.json()
-            setUsers(data)
-        }
-        fetchUsers()
-    },[])
-    console.log(users)
+    // const[users,setUsers]=useState([])
+    // useEffect(()=>{
+    //     const fetchUsers=async()=>{
+    //         const response=await fetch(`http://127.0.0.1:8000/api/commentor/1`)
+    //         const data=await response.json()
+    //         setUsers(data)
+    //     }
+    //     fetchUsers()
+    // },[])
+    // console.log(users)
 
 
   return (
@@ -169,7 +177,7 @@ function Single() {
                                     <h3 className="comments-title">5 Comments</h3>
                                     <ol className="comments">
                                         <li className="comment even thread-even depth-1" id="comment-1">
-                                            {users.map((user)=>{
+                                            {all.map((user)=>{
                                                     return( 
                                                     <div id="div-comment-1">
                                                 <div className="comment-theme">
@@ -181,10 +189,10 @@ function Single() {
                                                     <div className="comment-wrapper">
                                                        
                                                         <div className="comments-meta">
-                                                            <h4>{user.name} <span className="comments-date">{}</span></h4>
+                                                            <h4>{user.name} <span className="comments-date">{user.Date}</span></h4>
                                                         </div>
                                                         <div className="comment-area">
-                                                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+                                                            <p>{user.comment}</p>
                                                             <div className="comments-reply">
                                                                 <a className="comment-reply-link" href="#"><span>Reply</span></a>
                                                             </div>
@@ -196,7 +204,7 @@ function Single() {
                                            
                                             </div>
                                              ) })}
-                                            <ul className="children">
+                                            {/* <ul className="children">
                                                 <li className="comment">
                                                     <div>
                                                         <div className="comment-theme">
@@ -239,9 +247,9 @@ function Single() {
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-
+{/* 
                                         <li className="comment">
                                             <div>
                                                 <div className="comment-theme">
@@ -261,7 +269,7 @@ function Single() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> */}
                                     </ol>
                                 </div>
                                  {/* <!-- end comments-section --> */}
