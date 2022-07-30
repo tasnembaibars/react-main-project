@@ -17,8 +17,8 @@ class CreateCommentsPostsTable extends Migration
             $table->id();
             $table->timestamp('Date')->useCurrent();
             $table->text('comment');
-            $table->foreignId('post_id')->nullable()->constrained('posts');
-            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+            $table->foreignId('post_id')->constrained('posts');
+            $table->foreignId('costumer_id')->constrained('costumers');
             $table->timestamps();
         });
     }

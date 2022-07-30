@@ -31,9 +31,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//view user info
 Route::get('/profile/{id}',[CostumersController::class,'index']);
 
-//edit
+//edit user info
 Route::post('/profile',[CostumersController::class,'store']);
 Route::put('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
@@ -46,8 +47,18 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
 
-// comment on post
 
+
+Route::post('/post',[PostsController::class,'store']);
+Route::get('/posts',[PostsController::class,'create']);
+
+
+
+
+// comment on post
+Route::post('/comments_post',[CommentsPostController::class,'store']);
+Route::get('/comments',[CommentsPostController::class,'create']);
+Route::get('/commentor/{id}',[CostumersController::class,'view']);
 // Route::post('/post',[CommentsPostController::class,'store']);
 
 Route::post('/comments_post',[CommentsPostController::class,'store']);
@@ -59,16 +70,22 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 
 
 
-
-
+//Araa
 // start Post
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
+
+
+Route::get('/userposts/{id}',[PostsController::class,'view']);
+
+// Route::get('images', [PostsController::class, 'index'])->name('images');
+// Route::post('images', [PostsController::class, 'upload'])->name('images');
 // Route::post('/post',[CommentsPostController::class,'store']);
 
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -199,3 +216,9 @@ Route::post('/books',[BooksController::class,'store1']);
 Route::put('/books/{book}',[BooksController::class,'update1']);
 Route::put('/booksstate/{book}',[BooksController::class,'changeState']);
 Route::delete('/books/{book}',[BooksController::class,'destroy1']);
+=======
+// start Booking
+Route::post('/Book',[BooksController::class,'store']);
+// end Booking
+//Araa
+>>>>>>> b587d87f207b85bd11aee269c2d25c7186043c37

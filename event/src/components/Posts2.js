@@ -35,6 +35,7 @@ function Posts2() {
         if (response.ok) {
             window.alert("comment added successfully")
         }
+        window.location.href = "http://localhost:3000/Posts2";
     }
 
 
