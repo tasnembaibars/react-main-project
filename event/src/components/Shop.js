@@ -1,6 +1,29 @@
-import React from 'react'
-
+import React, { useState, useEffect } from 'react';
 function Shop() {
+    const [email, setemail] = useState({});
+    const [phone, setphone] = useState({});
+    const [date, setdate] = useState({});
+    const [hour, sethour] = useState({});
+
+   //  start Add books
+   const booking = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`http://127.0.0.1:8000/api/Book`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email ,phone:phone ,date:date ,hour:hour }),
+
+    });
+
+    if (response.ok) {
+        window.alert("comment added successfully")
+    }
+}
+//  end Add books
+
+
+
+
   return (
     <div className="page-wrapper">
     {/* // <!-- start of breadcumb-section --> */}
@@ -35,14 +58,14 @@ function Shop() {
                                         <div><img src="assets/images/shop/shop-single/thumb/img-4.jpg" alt/></div>
                                     </div>
                                 </div>
-                                <div class="col-lg-9 col col-9">
+                                {/* <div class="col-lg-9 col col-9">
                                     <div class="slider-for">
                                         <div><img src="assets/images/shop/shop-single/1.jpg" alt/></div>
                                         <div><img src="assets/images/shop/shop-single/2.jpg" alt/></div>
                                         <div><img src="assets/images/shop/shop-single/3.jpg" alt/></div>
                                         <div><img src="assets/images/shop/shop-single/4.jpg" alt/></div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -96,6 +119,93 @@ function Shop() {
                 </div>
                  {/* <!-- end col --> */}
             </div>
+                  {/* <!-- start of wpo-contact-section --> */}
+                 
+                  <section class="wpo-contact-section section-padding">
+                  
+                <div class="container">
+                    
+                    <div class="wpo-contact-section-wrapper">
+                        <div class="wpo-contact-form-area">
+                            
+                            <div class="wpo-section-title">
+                                <span>Let’s Meet</span>
+                                <h2>Appointment</h2>
+                                <div class="section-title-img">
+                                    <img src="assets/images/section-title.png" alt=""/>
+                                </div>
+                            </div>
+                            <form  class="contact-validation-active" id="contact-form-main">
+                                <div>
+                                    <input type="email" class="form-control" name="email" id="name" placeholder="Email"/>
+                                </div>
+                                <div>
+                                    <input type="number" class="form-control" name="phone" id="email"
+                                        placeholder="Phone"/>
+                                </div>
+                                <div>
+                                    <input type="time" class="form-control" name="hour" id="Hour"
+                                        placeholder="Hour"/>
+                                </div>
+                                <div>
+                                    <input type="date" class="form-control" name="date" id="Date"
+                                        placeholder="Date"/>
+                                </div>
+                                {/* <div>
+                                    <select name="service" class="form-control">
+                                        <option disabled="disabled" selected>Services</option>
+                                        <option>Photography</option>
+                                        <option>The Rehearsal Dinner</option>
+                                        <option>The Afterparty</option>
+                                        <option>Videographers</option>
+                                        <option>Perfect Cake</option>
+                                        <option>All Of The Above</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="guest" class="form-control">
+                                        <option disabled="disabled" selected>Number Of Guests</option>
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                    </select>
+                                </div> */}
+                                {/* <div>
+                                    <select name="meal" class="form-control last">
+                                        <option disabled="disabled" selected>Meal Preferences</option>
+                                        <option>Chicken Soup</option>
+                                        <option>Motton Kabab</option>
+                                        <option>Chicken BBQ</option>
+                                        <option>Mix Salad</option>
+                                        <option>Beef Ribs </option>
+                                    </select>
+                                </div> */}
+                                <div class="submit-area">
+                                    <button type="submit" class="theme-btn-s3">Make appointment</button>
+                                    <div id="c-loader">
+                                        <i class="ti-reload"></i>
+                                    </div>
+                                </div>
+                                <div class="clearfix error-handling-messages">
+                                    <div id="success">Thank you</div>
+                                    <div id="error"> Error occurred while sending email. Please try again later.
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="border-style"></div>
+                        </div>
+                        {/* <div class="vector-1">
+                            <img src="assets/images/contact/1.png" alt=""/>
+                        </div> */}
+                        <div class="vector-2">
+                            <img src="assets/images/contact/2.png" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
              {/* <!-- end row --> */}
 
             <div className="row">

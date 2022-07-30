@@ -8,6 +8,7 @@ use App\Http\Controllers\CostumersController;
 use App\Http\Controllers\CommentsPostController;
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,25 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 // comment on post
 
 // Route::post('/post',[CommentsPostController::class,'store']);
-Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+
 Route::post('/comments_post',[CommentsPostController::class,'store']);
 
+
+
+
+
+
+
+
+
+
+// start Post
+Route::post('/post',[PostsController::class,'store']);
+Route::get('/posts',[PostsController::class,'create']);
+Route::put('/update/{id}',[PostsController::class,'update']);
+// end Post
+
+
+// start Booking
+Route::post('/Book',[BooksController::class,'store']);
+// end Booking
