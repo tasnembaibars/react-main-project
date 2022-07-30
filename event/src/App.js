@@ -14,12 +14,20 @@ import Contact from './components/contact';
 import Register from './components/Register';
 import Login from './components/Login';
 import Profile from './components/Profile';
-
+import './App.css';
 import CheckOut from './components/Checkout';
 
+import { createContext, useState } from 'react';
+export const userContext = createContext();
+
 function App() {
+  
+  const [userData, setUserData] = useState([]);
+
+
   return (
     <Router>
+       <userContext.Provider value={{ userData, setUserData }}>
       <NavBar />
     <Routes>
 
@@ -41,6 +49,7 @@ function App() {
 
     </Routes>
     <Footer />
+    </userContext.Provider>
   </Router>
 
   );

@@ -1,27 +1,69 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import {useNavigate,useParams} from 'react-router-dom'
 
 function Single() {
 
-    const handleClick=()=>{
+     const { id } = useParams();
+    //insert comments
+    const [comment, setComment] = useState("");
+    const [costumer_id, setCostumer_id] = useState(1);
+    const [post_id, setPost_id] = useState(1);
+    
+    const navigate = useNavigate();
+    // let isLoggedIn = JSON.parse(localStorage.getItem("user"));
+    // if (!isLoggedIn) {
+    //   navigate("/login");
+    // }
+    const handleClick = async (e) => {
+      e.preventDefault();
+      const response= await fetch(`http://127.0.0.1:8000/api/comments_post`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ comment:comment,costumer_id,post_id  }),
+      
+      });
+      if (response.ok){
+        window.alert("comment added successfully")
+      }
+    };
 
+    console.log(comment)
+
+    const [selectedPost, setSelectedPost] = useState([]);
+    const [currentPost, setCurrentPost] = useState(1);
+    
+
+    //fetch all comments
+    const [all,setAll]=useState([])
+    useEffect(()=>{
+      const fetchComments=async()=>{  
+      const response=await fetch (`http://127.0.0.1:8000/api/comments`)
+      const res=await response.json()
+      setAll(res)
     }
+
+    fetchComments() },[])
+    console.log(all)   
+
+
+
+    //select users Infos
+    // const[users,setUsers]=useState([])
+    // useEffect(()=>{
+    //     const fetchUsers=async()=>{
+    //         const response=await fetch(`http://127.0.0.1:8000/api/commentor/1`)
+    //         const data=await response.json()
+    //         setUsers(data)
+    //     }
+    //     fetchUsers()
+    // },[])
+    // console.log(users)
+
 
   return (
     // <!-- start page-wrapper -->
     <div className="page-wrapper">
-         {/* <!-- start preloader -->  */}
-        {/* <div className="preloader">
-            <div className="vertical-centered-box">
-                <div className="content">
-                    <div className="loader-circle"></div>
-                    <div className="loader-line-mask">
-                        <div className="loader-line"></div>
-                    </div>
-                    <img src="assets/images/favicon.png" alt=""/>
-                </div>
-            </div>
-        </div> */}
-        {/* <!-- end preloader --> */}
+       
        
         {/* <!-- start wpo-page-title --> */}
         <section className="wpo-page-title">
@@ -119,6 +161,7 @@ function Single() {
                                     </div>
                                 </div>
                             </div>
+                      
                              {/* <!-- end author-box --> */}
 
                             <div className="more-posts">
@@ -141,25 +184,35 @@ function Single() {
                                     <h3 className="comments-title">5 Comments</h3>
                                     <ol className="comments">
                                         <li className="comment even thread-even depth-1" id="comment-1">
-                                            <div id="div-comment-1">
+                                            {all.map((user)=>{
+                                                if(user.post_id !== currentPost)return;
+                                                    return( 
+                                                    <div id="div-comment-1">
                                                 <div className="comment-theme">
                                                     <div className="comment-image"><img src="assets/images/blog-details/comments-author/img-1.jpg" alt/></div>
                                                 </div>
+                                               
                                                 <div className="comment-main-area">
+                                                
                                                     <div className="comment-wrapper">
+                                                       
                                                         <div className="comments-meta">
-                                                            <h4>Robert Sonny <span className="comments-date">says Jul 21, 2021 at 10:00am</span></h4>
+                                                            <h4>{user.name} <span className="comments-date">{user.Date}</span></h4>
                                                         </div>
                                                         <div className="comment-area">
-                                                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+                                                            <p>{user.comment}</p>
                                                             <div className="comments-reply">
                                                                 <a className="comment-reply-link" href="#"><span>Reply</span></a>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                       
+
                                                 </div>
+                                           
                                             </div>
-                                            <ul className="children">
+                                             ) })}
+                                            {/* <ul className="children">
                                                 <li className="comment">
                                                     <div>
                                                         <div className="comment-theme">
@@ -202,9 +255,9 @@ function Single() {
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-
+{/* 
                                         <li className="comment">
                                             <div>
                                                 <div className="comment-theme">
@@ -224,7 +277,7 @@ function Single() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> */}
                                     </ol>
                                 </div>
                                  {/* <!-- end comments-section --> */}
@@ -232,16 +285,13 @@ function Single() {
                                 <div className="comment-respond">
                                     <h3 className="comment-reply-title">Leave Comment</h3>
                                     <form className="comment-form" onSubmit={handleClick}>
-                                        {/* <div className="form-inputs">
-                                            <input placeholder="Name" type="text"/>
-                                            <input placeholder="Email" type="email"/>
-                                            <input placeholder="Website" type="url"/>
-                                        </div> */}
+                                     
                                         <div className="form-textarea">
-                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment'></textarea>
+                                            <textarea id="comment" placeholder="Write Your Comments..." name='comment' value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
                                         </div>
                                         <div className="form-submit">
-                                            <input id="submit" value="Post Comment" type="submit"/>
+                                           <button type="submit" style={{border:"none",background:"none"}}>Post Comment</button>
+                                           {/* <button type="submit" style={{border:"none",background:"none"}}><input id="submit" value="Post Comment"/></button> */}
                                         </div>
                                     </form>
                                 </div>

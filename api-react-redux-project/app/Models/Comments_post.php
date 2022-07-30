@@ -11,6 +11,7 @@ class Comments_post extends Model
     protected $table="comments_posts";
 
     protected $fillable=[
-        'comment'
+        'comment',
+  
     ] ;
 }

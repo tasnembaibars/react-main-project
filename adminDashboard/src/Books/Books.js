@@ -1,0 +1,250 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
+
+const Books = () => {
+
+    let usee = useNavigate();
+    const [Persons, setapi] = useState([]);
+    const [books, setapibooks] = useState([]);
+    const [services, setapiservices] = useState([]);
+    const [date, setdate] = useState('');
+    const [user_phone, setphone] = useState('');
+    const [address, setaddress] = useState('');
+    const [sub_email, setemail] = useState('');
+    const [book_state, setstate] = useState(0);
+    const [service_id, setservice] = useState('');
+    const [costumer_id, setcostumer] = useState('');
+
+
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/books`)
+                .then((res) => setapibooks(res.data))
+        }
+        , []);
+
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/services`)
+                .then((res) => setapiservices(res.data))
+        }
+        , []);
+
+
+    useEffect(
+        () => {
+            axios.get(`http://localhost:8000/api/costumers`)
+                .then((res) => setapi(res.data))
+        }
+        , []);
+
+
+    const getData = () => {
+        axios.get(`http://127.0.0.1:8000/api/books`)
+            .then((res) => {
+                setapibooks(res.data);
+            })
+    }
+
+    const handleactive = (id, idstate) => {
+        if (idstate) {
+            axios.put(`http://127.0.0.1:8000/api/booksstate/${id}`, {
+                book_state: 0,
+
+            }).then((res) => {
+                setapi(res.data);
+            })
+
+        } else {
+            axios.put(`http://127.0.0.1:8000/api/booksstate/${id}`, {
+                book_state: 1,
+
+            }).then((res) => {
+                setapi(res.data);
+            })
+        }
+
+    }
+
+
+    const hanldeDelete = (id) => {
+        axios.delete(`http://127.0.0.1:8000/api/books/${id}`)
+            .then(() => {
+                getData();
+            })
+    }
+
+    let successAdd = null
+
+
+    const addUser = (e) => {
+        e.preventDefault();
+
+        axios.post(`http://127.0.0.1:8000/api/books`, {
+            date: date,
+            user_phone: user_phone,
+            address: address,
+            sub_email: sub_email,
+            book_state: book_state,
+            service_id: service_id,
+            costumer_id: costumer_id
+
+        }).then(() => {
+            getData();
+        })
+
+        let successAdd = `         <div className="alert alert-success" role="alert">
+                add user success 
+            </div>`
+    }
+
+    return (
+        <>
+
+            <div className='container text-black'>
+                <div className='row'>
+                    <div className='col'></div>
+                    <div className='col-11'>
+
+                        {successAdd ? successAdd : ''}
+
+                        <form onSubmit={addUser}>
+
+
+                            <div className='row mt-5'>
+
+                                <div className='col'>
+                                    <div class="form-group">
+                                        <label for="inputState">Costumer</label>
+                                        <select name='book_state' onChange={e => setcostumer(e.target.value)} defaultValue={costumer_id}
+                                            id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            {Persons.map(a => <option value={a.id}> {a.name} </option>)}
+
+                                        </select>
+                                    </div>
+
+
+                                </div>
+
+                                <div className='col'>
+
+                                    <div class="form-group">
+                                        <label for="inputState">Service</label>
+                                        <select name='book_state' onChange={e => setservice(e.target.value)} defaultValue={service_id}
+                                            id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            {services.map(a => <option value={a.id}> {a.title} </option>)}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="form-group ">
+                                <label for="exampleInputEmail1">costumer Phone</label>
+                                <input type="text" name='user_phone' onChange={e => setphone(e.target.value)} defaultValue={user_phone}
+                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                            </div>
+                            <div className="form-group ">
+                                <label for="exampleInputEmail1">Address</label>
+                                <input type="text" name='address' onChange={e => setaddress(e.target.value)} defaultValue={address}
+                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                            </div>
+                            <div className="form-group ">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" name='sub_email' onChange={e => setemail(e.target.value)} defaultValue={sub_email}
+                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                            </div>
+
+
+                            <div className='row'>
+
+                                <div className='col'>
+
+                                    <div className="form-group">
+                                        <label for="exampleInputEmail1">Date</label>
+                                        <input type="date" name='date' onChange={e => setdate(e.target.value)} defaultValue={date}
+                                            className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div className='col'>
+
+                                    <div class="form-group">
+                                        <label for="inputState">State</label>
+                                        <select name='book_state' onChange={e => setstate(e.target.value)} defaultValue={book_state}
+                                            id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option value='1'> Active </option>
+                                            <option value='0'> Not Active </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button type='submit' className="btn btn-primary">Submit</button>
+                        </form>
+
+                        <hr></hr>
+                        <h2 className='mt-3'>Books :</h2>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th> date</th>
+                                    <th> phone</th>
+                                    <th> address</th>
+                                    <th> email</th>
+                                    <th> state</th>
+                                    <th> service</th>
+                                    <th> costumer</th>
+                                    <th> Edit / Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                {books ? books.map((a) =>
+
+                                    <tr>
+                                        <td>{a.id}</td>
+                                        <td>{a.date}</td>
+                                        <td>{a.user_phone}</td>
+                                        <td>{a.address}</td>
+                                        <td>{a.sub_email}</td>
+                                        <td>{a.book_state ? <span className='text-success'>Acive</span> : <span className='text-warning'>not Active</span>}</td>
+                                        <td>{a.service_id}</td>
+                                        <td>{a.costumer_id}</td>
+
+                                        <td>
+
+                                            {a.book_state ?
+                                                 <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-warning mr-2' >DesActive</button>
+                                                : <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-success mr-2' >Activate</button>}
+
+                                            <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
+
+                                            <button onClick={() => usee(`/admin/books/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
+                                        </td>
+
+
+                                    </tr>
+
+                                ) : 'Loading'}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className='col'></div>
+                </div>
+            </div>
+
+        </>
+    );
+}
+
+export default Books;

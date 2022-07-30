@@ -7,13 +7,19 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
 
-    function store (Request $request){
-        Posts::create($request->all());
-        return redirect('/post');
+
+    public function store(Request $request){
+       $Posts= new Posts;
+       $Posts->post= $request->post;
+
+       $Posts->costumer_id= $request->costumer_id;
+
+       $Posts->save();
     }
+
     function create (){
-        $posts = Posts::all()->where('rule' , 1);
-        return response()->json($posts);
+        // ->where('rule' , 1)
+        return Posts::all();
     }
 
 
@@ -30,4 +36,14 @@ class PostsController extends Controller
          return response()->json(['message' => 'No posts found'], 404);
          
     }
+    public function update(Request $request,$id)
+         {
+             $post=Posts::find($id);
+             $post->update([
+             'likes'=>$request->input('likes'),
+
+         ]);
+         $post->save();
+         return $post;
+      }
 }
