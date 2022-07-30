@@ -123,14 +123,6 @@ const NavBar = () => {
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/about" >About</NavLink>
-
-                                                {/* <ul class="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-single.html">Shop Single</a></li>
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul> */}
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/post" >Posts</NavLink>

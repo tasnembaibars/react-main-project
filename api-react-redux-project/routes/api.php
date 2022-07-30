@@ -55,8 +55,7 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 
 
 
-
-
+//Araa
 // start Post
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
@@ -64,6 +63,11 @@ Route::put('/update/{id}',[PostsController::class,'update']);
 // end Post
 
 
+
+
+
+
 // start Booking
 Route::post('/Book',[BooksController::class,'store']);
 // end Booking
+//Araa
