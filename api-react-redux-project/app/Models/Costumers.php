@@ -10,6 +10,6 @@ class Costumers extends Model
     use HasFactory;
     protected $table='costumers';
     protected $fillable =[
-        'name','email','password'	
+        'name','email','phone','password','picture'	
     ];
 }

@@ -15,4 +15,19 @@ class PostsController extends Controller
         $posts = Posts::all()->where('rule' , 1);
         return response()->json($posts);
     }
+
+
+
+    public function view($id)
+    {
+
+        // return Posts::all()->where('costumer_id' ,$id);
+        $tables =Posts::where('costumer_id', $id)->get();
+        if($tables->count() > 0){
+
+            return response()->json($tables);
+        }
+         return response()->json(['message' => 'No posts found'], 404);
+         
+    }
 }

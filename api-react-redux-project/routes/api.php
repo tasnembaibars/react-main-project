@@ -24,9 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//view user info
 Route::get('/profile/{id}',[CostumersController::class,'index']);
 
-//edit
+//edit user info
 Route::post('/profile',[CostumersController::class,'store']);
 Route::put('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
@@ -43,4 +44,10 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 // Route::post('/post',[CommentsPostController::class,'store']);
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
+
+
+Route::get('/userposts/{id}',[PostsController::class,'view']);
+
+// Route::get('images', [PostsController::class, 'index'])->name('images');
+// Route::post('images', [PostsController::class, 'upload'])->name('images');
 // Route::post('/post',[CommentsPostController::class,'store']);
