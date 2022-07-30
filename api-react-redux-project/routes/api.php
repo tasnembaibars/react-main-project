@@ -64,3 +64,6 @@ Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
 // Route::post('/post',[CommentsPostController::class,'store']);
 
+
+
+
