@@ -14,7 +14,7 @@ import Contact from './components/contact';
 import Register from './components/Register';
 import Login from './components/Login';
 import Profile from './components/Profile';
-
+import './App.css';
 import CheckOut from './components/Checkout';
 
 import { createContext, useState } from 'react';

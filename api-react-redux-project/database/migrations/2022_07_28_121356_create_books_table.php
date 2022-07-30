@@ -18,11 +18,10 @@ class CreateBooksTable extends Migration
             $table->string('date')->nullable();
 
 
-            $table->string('user_phone')->nullable();
-            $table->string('address')->nullable();
-            $table->string('sub_email')->nullable();
-            $table->boolean('book_state')->nullable();
-
+            $table->string('phone')->nullable();
+            $table->string('hour')->nullable();
+            $table->string('email')->nullable();
+            $table->boolean('book_state')->nullable()->default(0);
             $table->foreignId('service_id')->nullable()->constrained('services');
             $table->foreignId('costumer_id')->nullable()->constrained('costumers');
             $table->timestamps();
