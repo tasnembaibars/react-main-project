@@ -85,7 +85,6 @@ Route::get('/userposts/{id}',[PostsController::class,'view']);
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -216,9 +215,25 @@ Route::post('/books',[BooksController::class,'store1']);
 Route::put('/books/{book}',[BooksController::class,'update1']);
 Route::put('/booksstate/{book}',[BooksController::class,'changeState']);
 Route::delete('/books/{book}',[BooksController::class,'destroy1']);
-=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////// **** Admin Routes  end **** /////
+
+
+
 // start Booking
 Route::post('/Book',[BooksController::class,'store']);
 // end Booking
 //Araa
->>>>>>> b587d87f207b85bd11aee269c2d25c7186043c37
