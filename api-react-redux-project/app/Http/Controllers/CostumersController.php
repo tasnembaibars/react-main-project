@@ -25,7 +25,7 @@ class CostumersController extends Controller
       [
         'name' => 'required',
         'email' => 'required|unique:costumers,email',
-        'password' => 'required|max:8',
+        'password' => 'required|min:8',
       ],
       
       );
@@ -45,6 +45,34 @@ class CostumersController extends Controller
         // $user->save();
 
         // return $user;
+    }
+
+    public function loginAPI(Request $request)
+    {
+      
+        // $validator = Validator::make(
+        //     $request->all(),
+        //     [
+        //         'email' => 'email|required',
+        //         'password' => 'required|min:8',
+        //     ]
+        // );
+
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()->all()]);
+        // }
+
+        $user = Costumers::where('email', request('email'))->first();
+
+   
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
+            return response()->json([
+                'errors' => ['Email or Password is incorrect']
+            ]);
+        }
+        return response($user, 201);
+        
+       
     }
 
     //view user data in profile

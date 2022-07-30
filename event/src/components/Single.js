@@ -161,6 +161,7 @@ function Single() {
                                     </div>
                                 </div>
                             </div>
+                      
                              {/* <!-- end author-box --> */}
 
                             <div className="more-posts">
