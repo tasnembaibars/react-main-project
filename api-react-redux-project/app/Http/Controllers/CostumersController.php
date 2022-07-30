@@ -83,22 +83,22 @@ class CostumersController extends Controller
     }
 
 
-    public function store(Request $request ,User $User)
-    {
-        $request->validate([
-        'name',
-        'email',
-        'password',
+    // public function store(Request $request ,User $User)
+    // {
+    //     $request->validate([
+    //     'name',
+    //     'email',
+    //     'password',
 
-        ]);
+    //     ]);
   
         
-        $User->name=$request->name;
-         $User->email=$request->email;
-         $User->password=$request->password;
+    //     $User->name=$request->name;
+    //      $User->email=$request->email;
+    //      $User->password=$request->password;
        
-        $User->save(); 
-    }
+    //     $User->save(); 
+    // }
 
 
     public function edit($id)
@@ -120,5 +120,187 @@ class CostumersController extends Controller
          $user->save();
          return $user;
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function index1()
+      {
+          return Costumers::all();
+      }
+  
+      function single($id)
+      {
+          return Costumers::firstWhere('id', $id);
+      }
+  
+  
+  
+      // Create (POST) function
+      function store1(Request $request)
+      {
+          //validation 
+          // request()->validate([
+          //     'title' => 'required',
+          //     'content' => 'required'
+          // ]);
+  
+          //create command
+  
+  
+          
+          return Costumers::create([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+              'picture' => request('picture')
+  
+          ]);
+      }
+  
+  
+  
+      // Update (PUT) function
+      function update1(Costumers $costumer)
+      {
+  
+  
+          return $costumer->update([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+  
+          ]);
+  
+  
+          // return $product->update([
+          //     'title' => request('name'),
+          //     'content' => request('content')
+  
+          // ]);
+  
+  
+      }
+  
+  
+  
+      // Delete (DELETE) function
+      function destroy1(Costumers $costumer)
+      {
+          return  $costumer->delete();
+      }
+      
+
+
+
+
+
+
+
+
+
+
+      
 
 }
