@@ -1,6 +1,9 @@
 import React,{useEffect,useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useParams} from 'react-router-dom'
+
 function Single() {
+
+     const { id } = useParams();
     //insert comments
     const [comment, setComment] = useState("");
     const [costumer_id, setCostumer_id] = useState(1);
@@ -22,10 +25,13 @@ function Single() {
       if (response.ok){
         window.alert("comment added successfully")
       }
-      
     };
+
     console.log(comment)
 
+    const [selectedPost, setSelectedPost] = useState([]);
+    const [currentPost, setCurrentPost] = useState(1);
+    
 
     //fetch all comments
     const [all,setAll]=useState([])
@@ -178,6 +184,7 @@ function Single() {
                                     <ol className="comments">
                                         <li className="comment even thread-even depth-1" id="comment-1">
                                             {all.map((user)=>{
+                                                if(user.post_id !== currentPost)return;
                                                     return( 
                                                     <div id="div-comment-1">
                                                 <div className="comment-theme">
