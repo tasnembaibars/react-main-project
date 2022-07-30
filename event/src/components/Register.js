@@ -44,6 +44,7 @@ function Register() {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
+                        <div style={{color:'red'}}>{error[0]}</div>
                             <form class="wpo-accountWrapper" action="#" onSubmit={handleSubmit}>
                                 <div class="wpo-accountInfo">
                                     <div class="wpo-accountInfoHeader">
@@ -92,15 +93,6 @@ function Register() {
                                                 </span>
                                             </div>
                                         </div>
-                                        {/* <div class="col-lg-12 col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label>Confirm Password</label>
-                                        <input class="pwd3" type="password" placeholder="Your password here.." name="pass" required/>
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default reveal2" type="button"><i class="fa fa-eye"></i></button>
-                                        </span>
-                                    </div>
-                                </div> */}
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <button type="submit" class="wpo-accountBtn">Signup</button>
                                         </div>

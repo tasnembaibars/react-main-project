@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
+    const user_id = sessionStorage.getItem('user_id');
+
+    const handleClick = () => {
+        sessionStorage.clear();
+        window.location.href = 'http://localhost:3000/'
+    }
     return (
         <>
 
@@ -60,69 +66,22 @@ const NavBar = () => {
                                             <li class="menu-item-has-children">
 
                                                 <NavLink to="/" >Home</NavLink>
-                                                {/* <ul class="sub-menu">
-                                                    <li><a class="active" href="index.html">Main Home</a></li>
-                                                    <li><a href="index-2.html">Wedding Planner</a></li>
-                                                    <li><a href="index-3.html">Announcement S1</a></li>
-                                                    <li><a href="index-4.html">Announcement S2</a></li>
-                                                    <li><a href="index-5.html">Wedding Home</a></li>
-                                                    <li><a href="index-7.html">Shop Home</a></li>
-                                                    <li><a href="index-6.html">Invitation</a></li>
-                                                </ul> */}
+
                                             </li>
-                                            {/* <li class="menu-item-has-children">
-                                                <a href="/about">About</a> */}
-                                            {/* <ul class="sub-menu">
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="story.html">Our story</a></li>
-                                                    <li><a href="accomodation.html">Accomodation</a></li>
-                                                    <li><a href="rsvp.html">RSVP</a></li>
-                                                    <li><a href="gallery.html">Gallery</a></li>
-                                                    <li><a href="planner.html">Planners</a></li>
-                                                    <li><a href="team-single.html">Planner Single</a></li>
-                                                    <li><a href="groom-bride.html">Bridesmaid & Groomsman</a></li>
-                                                    <li><a href="service.html">Serevice</a></li>
-                                                    <li><a href="service-s2.html">Serevice S2</a></li>
-                                                    <li><a href="service-single.html">Serevice Single</a></li>
-                                                    <li><a href="pricing.html">Pricing</a></li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Auth Pages</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="login.html">Login</a>
-                                                            </li>
-                                                            <li><a href="register.html">Register</a></li>
-                                                            <li><a href="forgot.html">Forgot Password</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="coming.html">Coming Soon</a></li>
-                                                    <li><a href="404.html">404 Error</a></li>
-                                                </ul> */}
-                                            {/* </li> */}
+
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/shop" >Shop</NavLink>
 
-                                                {/* <ul class="sub-menu">
-                                                    <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
-                                                    <li><a href="portfolio-mashonary.html">Portfolio Mashonary</a></li>
-                                                    <li><a href="portfolio-mashonary-s2.html">Portfolio Mashonary S2</a>
-                                                    </li>
-                                                    <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                                                </ul> */}
                                             </li>
 
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/Posts2" >Post2</NavLink>
 
-                                                {/* <ul class="sub-menu">
-                                                    <li><a href="portfolio-grid.html">Portfolio Grid</a></li>
-                                                    <li><a href="portfolio-mashonary.html">Portfolio Mashonary</a></li>
-                                                    <li><a href="portfolio-mashonary-s2.html">Portfolio Mashonary S2</a>
-                                                    </li>
-                                                    <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                                                </ul> */}
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/about" >About</NavLink>
+
+
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/post" >Posts</NavLink>
@@ -130,33 +89,36 @@ const NavBar = () => {
                                             <li class="menu-item-has-children">
 
                                                 <NavLink to="/contact" >Contact</NavLink>
-                                                {/* <ul class="sub-menu">
-                                                    <li><a href="blog.html">Blog right sidebar</a></li>
-                                                    <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                                    <li><a href="blog-fullwidth.html">Blog fullwidth</a></li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Blog details</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="blog-single.html">Blog details right
-                                                                sidebar</a>
-                                                            </li>
-                                                            <li><a href="blog-single-left-sidebar.html">Blog details
-                                                                left
-                                                                sidebar</a></li>
-                                                            <li><a href="blog-single-fullwidth.html">Blog details
-                                                                fullwidth</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul> */}
-                                            </li>
 
-                                            <li class="menu-item-has-children">
-                                                <NavLink to="/login" >Login</NavLink>
                                             </li>
-                                            <li class="menu-item-has-children">
-                                                <NavLink to="/register" >Register</NavLink>
-                                            </li>
-                                            {/* <li><a href="contact.html">Contact</a></li> */}
+                                            {user_id == null ? (
+                                                <>
+                                                    <li class="menu-item-has-children">
+                                                        <NavLink to="/login" >Login</NavLink>
+                                                    </li>
+                                                    <li class="menu-item-has-children">
+                                                        <NavLink to="/register" >Register</NavLink>
+                                                    </li>
+
+                                                </>
+
+
+                                            ) : (
+                                                <>
+                                                    
+                                                    <li class="menu-item-has-children">
+                                                        <NavLink to="/profile/:id" >Account</NavLink>
+                                                    </li>
+
+                                                    <li class="menu-item-has-children">
+                                                        <NavLink onClick={handleClick} to="/" >LogOut</NavLink>
+                                                    </li>
+
+                                                </>
+
+                                            )};
+
+
                                         </ul>
 
                                     </div>
@@ -184,49 +146,7 @@ const NavBar = () => {
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                         </svg></a>
-                                        {/* <div class="mini-cart">
-                                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-cart"></i>
-                                                <span class="cart-count">2</span></button>
-                                            <div class="mini-cart-content">
-                                                <button class="mini-cart-close"><i class="ti-close"></i></button>
-                                                <div class="mini-cart-items">
-                                                    <div class="mini-cart-item clearfix">
-                                                        <div class="mini-cart-item-image">
-                                                            <a href="shop.html"><img
-                                                                src="assets/images/shop/mini-cart/img-1.jpg"
-                                                                alt /></a>
-                                                        </div>
-                                                        <div class="mini-cart-item-des">
-                                                            <a href="shop.html">Wedding Gown</a>
-                                                            <span class="mini-cart-item-price">$20.15 x 1</span>
-                                                            <span class="mini-cart-item-quantity"><a href="#"><i
-                                                                class="ti-close"></i></a></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mini-cart-item clearfix">
-                                                        <div class="mini-cart-item-image">
-                                                            <a href="shop.html"><img
-                                                                src="assets/images/shop/mini-cart/img-2.jpg"
-                                                                alt /></a>
-                                                        </div>
-                                                        <div class="mini-cart-item-des">
-                                                            <a href="shop.html">Bridal Flower</a>
-                                                            <span class="mini-cart-item-price">$13.25 x 2</span>
-                                                            <span class="mini-cart-item-quantity"><a href="#"><i
-                                                                class="ti-close"></i></a></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mini-cart-action clearfix">
-                                                    <span class="mini-checkout-price">Subtotal:
-                                                        <span>$215.14</span></span>
-                                                    <div class="mini-btn">
-                                                        <a href="checkout.html" class="view-cart-btn s1">Checkout</a>
-                                                        <a href="cart.html" class="view-cart-btn">View Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> */}
+
                                     </div>
                                 </div>
                             </div>

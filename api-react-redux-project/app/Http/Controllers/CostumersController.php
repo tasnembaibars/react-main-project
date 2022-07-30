@@ -25,7 +25,7 @@ class CostumersController extends Controller
       [
         'name' => 'required',
         'email' => 'required|unique:costumers,email',
-        'password' => 'required|max:8',
+        'password' => 'required|min:8',
       ],
       
       );
@@ -47,6 +47,34 @@ class CostumersController extends Controller
         // return $user;
     }
 
+    public function loginAPI(Request $request)
+    {
+      
+        // $validator = Validator::make(
+        //     $request->all(),
+        //     [
+        //         'email' => 'email|required',
+        //         'password' => 'required|min:8',
+        //     ]
+        // );
+
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()->all()]);
+        // }
+
+        $user = Costumers::where('email', request('email'))->first();
+
+   
+        if (!$user || !Hash::check($request->input('password'), $user->password)) {
+            return response()->json([
+                'errors' => ['Email or Password is incorrect']
+            ]);
+        }
+        return response($user, 201);
+        
+       
+    }
+
     //view user data in profile
     public function index($id)
     {
@@ -60,6 +88,7 @@ class CostumersController extends Controller
         $request->validate([
         'name',
         'email',
+        'phone',
         'password',
 
         ]);
@@ -87,10 +116,73 @@ class CostumersController extends Controller
              $user->update([
              'name'=>$request->input('name'),
              'email'=>$request->input('email'),
+             'phone'=>$request->input('phone'),
              'password'=>$request->input('password'),
+             'picture'=>$request->input('picture'),
          ]);
          $user->save();
          return $user;
+      }
+
+
+    //upload image 
+    // public function upload(Request $request) {
+    //     $imagesName = [];
+    //     $response = [];
+
+    //     $validator = Validator::make($request->all(),
+    //         [
+    //             'images' => 'required',
+    //             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    //         ]
+    //     );
+
+    //     if($validator->fails()) {
+    //         return response()->json(["status" => "failed", "message" => "Validation error", "errors" => $validator->errors()]);
+    //     }
+
+    //     if($request->has('images')) {
+    //         foreach($request->file('images') as $image) {
+    //             $filename = time().rand(3). '.'.$image->getClientOriginalExtension();
+    //             $image->move('uploads/', $filename);
+
+    //             Image::create([
+    //                 'picture' => $filename
+    //             ]);
+    //         }
+
+    //         $response["status"] = "successs";
+    //         $response["message"] = "Success! image(s) uploaded";
+    //     }
+
+    //     else {
+    //         $response["status"] = "failed";
+    //         $response["message"] = "Failed! image(s) not uploaded";
+    //     }
+    //     return response()->json($response);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //selects users data for comments page
+      public function view($id){
+       return Costumers::all()->where('id',$id);
       }
 
 }
