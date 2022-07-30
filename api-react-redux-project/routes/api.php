@@ -2,22 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+
 
 use App\Http\Controllers\CostumersController;
 use App\Http\Controllers\CommentsPostController;
 
-
-// use CostumersController;
-
-=======
-
-use App\Http\Controllers\CostumersController;
-
-use App\Http\Controllers\CommentsPostController;
 
 use App\Http\Controllers\PostsController;
->>>>>>> b3510cd4f03a7701149659eb023dc7aaa884fbfe
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +23,7 @@ use App\Http\Controllers\PostsController;
 */
 /*Login and Register */
  Route::post('register', [CostumersController::class, 'registerAPI']);
+ Route::post('login', [CostumersController::class, 'loginAPI']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -42,8 +35,8 @@ Route::get('/profile/{id}',[CostumersController::class,'index']);
 Route::post('/profile',[CostumersController::class,'store']);
 Route::put('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
-<<<<<<< HEAD
-=======
+
+
 
 
 
@@ -58,4 +51,4 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
 // Route::post('/post',[CommentsPostController::class,'store']);
->>>>>>> b3510cd4f03a7701149659eb023dc7aaa884fbfe
+
