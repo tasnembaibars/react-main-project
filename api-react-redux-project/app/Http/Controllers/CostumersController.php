@@ -83,23 +83,22 @@ class CostumersController extends Controller
     }
 
 
-    public function store(Request $request ,User $User)
-    {
-        $request->validate([
-        'name',
-        'email',
-        'phone',
-        'password',
+    // public function store(Request $request ,User $User)
+    // {
+    //     $request->validate([
+    //     'name',
+    //     'email',
+    //     'password',
 
-        ]);
+    //     ]);
   
         
-        $User->name=$request->name;
-         $User->email=$request->email;
-         $User->password=$request->password;
+    //     $User->name=$request->name;
+    //      $User->email=$request->email;
+    //      $User->password=$request->password;
        
-        $User->save(); 
-    }
+    //     $User->save(); 
+    // }
 
 
     public function edit($id)
@@ -116,51 +115,13 @@ class CostumersController extends Controller
              $user->update([
              'name'=>$request->input('name'),
              'email'=>$request->input('email'),
-             'phone'=>$request->input('phone'),
              'password'=>$request->input('password'),
-             'picture'=>$request->input('picture'),
          ]);
          $user->save();
          return $user;
       }
 
 
-    //upload image 
-    // public function upload(Request $request) {
-    //     $imagesName = [];
-    //     $response = [];
-
-    //     $validator = Validator::make($request->all(),
-    //         [
-    //             'images' => 'required',
-    //             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-    //         ]
-    //     );
-
-    //     if($validator->fails()) {
-    //         return response()->json(["status" => "failed", "message" => "Validation error", "errors" => $validator->errors()]);
-    //     }
-
-    //     if($request->has('images')) {
-    //         foreach($request->file('images') as $image) {
-    //             $filename = time().rand(3). '.'.$image->getClientOriginalExtension();
-    //             $image->move('uploads/', $filename);
-
-    //             Image::create([
-    //                 'picture' => $filename
-    //             ]);
-    //         }
-
-    //         $response["status"] = "successs";
-    //         $response["message"] = "Success! image(s) uploaded";
-    //     }
-
-    //     else {
-    //         $response["status"] = "failed";
-    //         $response["message"] = "Failed! image(s) not uploaded";
-    //     }
-    //     return response()->json($response);
-    // }
 
 
 
@@ -180,9 +141,152 @@ class CostumersController extends Controller
 
 
 
-      //selects users data for comments page
-      public function view($id){
-       return Costumers::all()->where('id',$id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function index1()
+      {
+          return Costumers::all();
       }
+  
+      function single($id)
+      {
+          return Costumers::firstWhere('id', $id);
+      }
+  
+  
+  
+      // Create (POST) function
+      function store1(Request $request)
+      {
+          //validation 
+          // request()->validate([
+          //     'title' => 'required',
+          //     'content' => 'required'
+          // ]);
+  
+          //create command
+  
+  
+          
+          return Costumers::create([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+              'picture' => request('picture')
+  
+          ]);
+      }
+  
+  
+  
+      // Update (PUT) function
+      function update1(Costumers $costumer)
+      {
+  
+  
+          return $costumer->update([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+  
+          ]);
+  
+  
+          // return $product->update([
+          //     'title' => request('name'),
+          //     'content' => request('content')
+  
+          // ]);
+  
+  
+      }
+  
+  
+  
+      // Delete (DELETE) function
+      function destroy1(Costumers $costumer)
+      {
+          return  $costumer->delete();
+      }
+
 
 }
