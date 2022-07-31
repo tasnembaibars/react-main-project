@@ -9,6 +9,7 @@ function Profile() {
     const [users, setUsers] = useState({
         name: '', email: '', phone: '', password: '', picture: ''
     });
+    const [selectedFile, setSelectedFile] = useState();
 
     const [update, setUpdate] = useState(false);
     const { id } = useParams();
@@ -25,19 +26,79 @@ function Profile() {
         data()
     }, [update])
 
+    const [singleData, setsingleData] = useState([]);
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/profile/${id}`)
+                .then((res) => setsingleData(res.data))
+        }
+        , [])
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [pass, setPass] = useState('');
+    const [picture, setPicture] = useState('');
+
+
+
+    useEffect(() => {
+        setName(singleData.name)
+        setEmail(singleData.email);
+        setPass(singleData.password);
+        setPhone(singleData.phone);
+        setPicture(singleData.picture);
+
+    }, [singleData] );
+
   //update user info
 
-    const updateHandeler = (e) => {
-        e.preventDefault();
-        axios.put(`http://127.0.0.1:8000/api/profile/${id}`, users)
-            .then((res) => setUsers(res.data))
-            .then(() => setUpdate(!update))
-        console.log(users)
-        if (!update) {
-            window.alert('Your profile has been updated successfuly')
+  const updateHandeler = async (e) => {
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("password", pass);
 
-        }
-    }
+    await fetch(`http://127.0.0.1:8000/api/profile/${id}`, {
+      method: "POST",
+      body: formData,
+    })
+    .then((result)=>{
+        console.log('complete');
+    })
+    .catch((err)=>{
+        console.log(err);
+      
+    });
+  };
+console.log(selectedFile,name,email,pass ,picture)
+
+
+
+
+
+
+
+
+
+    // const updateHandeler = (e) => {
+    //     e.preventDefault();
+    //     axios.put(`http://127.0.0.1:8000/api/profile/${id}`, users)
+    //         .then((res) => setUsers(res.data))
+    //         .then(() => setUpdate(!update))
+    //     console.log(users)
+    //     if (!update) {
+    //         window.alert('Your profile has been updated successfuly')
+
+    //     }
+    // }
+
+
+
+
+
+
 
     //post history
     const [post, setPost] = useState([]);
@@ -67,9 +128,10 @@ function Profile() {
                         <div class="profile-info-contact p-4">
                             {/* <h6 class="mb-3">User Information</h6> */}
                             <form onSubmit={updateHandeler}>
-                                <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />
+                                <div class="profile-info-brief p-3">{ picture ? (<img class="img-fluid user-profile-avatar" src={`http://127.0.0.1:8000/${picture}`} alt="" />)
+                                                                             : (< img class="img-fluid user-profile-avatar" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />)}
                                     <div class="text-center">
-                                    <input type="file" name='picture' />
+                                    <input type="file" name='picture' onChange={(e) => setSelectedFile(e.target.files[0])} />
                                         <hr class="m-2"/>
                                     </div>
                                 </div>
@@ -79,28 +141,28 @@ function Profile() {
                                         <tr>
                                             <td><strong>Name:</strong></td>
                                             <td>
-                                                <input type="text" className="form-control" name='name' value={users.name} onChange={(e) => setUsers({ ...users, name: e.target.value })} />
+                                                <input type="text" className="form-control" name='name' onChange={e => setName(e.target.value)} defaultValue={name} />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><strong>Email:</strong></td>
                                             <td>
                                                 {/* <p class="text-muted mb-0">rathemes@gmail.com</p> */}
-                                                <input type="text" className="form-control" name='email' value={users.email} onChange={(e) => setUsers({ ...users, email: e.target.value })} />
+                                                <input type="text" className="form-control" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><strong>Phone:</strong></td>
                                             <td>
                                                 {/* <p class="text-muted mb-0">Rathemes</p> */}
-                                                <input type="text" className="form-control" name='phone' placeholder='' value={users.phone} onChange={(e) => setUsers({ ...users, phone: e.target.value })} />
+                                                <input type="text" className="form-control" name='phone' placeholder='' onChange={e => setPhone(e.target.value)} defaultValue={phone} />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><strong>Password:</strong></td>
                                             <td>
                                                 {/* <p class="text-muted mb-0">Rathemes</p> */}
-                                                <input type="password" className="form-control" name='password' placeholder='' value={users.password} onChange={(e) => setUsers({ ...users, password: e.target.value })} />
+                                                <input type="password" className="form-control" name='password' placeholder='' onChange={e => setPass(e.target.value)} defaultValue={pass} />
                                             </td>
                                         </tr>
                                         <button className="btn btn-primary" type='submit' style={{ backgroundColor: '#86a0b6', marginTop: '10px' }} >Update</button>

@@ -37,7 +37,7 @@ Route::get('/profile/{id}',[CostumersController::class,'index']);
 
 //edit user info
 Route::post('/profile',[CostumersController::class,'store']);
-Route::put('/profile/{id}',[CostumersController::class,'update']);
+Route::post('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
