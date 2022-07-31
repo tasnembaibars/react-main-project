@@ -16,7 +16,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import './App.css';
 import CheckOut from './components/Checkout';
-
+import Singlepost from './components/Singlepost';
 import { createContext, useState } from 'react';
 export const userContext = createContext();
 
@@ -32,6 +32,7 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Index />} />
+    <Route path="/Singlepost/:id" element={<Singlepost />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />

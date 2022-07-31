@@ -9,7 +9,7 @@ use App\Http\Controllers\CommentsPostController;
 
 
 use App\Http\Controllers\PostsController;
-
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,9 +72,11 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 // start Post
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
-
+Route::get('update/{id}',[PostsController::class,'update']);
 
 Route::get('/userposts/{id}',[PostsController::class,'view']);
+
+Route::put('/singlepost/{id}',[PostsController::class,'viewPost']);
 
 // Route::get('images', [PostsController::class, 'index'])->name('images');
 // Route::post('images', [PostsController::class, 'upload'])->name('images');
