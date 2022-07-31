@@ -33,43 +33,44 @@ class CostumersController extends Controller
            if ($validator->fails()) {
              return response()->json(['errors' => $validator->errors()->all()]);
            }
+           
 
-          $costumer = Costumers::create($request->all());
+          // $costumer = Costumers::create($request->all());
 
-          $costumer->save();
+          // $costumer->save();
 
-        // $user = new Costumers();
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = $request->password;
-        // $user->save();
+         $user = new Costumers();
+         $user->name = $request->name;
+         $user->email = $request->email;
+         $user->password = Hash::make($request->password) ;
+         $user->save();
 
-        // return $user;
+         return response($user, 201);
     }
 
     public function loginAPI(Request $request)
     {
       
-        // $validator = Validator::make(
-        //     $request->all(),
-        //     [
-        //         'email' => 'email|required',
-        //         'password' => 'required|min:8',
-        //     ]
-        // );
+         $validator = Validator::make(
+             $request->all(),
+             [
+                 'email' => 'email|required',
+                'password' => 'required|min:8',
+            ]
+         );
 
-        // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors()->all()]);
-        // }
+         if ($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()->all()]);
+         }
 
         $user = Costumers::where('email', request('email'))->first();
 
    
-        // if (!$user || !Hash::check($request->input('password'), $user->password)) {
-        //     return response()->json([
-        //         'errors' => ['Email or Password is incorrect']
-        //     ]);
-        // }
+         if (!$user || !Hash::check($request->input('password'), $user->password)) {
+             return response()->json([
+                 'errors' => ['Email or Password is incorrect']
+            ]);
+         }
         return response($user, 201);
         
        
@@ -83,22 +84,22 @@ class CostumersController extends Controller
     }
 
 
-    public function store(Request $request ,User $User)
-    {
-        $request->validate([
-        'name',
-        'email',
-        'password',
+    // public function store(Request $request ,User $User)
+    // {
+    //     $request->validate([
+    //     'name',
+    //     'email',
+    //     'password',
 
-        ]);
+    //     ]);
   
         
-        $User->name=$request->name;
-         $User->email=$request->email;
-         $User->password=$request->password;
+    //     $User->name=$request->name;
+    //      $User->email=$request->email;
+    //      $User->password=$request->password;
        
-        $User->save(); 
-    }
+    //     $User->save(); 
+    // }
 
 
     public function edit($id)
@@ -120,5 +121,75 @@ class CostumersController extends Controller
          $user->save();
          return $user;
       }
+
+
+
+
+      function index1()
+      {
+          return Costumers::all();
+      }
+  
+      function single1($id)
+      {
+          return Costumers::firstWhere('id', $id);
+      }
+  
+  
+  
+      // Create (POST) function
+      function store1(Request $request)
+      {
+          //validation 
+          // request()->validate([
+          //     'title' => 'required',
+          //     'content' => 'required'
+          // ]);
+  
+          //create command
+  
+  
+          
+          return Costumers::create([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+              'picture' => request('picture')
+  
+          ]);
+      }
+  
+  
+  
+      // Update (PUT) function
+      function update1(Costumers $costumer)
+      {
+  
+  
+          return $costumer->update([
+              'name' => request('name'),
+              'email' => request('email'),
+              'password' => request('password'),
+  
+          ]);
+  
+  
+          // return $product->update([
+          //     'title' => request('name'),
+          //     'content' => request('content')
+  
+          // ]);
+  
+  
+      }
+  
+  
+  
+      // Delete (DELETE) function
+      function destroy1(Costumers $costumer)
+      {
+          return  $costumer->delete();
+      }
+
 
 }

@@ -14,7 +14,7 @@ function Index() {
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" data-background="assets/images/slider/slide-1.jpg">
+                            <div class="slide-inner slide-bg-image" data-background="slider/slide-1.jpg">
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -35,7 +35,7 @@ function Index() {
                         </div> 
 
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" data-background="assets/images/slider/slide-2.jpg">
+                            <div class="slide-inner slide-bg-image" data-background="slider/slide-2.jpg">
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -56,7 +56,7 @@ function Index() {
                         </div> 
 
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" data-background="assets/images/slider/slide-3.jpg">
+                            <div class="slide-inner slide-bg-image" data-background="slider/slide-3.jpg">
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -89,19 +89,19 @@ function Index() {
                         <div class="col col-xs-12">
                             <div class="partner-grids partners-slider owl-carousel">
                                 <div class="grid">
-                                    <img src="assets/images/partners/1.png" alt/>
+                                    <img src="%PUBLIC_URL%/slider/slide-1.jpg" alt/>
                                 </div>
                                 <div class="grid">
-                                    <img src="assets/images/partners/2.png" alt/>
+                                    <img src="%PUBLIC_URL%/slider/slide-1.jpg" alt/>
                                 </div>
                                 <div class="grid">
-                                    <img src="assets/images/partners/3.png" alt/>
+                                    <img src="%PUBLIC_URL%/slider/slide-1.jpg" alt/>
                                 </div>
                                 <div class="grid">
-                                    <img src="assets/images/partners/4.png" alt/>
+                                    <img src="%PUBLIC_URL%/slider/slide-1.jpg" alt/>
                                 </div>
                                 <div class="grid">
-                                    <img src="assets/images/partners/5.png" alt/>
+                                    <img src="%PUBLIC_URL%/slider/slide-1.jpg" alt/>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@ function Index() {
                 </div> 
             </section>
        
-            <section class="wpo-video-section section-padding">
+            {/* <section class="wpo-video-section section-padding">
                 <div class="container">
                     <div class="row">
                         <div class="wpo-section-title">
@@ -208,9 +208,9 @@ function Index() {
                         </div>
                     </div>
                 </div> 
-            </section>
+            </section> */}
 
-            <section class="wpo-fun-fact-section">
+            {/* <section class="wpo-fun-fact-section">
                 <div class="container">
                     <div class="row">
                         <div class="col col-xs-12">
@@ -250,7 +250,7 @@ function Index() {
                     </div>
                 </div>
             </section>
-     
+      */}
             <section class="wpo-portfolio-section section-padding">
                 <div class="container-fluid">
                     <div class="row">
@@ -328,7 +328,7 @@ function Index() {
 
                 </div> 
             </section>
-
+{/* 
             <section class="wpo-testimonials-section section-padding">
                 <div class="container">
                     <div class="row align-items-center">
@@ -397,7 +397,7 @@ function Index() {
                     <img src="assets/images/testimonial/shape2.png" alt=""/>
                 </div>
             </section>
-          
+           */}
             <section class="wpo-product-section section-padding">
                 <div class="container">
                     <div class="row">
@@ -622,7 +622,7 @@ function Index() {
                 <h4>There is only one happiness in this life, to love and be loved</h4>
             </section>
 
-            <section class="wpo-contact-section section-padding">
+            {/* <section class="wpo-contact-section section-padding">
                 <div class="container">
                     <div class="wpo-contact-section-wrapper">
                         <div class="wpo-contact-form-area">
@@ -699,7 +699,7 @@ function Index() {
                     </div>
                 </div>
             </section>
-      
+       */}
             <section class="wpo-blog-section section-padding">
                 <div class="container">
                     <div class="row">
@@ -771,9 +771,9 @@ function Index() {
 
         <div class="color-switcher-wrap">
             <div class="color-switcher-item">
-                <div class="color-toggle-btn">
+                {/* <div class="color-toggle-btn">
                     <i class="fa fa-cog"></i>
-                </div>
+                </div> */}
                 <ul id="switcher">
                     <li class="btn btn1" id="Button1"></li>
                     <li class="btn btn2" id="Button2"></li>
