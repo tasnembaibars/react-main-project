@@ -34,7 +34,7 @@ class ContactController extends Controller
      * @param  \App\Http\Requests\StorecontactRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecontactRequest $request)
+    public function store(Request $request)
     {
         //
         $Contact= new contact;

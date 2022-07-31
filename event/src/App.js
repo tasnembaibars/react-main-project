@@ -17,6 +17,7 @@ import Profile from './components/Profile';
 import './App.css';
 import CheckOut from './components/Checkout';
 import Singlepost from './components/Singlepost';
+import Booking from './components/Booking';
 import { createContext, useState } from 'react';
 export const userContext = createContext();
 // import Booking from './components/Booking';

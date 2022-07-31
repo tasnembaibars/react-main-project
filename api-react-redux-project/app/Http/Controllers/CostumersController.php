@@ -112,11 +112,30 @@ class CostumersController extends Controller
 
    public function update(Request $request,$id)
          {
+
+
+            $singles=Costumers::find($id);
+
+            if($singles->picture){
+                $filepath=$singles->picture ;
+            }else{
+                if ($request->file('file')) {
+                    $filepath = $request->file('file')->store('products');
+                } else {
+                    $filepath = null;
+                }
+
+            }
+
+
+
+
              $user=Costumers::find($id);
              $user->update([
-             'name'=>$request->input('name'),
-             'email'=>$request->input('email'),
-             'password'=>$request->input('password'),
+             'name'=>request('name'),
+             'email'=>request('email'),
+             'password'=>request('password'),
+             'picture' => $filepath
          ]);
          $user->save();
          return $user;
@@ -139,9 +158,6 @@ class CostumersController extends Controller
 
 
 
-      //selects users data for comments page
-      public function view($id){
-       return Costumers::all()->where('id',$id);
 
 
 
@@ -152,6 +168,7 @@ class CostumersController extends Controller
 
 
       }
+
 
 
 
@@ -293,4 +310,3 @@ class CostumersController extends Controller
       }
 
 
-}

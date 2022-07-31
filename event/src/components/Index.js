@@ -14,7 +14,7 @@ function Index() {
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" data-background="slider/slide-1.jpg">
+                            <div class="slide-inner slide-bg-image" style={{backgroundImage: `url("slider/8.jpg")`}}>
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -525,7 +525,7 @@ function Index() {
             </div>
 
             
-             <section className="wpo-pricing-section section-padding pt-0">
+             <section className="wpo-pricing-section section-padding pt-5">
             <div className="container">
                 <div className="row">
                     <div className="wpo-section-title">

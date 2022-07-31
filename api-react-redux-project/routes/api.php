@@ -12,6 +12,7 @@ use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('/profile/{id}',[CostumersController::class,'index']);
 
 //edit user info
 Route::post('/profile',[CostumersController::class,'store']);
-Route::put('/profile/{id}',[CostumersController::class,'update']);
+Route::post('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
@@ -240,3 +241,30 @@ Route::delete('/books/{book}',[BooksController::class,'destroy1']);
 Route::post('/Book',[BooksController::class,'store']);
 // end Booking
 //Araa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//start contact
+
+Route::post('/contact',[ContactController::class,'store']);
+
+//end contact
+
+
+
