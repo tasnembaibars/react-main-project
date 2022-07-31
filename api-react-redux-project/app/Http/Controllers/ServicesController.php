@@ -172,12 +172,15 @@ class ServicesController extends Controller
         //create command
 
 
-        
+        $filepath = $request->file('file')->store('products');
+
+
+
         return Services::create([
             'title' => request('title'),
             'price' => request('price'),
             'description' => request('description'),
-            'picture' => request('picture')
+            'picture' => $filepath
 
         ]);
     }

@@ -10,9 +10,9 @@ const Books = () => {
     const [books, setapibooks] = useState([]);
     const [services, setapiservices] = useState([]);
     const [date, setdate] = useState('');
-    const [user_phone, setphone] = useState('');
-    const [address, setaddress] = useState('');
-    const [sub_email, setemail] = useState('');
+    const [phone, setphone] = useState('');
+    const [hour, setaddress] = useState('');
+    const [email, setemail] = useState('');
     const [book_state, setstate] = useState(0);
     const [service_id, setservice] = useState('');
     const [costumer_id, setcostumer] = useState('');
@@ -84,9 +84,9 @@ const Books = () => {
 
         axios.post(`http://127.0.0.1:8000/api/books`, {
             date: date,
-            user_phone: user_phone,
-            address: address,
-            sub_email: sub_email,
+            phone: phone,
+            hour: hour,
+            email: email,
             book_state: book_state,
             service_id: service_id,
             costumer_id: costumer_id
@@ -99,6 +99,7 @@ const Books = () => {
                 add user success 
             </div>`
     }
+    console.log(hour , phone , email)
 
     return (
         <>
@@ -145,18 +146,18 @@ const Books = () => {
 
                             <div className="form-group ">
                                 <label for="exampleInputEmail1">costumer Phone</label>
-                                <input type="text" name='user_phone' onChange={e => setphone(e.target.value)} defaultValue={user_phone}
-                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                                <input type="text" name='phone' onChange={e => setphone(e.target.value)} defaultValue={phone}
+                                    className="form-control"  />
                             </div>
                             <div className="form-group ">
-                                <label for="exampleInputEmail1">Address</label>
-                                <input type="text" name='address' onChange={e => setaddress(e.target.value)} defaultValue={address}
-                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                                <label for="exampleInputEmail1">time</label>
+                                <input type="time" name='hour' onChange={e => setaddress(e.target.value)} defaultValue={hour}
+                                    className="form-control"  />
                             </div>
                             <div className="form-group ">
                                 <label for="exampleInputEmail1">Email</label>
-                                <input type="email" name='sub_email' onChange={e => setemail(e.target.value)} defaultValue={sub_email}
-                                    className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                                <input type="email" name='email' onChange={e => setemail(e.target.value)} defaultValue={email}
+                                    className="form-control"  />
                             </div>
 
 
@@ -167,7 +168,7 @@ const Books = () => {
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Date</label>
                                         <input type="date" name='date' onChange={e => setdate(e.target.value)} defaultValue={date}
-                                            className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
+                                            className="form-control"  placeholder="" />
                                     </div>
                                 </div>
 
@@ -196,8 +197,9 @@ const Books = () => {
                                 <tr>
                                     <th>Id</th>
                                     <th> date</th>
+                                    <th> time</th>
                                     <th> phone</th>
-                                    <th> address</th>
+                                    
                                     <th> email</th>
                                     <th> state</th>
                                     <th> service</th>
@@ -213,9 +215,10 @@ const Books = () => {
                                     <tr>
                                         <td>{a.id}</td>
                                         <td>{a.date}</td>
-                                        <td>{a.user_phone}</td>
-                                        <td>{a.address}</td>
-                                        <td>{a.sub_email}</td>
+                                        <td>{a.hour}</td>
+                                        <td>{a.phone}</td>
+                                        
+                                        <td>{a.email}</td>
                                         <td>{a.book_state ? <span className='text-success'>Acive</span> : <span className='text-warning'>not Active</span>}</td>
                                         <td>{a.service_id}</td>
                                         <td>{a.costumer_id}</td>

@@ -11,6 +11,7 @@ const Services = () => {
 
 
     const [Persons, setapi] = useState([]);
+    const [selectedFile, setSelectedFile] = useState();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -18,10 +19,10 @@ const Services = () => {
 
 
 
-    const fileBrowseHandler = (event) => {
-        let value = URL.createObjectURL(event.target.files[0]);
-        setImageUrl(value);
-    };
+    // const fileBrowseHandler = (event) => {
+    //     let value = URL.createObjectURL(event.target.files[0]);
+    //     setImageUrl(value);
+    // };
 
     useEffect(
         () => {
@@ -52,33 +53,56 @@ const Services = () => {
 
 
 
-    const addUser = (e) => {
-        e.preventDefault();
+    // const addUser = (e) => {
+    //     e.preventDefault();
 
-        axios.post(`http://127.0.0.1:8000/api/services`, {
-            title: name,
-            price: email,
-            description: pass,
+    //     axios.post(`http://127.0.0.1:8000/api/services`, {
+    //         title: name,
+    //         price: email,
+    //         description: pass,
+    //         file: selectedFile
 
 
-        }).then(() => {
+
+    //     }).then(() => {
+    //         getData();
+    //     })
+
+    //     setName('')
+    //     setEmail('')
+    //     setPass('')
+
+
+    //     console.log(selectedFile)
+
+
+    //     let successAdd = `         <div className="alert alert-success" role="alert">
+    //         add user success 
+    //     </div>`
+    // }
+    const addUser = async (e) => {
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        formData.append("title", name);
+        formData.append("price", email);
+        formData.append("description", pass);
+        await fetch("http://127.0.0.1:8000/api/services", {
+          method: "POST",
+          body: formData,
+        })
+        .then((result)=>{
             getData();
         })
+        .catch((err)=>{
+            console.log(err);
+          
+        });
+      };
 
 
 
-        setName('')
-        setEmail('')
-        setPass('')
 
 
-        console.log(picture)
-
-
-        let successAdd = `         <div className="alert alert-success" role="alert">
-            add user success 
-        </div>`
-    }
     return (
         <>
             <div className='container text-black'>
@@ -91,20 +115,20 @@ const Services = () => {
                         <form onSubmit={addUser}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Title</label>
-                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jhone" />
+                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control"  placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Price</label>
-                                <input type="text" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                <input type="text" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} className="form-control"  placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <input type="text" name='password' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input type="text" name='password' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control"  placeholder="" />
                             </div>
                             
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file input</label>
-                                <input type="file"  name='picture' onChange={fileBrowseHandler} class="form-control-file" id="exampleFormControlFile1" />
+                                <input type="file"  name='picture' onChange={(e) => setSelectedFile(e.target.files[0])} class="form-control-file"  />
                             </div>
 
                             <button type='submit' className="btn btn-primary">Submit</button>
@@ -129,7 +153,7 @@ const Services = () => {
 
                                     <tr>
                                         <td>{a.id}</td>
-                                        <td>{a.name}</td>
+                                        <td>{a.title}</td>
                                         <td>{a.price}</td>
                                         <td>{a.picture}</td>
 
@@ -137,7 +161,6 @@ const Services = () => {
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
                                             <button onClick={() => usee(`/admin/services/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
                                         </td>
-
 
                                     </tr>
 

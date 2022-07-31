@@ -35,18 +35,18 @@ const UpdateBook = () => {
             , []);
 
             const [date, setdate] = useState('');
-            const [user_phone, setphone] = useState('');
-            const [address, setaddress] = useState('');
-            const [sub_email, setemail] = useState('');
+            const [phone, setphone] = useState('');
+            const [hour, setaddress] = useState('');
+            const [email, setemail] = useState('');
             const [book_state, setstate] = useState('');
             const [service_id, setservice] = useState('');
             const [costumer_id, setcostumer] = useState('');
 
             useEffect(() => {
                 setdate(singleData.date)
-                setphone(singleData.user_phone);
-                setaddress(singleData.address);
-                setemail(singleData.sub_email);
+                setphone(singleData.phone);
+                setaddress(singleData.hour);
+                setemail(singleData.email);
 
                 setstate(singleData.book_state);
                 setservice(singleData.service_id);
@@ -59,9 +59,9 @@ const UpdateBook = () => {
 
         axios.put(`http://localhost:8000/api/books/${id}`, {
             date: date,
-            user_phone: user_phone,
-            address: address,
-            sub_email: sub_email,
+            phone: phone,
+            hour: hour,
+            email: email,
             book_state: book_state,
             service_id: service_id,
             costumer_id: costumer_id
@@ -111,17 +111,17 @@ const UpdateBook = () => {
 
                             <div className="form-group ">
                                 <label for="exampleInputEmail1">costumer Phone</label>
-                                <input type="text" name='user_phone' onChange={e => setphone(e.target.value)} defaultValue={user_phone}
+                                <input type="text" name='user_phone' onChange={e => setphone(e.target.value)} defaultValue={phone}
                                     className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
                             </div>
                             <div className="form-group ">
-                                <label for="exampleInputEmail1">Address</label>
-                                <input type="text" name='address' onChange={e => setaddress(e.target.value)} defaultValue={address}
+                                <label for="exampleInputEmail1">time</label>
+                                <input type="time" name='hour' onChange={e => setaddress(e.target.value)} defaultValue={hour}
                                     className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
                             </div>
                             <div className="form-group ">
                                 <label for="exampleInputEmail1">Email</label>
-                                <input type="email" name='sub_email' onChange={e => setemail(e.target.value)} defaultValue={sub_email}
+                                <input type="email" name='sub_email' onChange={e => setemail(e.target.value)} defaultValue={email}
                                     className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
                             </div>
 

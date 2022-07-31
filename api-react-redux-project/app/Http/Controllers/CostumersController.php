@@ -33,43 +33,44 @@ class CostumersController extends Controller
            if ($validator->fails()) {
              return response()->json(['errors' => $validator->errors()->all()]);
            }
+           
 
-          $costumer = Costumers::create($request->all());
+          // $costumer = Costumers::create($request->all());
 
-          $costumer->save();
+          // $costumer->save();
 
-        // $user = new Costumers();
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = $request->password;
-        // $user->save();
+         $user = new Costumers();
+         $user->name = $request->name;
+         $user->email = $request->email;
+         $user->password = Hash::make($request->password) ;
+         $user->save();
 
-        // return $user;
+         return response($user, 201);
     }
 
     public function loginAPI(Request $request)
     {
       
-        // $validator = Validator::make(
-        //     $request->all(),
-        //     [
-        //         'email' => 'email|required',
-        //         'password' => 'required|min:8',
-        //     ]
-        // );
+         $validator = Validator::make(
+             $request->all(),
+             [
+                 'email' => 'email|required',
+                'password' => 'required|min:8',
+            ]
+         );
 
-        // if ($validator->fails()) {
-        //     return response()->json(['errors' => $validator->errors()->all()]);
-        // }
+         if ($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()->all()]);
+         }
 
         $user = Costumers::where('email', request('email'))->first();
 
    
-        if (!$user || !Hash::check($request->input('password'), $user->password)) {
-            return response()->json([
-                'errors' => ['Email or Password is incorrect']
+         if (!$user || !Hash::check($request->input('password'), $user->password)) {
+             return response()->json([
+                 'errors' => ['Email or Password is incorrect']
             ]);
-        }
+         }
         return response($user, 201);
         
        
@@ -124,6 +125,8 @@ class CostumersController extends Controller
 
 
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -138,6 +141,9 @@ class CostumersController extends Controller
 
 
 
+      //selects users data for comments page
+      public function view($id){
+       return Costumers::all()->where('id',$id);
 
 
 
@@ -222,12 +228,13 @@ class CostumersController extends Controller
 
 
 
+>>>>>>> f1936225488259540ecbb70072aeb352a6978abf
       function index1()
       {
           return Costumers::all();
       }
   
-      function single($id)
+      function single1($id)
       {
           return Costumers::firstWhere('id', $id);
       }

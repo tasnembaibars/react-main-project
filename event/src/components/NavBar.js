@@ -107,7 +107,7 @@ const NavBar = () => {
                                                 <>
                                                     
                                                     <li class="menu-item-has-children">
-                                                        <NavLink to="/profile/:id" >Account</NavLink>
+                                                        <NavLink to="profile/:id" >Account</NavLink>
                                                     </li>
 
                                                     <li class="menu-item-has-children">
