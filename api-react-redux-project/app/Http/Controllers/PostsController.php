@@ -34,7 +34,7 @@ class PostsController extends Controller
             return response()->json($tables);
         }
          return response()->json(['message' => 'No posts found'], 404);
-         
+
     }
     public function update(Request $request,$id)
          {
@@ -46,4 +46,7 @@ class PostsController extends Controller
          $post->save();
          return $post;
       }
+      public function viewPost($id){
+        return Posts::all()->where('id',$id);
+       }
 }

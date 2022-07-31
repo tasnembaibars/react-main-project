@@ -87,20 +87,8 @@ const Contact = () => {
                                     <div>
                                         <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*" />
                                     </div>
-                                    <div>
-                                        <input type="text" class="form-control" name="adress" id="adress" placeholder="Adress" />
-                                    </div>
-                                    <div>
-                                        <select name="service" class="form-control">
-                                            <option disabled="disabled" selected="">Services</option>
-                                            <option>Photography</option>
-                                            <option>The Rehearsal Dinner</option>
-                                            <option>The Afterparty</option>
-                                            <option>Videographers</option>
-                                            <option>Perfect Cake</option>
-                                            <option>All Of The Above</option>
-                                        </select>
-                                    </div>
+                                  
+                                    
                                     <div class="fullwidth">
                                         <textarea class="form-control" name="note" id="note" placeholder="Message..."></textarea>
                                     </div>
