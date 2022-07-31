@@ -111,4 +111,24 @@ class ServicesController extends Controller
     {
         return  $service->delete();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function view($id){
+        return Services::all()->where('categories_id',$id);
+       }
+       public function view2($id){
+        return Services::all()->where('categories_id',$id);
+       }
 }

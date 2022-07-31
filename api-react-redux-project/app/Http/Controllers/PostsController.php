@@ -50,7 +50,7 @@ class PostsController extends Controller
       public function viewP($id){
         return Posts::find($id);
        }
-       public function viewComments($id){
-        return Comments_post::all()->where('post_id',$id);
+       public function viewComments($post_id){
+        return Comments_post::all()->where('post_id',$post_id);
        }
 }
