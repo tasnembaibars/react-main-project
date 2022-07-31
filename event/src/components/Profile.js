@@ -3,8 +3,11 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function Profile() {
+
+
 
     const [users, setUsers] = useState({
         name: '', email: '', phone: '', password: '', picture: ''

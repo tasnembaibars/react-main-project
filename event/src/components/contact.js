@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 const Contact = () => {
 
     const [name, setname] = useState("");
@@ -18,7 +19,14 @@ const Contact = () => {
 
         });
      
-      window.alert('add')
+    //   window.alert('add')
+  
+        swal({
+            title: "Good job!",
+            icon: "success",
+            button: "ok!",
+          });
+   
     }
 
     return ( 

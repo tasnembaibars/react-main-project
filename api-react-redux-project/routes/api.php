@@ -184,6 +184,10 @@ Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 
 
 
+
+
+
+
 ////// **** Admin Routes **** /////
 
 
