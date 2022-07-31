@@ -11,7 +11,7 @@ const UpdateCategoriese = () => {
 
     useEffect(
         () => {
-            axios.get(`http://127.0.0.1:8000/api/services/${id}`)
+            axios.get(`http://127.0.0.1:8000/api/categories/${id}`)
                 .then((res) => setsingleData(res.data))
         }
         ,
@@ -19,11 +19,16 @@ const UpdateCategoriese = () => {
 
     const [name, setName] = useState(singleData.name);
 
+    useEffect(() => {
+        setName(singleData.name)
+
+    }, [singleData] );
+
 
     const updateUser = (e) => {
         e.preventDefault();
 
-        axios.put(`http://127.0.0.1:8000/api/services/${id}`, {
+        axios.put(`http://127.0.0.1:8000/api/categories/${id}`, {
             title: name,
         })
         // history.replace('/profile')

@@ -45,21 +45,21 @@ const Users = () => {
 
     let successAdd = null
 
-    const addUser = (e, { reset }) => {
+    const addUser = (e) => {
         e.preventDefault();
 
         axios.post(`http://localhost:8000/api/costumers`, {
             name: name,
             email: email,
             password: pass,
-            picture:picture
+
 
         }).then(() => {
             getData();
-        })
+        });
 
 
-        reset()
+
         setName('')
         setEmail('')
         setPass('')
