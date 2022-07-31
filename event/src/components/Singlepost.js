@@ -10,14 +10,13 @@ function Singlepost() {
     // const [costumer_id , setCostumer_id] = useState(1);
     const { id } = useParams();
     const [posts, setPosts] = useState([]);
-    const [Load, setLoad] = useState(true);
 
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/api/singlepost/${id}`)
             .then((response) => response.json())
             .then(data => {
                 setPosts(data);
-                setLoad(false);
+             
                 console.log(data);
             });
             // fetch(`http://127.0.0.1:8000/api/singlepost/${id}`)
@@ -40,8 +39,7 @@ function Singlepost() {
               
 
                     <h3 class="comments-title">Posts</h3>
-                    {Load && <h1>Loading .... </h1>}
-                   
+                           
                         <div className="author-box">
                             <div className="author-avatar">
                                 <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>

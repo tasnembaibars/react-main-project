@@ -91,20 +91,20 @@ const Services = () => {
                         <form onSubmit={addUser}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Title</label>
-                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jhone" />
+                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control"  placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Price</label>
-                                <input type="text" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                <input type="text" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} className="form-control"  placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label for="exampleInputPassword1">Description</label>
-                                <input type="text" name='password' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input type="text" name='password' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control"  placeholder="" />
                             </div>
                             
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file input</label>
-                                <input type="file"  name='picture' onChange={fileBrowseHandler} class="form-control-file" id="exampleFormControlFile1" />
+                                <input type="file"  name='picture' onChange={fileBrowseHandler} class="form-control-file"  />
                             </div>
 
                             <button type='submit' className="btn btn-primary">Submit</button>
@@ -129,7 +129,7 @@ const Services = () => {
 
                                     <tr>
                                         <td>{a.id}</td>
-                                        <td>{a.name}</td>
+                                        <td>{a.title}</td>
                                         <td>{a.price}</td>
                                         <td>{a.picture}</td>
 
@@ -137,7 +137,6 @@ const Services = () => {
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
                                             <button onClick={() => usee(`/admin/services/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
                                         </td>
-
 
                                     </tr>
 
