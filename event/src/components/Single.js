@@ -262,7 +262,7 @@ function Single() {
 
                                                                             : null}
                                                                         {update ?
-                                                                            <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  value={user.comment}/>
+                                                                            <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
                                                                         <div className="comments-reply">

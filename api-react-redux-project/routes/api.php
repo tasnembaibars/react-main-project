@@ -12,6 +12,7 @@ use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -240,3 +241,30 @@ Route::delete('/books/{book}',[BooksController::class,'destroy1']);
 Route::post('/Book',[BooksController::class,'store']);
 // end Booking
 //Araa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//start contact
+
+Route::post('/contact',[ContactController::class,'store']);
+
+//end contact
+
+
+

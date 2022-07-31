@@ -14,6 +14,7 @@ function Profile() {
     const { id } = useParams();
     console.log(id);
 
+  //retrieve user info
     useEffect(() => {
         const data = async () => {
             const response = await fetch(`http://127.0.0.1:8000/api/profile/${id}`)
@@ -23,6 +24,8 @@ function Profile() {
         }
         data()
     }, [update])
+
+  //update user info
 
     const updateHandeler = (e) => {
         e.preventDefault();
@@ -108,37 +111,7 @@ function Profile() {
                         </div>
 
                         <hr class="m-0" />
-                        {/* <div class="profile-info-general p-4">
-                <h6 class="mb-3">General Information</h6>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td><strong>JOB:</strong></td>
-                            <td>
-                                <p class="text-muted mb-0">Web Developer</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>POSITION:</strong></td>
-                            <td>
-                                <p class="text-muted mb-0">Team Manager</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>STUDIED:</strong></td>
-                            <td>
-                                <p class="text-muted mb-0">Computer Science</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>LAST SEEN:</strong></td>
-                            <td>
-                                <p class="text-muted mb-0">Yesterday 8:00 AM</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> */}
+
 
                         <hr class="m-0" />
                     </div>
