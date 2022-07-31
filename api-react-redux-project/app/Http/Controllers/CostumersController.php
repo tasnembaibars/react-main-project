@@ -14,26 +14,26 @@ class CostumersController extends Controller
 
     //
 
-    
+
     public function registerAPI(Request $request)
     {
 
-       
+
 
       $validator = Validator:: make($request->all(),
-      
+
       [
         'name' => 'required',
         'email' => 'required|unique:costumers,email',
         'password' => 'required|min:8',
       ],
-      
+
       );
 
            if ($validator->fails()) {
              return response()->json(['errors' => $validator->errors()->all()]);
            }
-           
+
 
           // $costumer = Costumers::create($request->all());
 
@@ -50,7 +50,7 @@ class CostumersController extends Controller
 
     public function loginAPI(Request $request)
     {
-      
+
          $validator = Validator::make(
              $request->all(),
              [
@@ -65,22 +65,22 @@ class CostumersController extends Controller
 
         $user = Costumers::where('email', request('email'))->first();
 
-   
+
          if (!$user || !Hash::check($request->input('password'), $user->password)) {
              return response()->json([
                  'errors' => ['Email or Password is incorrect']
             ]);
          }
         return response($user, 201);
-        
-       
+
+
     }
 
     //view user data in profile
     public function index($id)
     {
       return Costumers::find($id);
-     
+
     }
 
 
@@ -92,31 +92,50 @@ class CostumersController extends Controller
     //     'password',
 
     //     ]);
-  
-        
+
+
     //     $User->name=$request->name;
     //      $User->email=$request->email;
     //      $User->password=$request->password;
-       
-    //     $User->save(); 
+
+    //     $User->save();
     // }
 
 
     public function edit($id)
     {
         return Costumers::find($id);
-  
+
          }
 
 
 
    public function update(Request $request,$id)
          {
+
+
+            $singles=Costumers::find($id);
+
+            if($singles->picture){
+                $filepath=$singles->picture ;
+            }else{
+                if ($request->file('file')) {
+                    $filepath = $request->file('file')->store('products');
+                } else {
+                    $filepath = null;
+                }
+
+            }
+
+
+
+
              $user=Costumers::find($id);
              $user->update([
-             'name'=>$request->input('name'),
-             'email'=>$request->input('email'),
-             'password'=>$request->input('password'),
+             'name'=>request('name'),
+             'email'=>request('email'),
+             'password'=>request('password'),
+             'picture' => $filepath
          ]);
          $user->save();
          return $user;
@@ -125,66 +144,165 @@ class CostumersController extends Controller
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       function index1()
       {
           return Costumers::all();
       }
-  
+
       function single1($id)
       {
           return Costumers::firstWhere('id', $id);
       }
-  
-  
-  
+
+
+
       // Create (POST) function
       function store1(Request $request)
       {
-          //validation 
+          //validation
           // request()->validate([
           //     'title' => 'required',
           //     'content' => 'required'
           // ]);
-  
+
           //create command
-  
-  
-          
+
+
+
           return Costumers::create([
               'name' => request('name'),
               'email' => request('email'),
               'password' => request('password'),
               'picture' => request('picture')
-  
+
           ]);
       }
-  
-  
-  
+
+
+
       // Update (PUT) function
       function update1(Costumers $costumer)
       {
-  
-  
+
+
           return $costumer->update([
               'name' => request('name'),
               'email' => request('email'),
               'password' => request('password'),
-  
+
           ]);
-  
-  
+
+
           // return $product->update([
           //     'title' => request('name'),
           //     'content' => request('content')
-  
+
           // ]);
-  
-  
+
+
       }
-  
-  
-  
+
+
+
       // Delete (DELETE) function
       function destroy1(Costumers $costumer)
       {
@@ -192,4 +310,3 @@ class CostumersController extends Controller
       }
 
 
-}

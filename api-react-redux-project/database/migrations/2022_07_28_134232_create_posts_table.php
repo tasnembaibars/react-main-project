@@ -18,8 +18,6 @@ class CreatePostsTable extends Migration
             $table->timestamp('Date')->useCurrent();
             $table->text('post');
             $table->integer('rule')->default(0);
-            $table->integer('likes')->default(0);
-
             $table->foreignId('costumer_id')->nullable()->constrained('costumers');
             $table->timestamps();
         });

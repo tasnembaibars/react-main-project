@@ -11,143 +11,6 @@ class ServicesController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function index()
     {
         return Services::all();
@@ -163,7 +26,7 @@ class ServicesController extends Controller
     // Create (POST) function
     function store(Request $request)
     {
-        //validation 
+        //validation
         // request()->validate([
         //     'title' => 'required',
         //     'content' => 'required'
@@ -201,10 +64,12 @@ class ServicesController extends Controller
 
 
 
+
         return Services::create([
             'title' => request('title'),
             'price' => request('price'),
             'description' => request('description'),
+            'picture' => request('picture'),
             'categories_id' => request('categories_id'),
             'picture' => $filepath,
             'picture_two' => $filepath2,

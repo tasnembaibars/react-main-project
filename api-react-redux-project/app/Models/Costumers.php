@@ -13,6 +13,7 @@ class Costumers extends Model
         'name',
         'email',
         'phone',
-        'password'	
+        'password',
+        'picture'
     ];
 }

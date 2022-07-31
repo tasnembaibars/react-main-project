@@ -86,7 +86,7 @@ const NavBar = () => {
 
                                             </li>
                                             <li class="menu-item-has-children">
-                                                <NavLink to="/post" >Posts</NavLink>
+                                                <NavLink to="/post2" >Posts</NavLink>
                                             </li>
                                             <li class="menu-item-has-children">
 

@@ -4,31 +4,46 @@ import axios from "axios";
 import { useParams } from 'react-router';
 
 function Singlepost() {
-    // const [post, setPost] = useState('');
-    // const [rule , setRule] = useState(0);
-    // const [likesP , setLikesP] = useState(0);
-    // const [costumer_id , setCostumer_id] = useState(1);
-    const { id } = useParams();
-    const [posts, setPosts] = useState([]);
 
+    const { id } = useParams();
+
+const [posts, setPosts] = useState([]);
+//  const [user_id, setuser_id] = useState({});
+//  const [post_id, setpost_id] = useState({});
+//  const [likes, setlike] = useState(0);
+//  setpost_id(id);
+//  setuser_id(1);
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/singlepost/${id}`)
+        fetch(`http://127.0.0.1:8000/api/post/${id}`)
             .then((response) => response.json())
             .then(data => {
                 setPosts(data);
-             
                 console.log(data);
             });
-            // fetch(`http://127.0.0.1:8000/api/singlepost/${id}`)
-            // .then((response) => response.json())
-            // .then(data => {
-            //     setPosts(data);
-            //     setLoad(false);
-            //     console.log(data);
-            // });
+   
+           
     }, []);
 
-    
+    // //like
+    // const [likeactive, setlikeactive] = useState(false);
+  
+
+    // const like = () => {
+        
+    //     if (likeactive) {
+    //         setlikeactive(false);
+    //         setlike(likes - 1);
+    //     }
+    //     else {
+    //         setlikeactive(true);
+    //         setlike(likes + 1);
+    //     }
+    //     axios.put(`https://62c47caf7d83a75e39fb0ca3.mockapi.io/likes/${post_id}`, {
+    //         likes
+    //     })
+    // }
+
+    // //like
 
    
     return (
@@ -52,7 +67,7 @@ function Singlepost() {
                                 <p>{posts.post}</p>
                                 <div className="socials">
                                     <ul className="social-link">
-                                       
+                                    {/* <button type="submit" name='like' className={[likeactive ? 'active-like' : null, 'button'].join(' ')} onClick={like} style={{ border: "none" }} ><i class='far fa-heart'></i> {likes} Likes</button> */}
                                         <button type="submit" name='like' style={{ border: "none" }} ><i class="fa fa-comment-o" > 35 Comments </i></button>
                                     </ul>
                                     <div class="comments-area">
