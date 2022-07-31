@@ -5,25 +5,25 @@ const Contact = () => {
         
         <div class="page-wrapper">
       
-            <section class="wpo-page-title">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-xs-12">
-                            <div class="wpo-breadcumb-wrap">
-                                <h2>Contact</h2>
-                                <ol class="wpo-breadcumb-wrap">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>Contact</li>
-                                </ol>
-                            </div>
+          
+            {/* <!-- end page-title --> */}
+ <section className="wpo-page-title"> 
+            {/* <div className="container">
+                <div className="row">
+                    <div className="col col-xs-12">
+                        <div className="wpo-breadcumb-wrap">
+                            <h2>About</h2>
+                            <ol className="wpo-breadcumb-wrap">
+                                <li><a href="index.html">Home</a></li>
+                                <li>About</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
-                {/*  <!-- end row --> */}
-                {/*  <!-- end container --> */}
-            </section>
-            {/* <!-- end page-title --> */}
-
+                 <!-- end row -->
+            </div> */}
+             {/* <!-- end container --> */}
+       </section>
             {/* <!-- start wpo-contact-pg-section --> */}
             <section class="wpo-contact-pg-section section-padding">
                 <div class="container">
@@ -32,7 +32,7 @@ const Contact = () => {
                             <div class="office-info">
                                 <div class="row">
                                     <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <div class="office-info-item">
+                                        <div class="office-info-item" style={{backgroundColor:"#88a6bf3d"}}>
                                             <div class="office-info-icon">
                                                 <div class="icon">
                                                     <i class="fi flaticon-maps-and-flags"></i>
@@ -45,7 +45,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <div class="office-info-item">
+                                        <div class="office-info-item" style={{backgroundColor:"#88a6bf3d"}}>
                                             <div class="office-info-icon">
                                                 <div class="icon">
                                                     <i class="fi flaticon-email"></i>
@@ -59,7 +59,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
-                                        <div class="office-info-item">
+                                        <div class="office-info-item" style={{backgroundColor:"#88a6bf3d"}}>
                                             <div class="office-info-icon">
                                                 <div class="icon">
                                                     <i class="fi flaticon-phone-call"></i>

@@ -14,7 +14,7 @@ function Index() {
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" style={{backgroundImage: `url("slider/8.jpg")`}}>
+                            <div class="slide-inner slide-bg-image" style={{backgroundImage: `url("slider/10.jpg")`}}>
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -27,7 +27,7 @@ function Index() {
                                         </div>
                                         <div class="clearfix"></div>
                                         <div data-swiper-parallax="500" class="slide-btns">
-                                            <a href="about.html" class="theme-btn">Discover More</a>
+                                            <a href="/about" class="theme-btn">Discover More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -76,9 +76,9 @@ function Index() {
                             </div> 
                         </div> 
                     </div>
-                    <div class="swiper-pagination"></div>
+                    {/* <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev"></div> */}
                 </div>
             </section>
 
@@ -271,26 +271,27 @@ function Index() {
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/img-4.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Maria & Robin</a></h4>
-                                                <span>Austria- Feb 2019</span>
+                                                <h4><a href="/shop">Maria & Rabea</a></h4>
+                                                <span>Amman- Feb 2021</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/33.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/19.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Rose & Harry</a></h4>
-                                                <span>Austria- Jan 2020</span>
+                                                <h4><a href="/shop">Renad & Hazem</a></h4>
+                                                <span>Irbid- Jan 2020</span>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="grid">
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/3.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Aliana & David</a></h4>
-                                                <span>Austria- Mar 2020</span>
+                                                <h4><a href="/shop">Alia & Raad</a></h4>
+                                                <span>Amman- Mar 2022</span>
                                             </div>
                                         </div>
                                     </div>
@@ -298,8 +299,8 @@ function Index() {
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/4.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Aliza & Ken</a></h4>
-                                                <span>Austria- April 2020</span>
+                                                <h4><a href="/shop">Ali & Kenda</a></h4>
+                                                <span>Amman- April 2020</span>
                                             </div>
                                         </div>
                                     </div>
@@ -307,17 +308,17 @@ function Index() {
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/16.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Michel & Dianee</a></h4>
-                                                <span>Austria- May 2020</span>
+                                                <h4><a href="/shop">Mira & Mazen</a></h4>
+                                                <span>Irbid- May 2021</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/32.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/57.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Maria & Noor</a></h4>
-                                                <span>Amman- Jul 2021</span>
+                                                <h4><a href="/shop">Maria & Noor</a></h4>
+                                                <span>Amman- Jan 2022</span>
                                             </div>
                                         </div>
                                     </div>
@@ -618,9 +619,9 @@ function Index() {
             </div>
         </section>
            
-            <section class="wpo-banner-section">
+            {/* <section class="wpo-banner-section">
                 <h4>There is only one happiness in this life, to love and be loved</h4>
-            </section>
+            </section> */}
 
             {/* <section class="wpo-contact-section section-padding">
                 <div class="container">
@@ -705,7 +706,7 @@ function Index() {
                     <div class="row">
                         <div class="wpo-section-title">
                             <span>News</span>
-                            <h2>From Our Blog</h2>
+                            <h2>Messages From Our Brides</h2>
                             <div class="section-title-img">
                                 <img src="assets/images/section-title.png" alt=""/>
                             </div>
@@ -716,15 +717,15 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-1.jpg" alt=""/>
+                                        <img src="assets/images/contact/4.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
                                             <li>By <a href="blog-single.html">Loura Sweety</a></li>
                                             <li>25 Sep 2021</li>
                                         </ul>
-                                        <h2><a href="blog.html">Best wedding gift you may
-                                                like & choose.</a>
+                                        <h2><a href="blog.html">Best Engagement gift you may
+                                                recieve is to have a good planner for your party.</a>
                                         </h2>
                                     </div>
                                 </div>
@@ -732,7 +733,7 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-2.jpg" alt=""/>
+                                        <img src="assets/images/contact/5.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
@@ -747,14 +748,14 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-3.jpg" alt=""/>
+                                        <img src="assets/images/contact/1.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
                                             <li>By <a href="blog-single.html">Aliana de</a></li>
                                             <li>21 Sep 2021</li>
                                         </ul>
-                                        <h2><a href="blog.html">Top 10 wedding fresh flower decoration idea.</a>
+                                        <h2><a href="blog.html">Best Cutlery arrangement you might recieve .</a>
                                         </h2>
                                     </div>
                                 </div>
