@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Posts;
+use App\Models\Comments_post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -47,6 +48,9 @@ class PostsController extends Controller
          return $post;
       }
       public function viewPost($id){
-        return Posts::all()->where('id',$id);
+        return Posts::find($id);
+       }
+       public function viewComments($id){
+        return Comments_post::all()->where('post_id',$id);
        }
 }

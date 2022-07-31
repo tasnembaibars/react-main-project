@@ -80,7 +80,7 @@ Route::get('update/{id}',[PostsController::class,'update']);
 Route::get('/userposts/{id}',[PostsController::class,'view']);
 
 Route::put('/singlepost/{id}',[PostsController::class,'viewPost']);
-
+Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 // Route::get('images', [PostsController::class, 'index'])->name('images');
 // Route::post('images', [PostsController::class, 'upload'])->name('images');
 // Route::post('/post',[CommentsPostController::class,'store']);
