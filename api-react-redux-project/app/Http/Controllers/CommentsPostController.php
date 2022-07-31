@@ -37,7 +37,34 @@ class CommentsPostController extends Controller
 
     }
 
-   
+        //select comment data/id
+   public function edit($id){
+    return Comments_post::find($id);
+  
+  
+     }
+  
+     public function update(Request $request,$id)
+     {
+         $comment=Comments_post::find($id);
+         $comment->update([
+         'comment'=>$request->input('comment'),
+         'costumer_id'=>$request->input('costumer_id'),
+         'post_id'=>$request->input('post_id'),
+         
+     ]);
+     $comment->save();
+     return $comment;
+  }
+  public function index($id){
+    return Comments_post::find($id);
+
+  }
+
+  public function delete(Comments_post $comment)
+      {
+          return  $comment->delete();
+      }
 
     
 }

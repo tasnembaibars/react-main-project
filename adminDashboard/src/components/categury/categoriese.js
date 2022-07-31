@@ -43,20 +43,21 @@ const Categoriese = () => {
     
             axios.post(`http://127.0.0.1:8000/api/categories`, {
 
-                name: name,
+                name: name
 
-            }).then(() => {
-                getData();
-            })
-            setName('')
-
+            }).then(response => { 
+                console.log(response)
+             })
+             .catch(error => {
+               console.log(error)
+             });
 
             let successAdd = `         <div className="alert alert-success" role="alert">
                 add user success 
             </div>`
         }
 
-
+console.log(name)
     return (
         <>
 
@@ -65,7 +66,8 @@ const Categoriese = () => {
                     <div className='col'></div>
                     <div className='col-11'>
 
-                        {successAdd ? successAdd : ''}
+                        
+                        <div>{successAdd ? successAdd : ''}</div>
 
                         <form onSubmit={addUser}>
                             <div className="form-group mt-5">
@@ -101,7 +103,7 @@ const Categoriese = () => {
 
                                         <td>
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
-                                            <button onClick={() => usee(`/admin/services/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
+                                            <button onClick={() => usee(`/admin/categoriese/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
                                         </td>
 
 
