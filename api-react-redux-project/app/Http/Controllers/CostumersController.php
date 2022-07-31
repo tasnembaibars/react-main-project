@@ -177,9 +177,6 @@ class CostumersController extends Controller
 
 
 
-
-
-
       //selects users data for comments page
       public function view($id){
        return Costumers::all()->where('id',$id);
