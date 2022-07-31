@@ -23,7 +23,9 @@ function Single() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ comment: comment, costumer_id, post_id }),
 
-        });
+        })
+        
+        ;
         if (response.ok) {
             // window.alert("comment added successfully")
             swal({
@@ -112,6 +114,8 @@ function Single() {
           .then(function() {
             window.location.href="/post";
         });
+        
+        id.preventDefault();
 
      }
 

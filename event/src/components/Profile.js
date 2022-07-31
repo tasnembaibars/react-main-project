@@ -200,7 +200,7 @@ console.log(selectedFile,name,email,pass ,picture)
                                     <div class="stream-post">
 
                                         <div class="sp-author">
-                                            <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" /></a>
+                                            <a href="#" class="sp-author-avatar"><img src={c.picture} alt="" /></a>
                                             <h6 class="sp-author-name"><a href="#">{c.name}</a></h6></div>
                                         <div class="sp-content">
                                             <div class="sp-info"></div>
