@@ -1,5 +1,26 @@
 import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 const Contact = () => {
+
+    const [name, setname] = useState("");
+    const [email, setemail] = useState("");
+    const [message, setmessage] = useState("");
+ 
+
+    
+    const contact = async (e) => {
+        e.preventDefault();
+        axios.post(`https://62e6b4710e5d74566aeb5bb1.mockapi.io/contact`, {
+            name,
+            email,
+            message
+
+        });
+     
+      window.alert('add')
+    }
+
     return ( 
         <>
         
@@ -76,24 +97,23 @@ const Contact = () => {
                             </div>
                             <div class="wpo-contact-title">
                                 <h2>Have Any Question?</h2>
-                                <p>It is a long established fact that a reader will be distracted
-                                    content of a page when looking.</p>
+                               
                             </div>
-                            <div class="wpo-contact-form-area">
-                                <form method="post" class="contact-validation-active" id="contact-form-main">
+                            <div class="wpo-contact-form-area" >
+                                <form  class="contact-validation-active" id="contact-form-main">
                                     <div>
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name*" />
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name*" onChange={(e) => setname(e.target.value)} required/>
                                     </div>
                                     <div>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*" />
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*" onChange={(e) => setemail(e.target.value)} required/>
                                     </div>
                                   
                                     
                                     <div class="fullwidth">
-                                        <textarea class="form-control" name="note" id="note" placeholder="Message..."></textarea>
+                                        <textarea class="form-control" name="message" id="note" placeholder="Message..." onChange={(e) => setmessage(e.target.value)} required></textarea>
                                     </div>
                                     <div class="submit-area">
-                                        <button type="submit" class="theme-btn-s4">Get in Touch</button>
+                                        <button type="submit" class="theme-btn-s4" onClick={contact}>Get in Touch</button>
                                         <div id="loader">
                                             <i class="ti-reload"></i>
                                         </div>
@@ -122,109 +142,7 @@ const Contact = () => {
 
 
 
-{/* 
-            <footer class="wpo-site-footer">
-                <div class="wpo-upper-footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="widget about-widget">
-                                    <div class="logo widget-title">
-                                        <img src="assets/images/logo.png" alt="blog" />
-                                    </div>
-                                    <p>Welcome and open yourself to your truest love this year with us! With the Release
-                                        Process</p>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="widget link-widget">
-                                    <div class="widget-title">
-                                        <h3>Information</h3>
-                                    </div>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li><a href="blog.html">Latest News</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                        <li><a href="service.html">Our Services</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="widget wpo-service-link-widget">
-                                    <div class="widget-title">
-                                        <h3>Contact </h3>
-                                    </div>
-                                    <div class="contact-ft">
-                                        <p>Would you have any enquiries.Please feel free to contuct us</p>
-                                        <ul>
-                                            <li><i class="fi flaticon-email"></i>loveme@gmail.com</li>
-                                            <li><i class="fi flaticon-phone-call"></i>+888 (123) 869523</li>
-                                            <li><i class="fi flaticon-maps-and-flags"></i>New York – 1075 Firs Avenue
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
-                                <div class="widget instagram">
-                                    <div class="widget-title">
-                                        <h3>Instagram</h3>
-                                    </div>
-                                    <ul class="d-flex">
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/1.jpg"
-                                            alt="" /></a></li>
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/2.jpg"
-                                            alt="" /></a></li>
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/3.jpg"
-                                            alt="" /></a></li>
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/4.jpg"
-                                            alt="" /></a></li>
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/5.jpg"
-                                            alt="" /></a></li>
-                                        <li><a href="portfolio-single.html"><img src="assets/images/instragram/6.jpg"
-                                            alt="" /></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpo-lower-footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col col-xs-12">
-                                <p class="copyright"> &copy; 2021 Loveme Template. Design By <a
-                                    href="index.html">wpOceans</a>. All Rights Reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer> */}
-            {/* <!-- end of wpo-site-footer-section --> */}
 
             {/* <!-- color-switcher --> */}
             <div class="color-switcher-wrap">
