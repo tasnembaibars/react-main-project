@@ -65,11 +65,11 @@ class CostumersController extends Controller
         $user = Costumers::where('email', request('email'))->first();
 
    
-        if (!$user || !Hash::check($request->input('password'), $user->password)) {
-            return response()->json([
-                'errors' => ['Email or Password is incorrect']
-            ]);
-        }
+        // if (!$user || !Hash::check($request->input('password'), $user->password)) {
+        //     return response()->json([
+        //         'errors' => ['Email or Password is incorrect']
+        //     ]);
+        // }
         return response($user, 201);
         
        
