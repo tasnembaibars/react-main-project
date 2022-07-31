@@ -19,9 +19,9 @@ function Posts2() {
                 setLoad(false);
                 console.log(data);
             });
+            
     }, []);
-
-
+    
 
     //  start Add post
     const add_Posts = async (e) => {
@@ -42,37 +42,7 @@ function Posts2() {
 
     //  end Add post
 
-    //like
-    const [likeactive, setlikeactive] = useState(false);
-    const [likes, setlike] = useState(0);
-
-    const like = (id) => {
-        fetch(`http://127.0.0.1:8000/api/update/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json",
-            "Authorization":"Bearer" + localStorage.getItem("jwt")
-        },
-            body: JSON.stringify({ likes: likes }),
-        }).then(res=>res.json())
-        .then(result=>{
-            console.log(result)
-        })
-        if (likeactive) {
-            setlikeactive(false);
-            setlike(likes - 1);
-        }
-        else {
-            setlikeactive(true);
-            setlike(likes + 1);
-        }
-        // axios.put(`http://127.0.0.1:8000/api/update/${id}`, {
-        //     likes
-        // })
-      
-
-    }
-
-    //like
+    
 
     return (
         <>
@@ -103,7 +73,7 @@ function Posts2() {
 
                     <h3 class="comments-title">Posts</h3>
                     {Load && <h1>Loading .... </h1>}
-                    {posts && posts.map(m => (
+                    {posts && posts.map(p => (
                         <div className="author-box">
                             <div className="author-avatar">
                                 <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>
@@ -111,13 +81,13 @@ function Posts2() {
                             <div className="author-content">
                                 {/* <a href="#" className="author-name">Author: Jenny Watson</a> */}
                                 <div class="comments-meta">
-                                    <h4>Robert Sonny <span class="comments-date">{m.Date}</span></h4>
+                                    <h4>Robert Sonny <span class="comments-date">{p.Date}</span></h4>
                                 </div>
-                                <p>{m.post}</p>
+                                <p>{p.post}</p>
                                 <div className="socials">
                                     <ul className="social-link">
-                                        <button type="submit" name='like' className={[likeactive ? 'active-like' : null, 'button'].join(' ')} onClick={() => like(m.id)} style={{ border: "none" }} ><i class='far fa-heart'></i> {likes} Likes</button>
-                                        <button type="submit" name='like' style={{ border: "none" }} >  <NavLink  to={`/Singlepost/${m.id}`}  style={{  textDecoration:" none" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
+                                    
+                                        <button type="submit" name='like' style={{ border: "none" }} >  <NavLink  to={`/post/${p.id}`}  style={{  textDecoration:" none" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
 
                                         {/*  */}
                                         {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}

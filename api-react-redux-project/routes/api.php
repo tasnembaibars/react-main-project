@@ -60,10 +60,10 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::get('/comments',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
-Route::put('/comments_post/{id}',[CommentsPostController::class,'update']);
-Route::get('/comments_post/{id}',[CommentsPostController::class,'edit']);
+Route::put('/comment/{id}',[CommentsPostController::class,'update']);
+Route::get('/comment/{id}',[CommentsPostController::class,'edit']);
 Route::delete('/comment/{comment}',[CommentsPostController::class,'delete']);
-Route::get('/comment/{id}',[CommentsPostController::class,'index']);
+Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 
 
 
@@ -79,8 +79,8 @@ Route::get('update/{id}',[PostsController::class,'update']);
 
 Route::get('/userposts/{id}',[PostsController::class,'view']);
 
-Route::put('/singlepost/{id}',[PostsController::class,'viewPost']);
-
+Route::get('/post/{id}',[PostsController::class,'viewP']);
+Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 // Route::get('images', [PostsController::class, 'index'])->name('images');
 // Route::post('images', [PostsController::class, 'upload'])->name('images');
 // Route::post('/post',[CommentsPostController::class,'store']);

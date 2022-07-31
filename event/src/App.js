@@ -19,7 +19,7 @@ import CheckOut from './components/Checkout';
 import Singlepost from './components/Singlepost';
 import { createContext, useState } from 'react';
 export const userContext = createContext();
-
+// import Booking from './components/Booking';
 function App() {
   
   const [userData, setUserData] = useState([]);
@@ -32,21 +32,21 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Index />} />
-    <Route path="/Singlepost/:id" element={<Singlepost />} />
+    <Route path="/post/:id" element={<Singlepost />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile/:id" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
-      <Route path="/book" element={<Booking />} />
+      {/* <Route path="/book" element={<Booking />} /> */}
 
 
 
 
 {/* routes */}
 <Route path="/about" element={<About />} />
-<Route path="/post" element={<Single />} />
+<Route path="/post2" element={<Single />} />
 <Route path="/shop" element={<Shop />} />
 
     </Routes>
