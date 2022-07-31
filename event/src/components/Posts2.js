@@ -19,9 +19,9 @@ function Posts2() {
                 setLoad(false);
                 console.log(data);
             });
-            
+
     }, []);
-    
+
 
     //  start Add post
     const add_Posts = async (e) => {
@@ -42,75 +42,105 @@ function Posts2() {
 
     //  end Add post
 
-    
+
 
     return (
         <>
+            <div className="page-wrapper">
+                <section className="wpo-blog-single-section wpo-blog-single-left-sidebar-section section-padding">
+                    <div class="container">
+                        <div class="row">
+                            
 
-            <section class="wpo-blog-single-section section-padding">
-                <div class="container">
-                    <div class="row">
-
-
-                        <div class="comment-respond">
-                            <h3 class="comment-reply-title">Add Post</h3>
-                            <form class="comment-form" onSubmit={add_Posts}>
-
-                                {/* <input placeholder="Website" type="url"/> */}
-                                <div class="form-textarea">
-                                    <textarea id="comment" placeholder="Write Your Comments..." onChange={(e) => setPost(e.target.value)} name="post" value={post}></textarea>
+                                    <a href="#comment" style={{textDecoration: 'none',color:"#5495ca",fontSize:"20px"}}>Add Post <span > <img src="https://img.icons8.com/pastel-glyph/64/000000/circled-chevron-down.png" width="40" height="40"/></span></a>
+                               
+                            <div className="post format-standard-image">
+                                <div className="entry-media">
+                                    {/* <img src="assets/images/blog-details/1.jpeg" alt /> */}
                                 </div>
-                                <div class="form-submit">
-                                    <button id="submit" value="Post Comment" type="submit" >
-                                        Add Post
-                                    </button>
+                                <div className="entry-meta">
+                                    {/* <ul>
+                                            <li><i className="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li>
+                                            <li><i className="fi flaticon-comment-white-oval-bubble"></i> Comments 35 </li>
+                                            <li><i className="fi flaticon-calendar"></i> 24 Jun 2021</li>
+                                        </ul> */}
                                 </div>
-                            </form>
+                                <h2>Share  your experience with Nay .</h2>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.</p>
+                                <blockquote>
+                                    Combined with a handful of model sentence structures, generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                </blockquote>
+                                <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself,</p>
+
+                                <div className="gallery">
+                                    <div>
+                                        <img src="assets/images/blog-details/1.jpeg" />
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/blog-details/2.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-respond" id="comment">
+                                <h3 class="comment-reply-title">Add your story</h3>
+                                <form class="comment-form" onSubmit={add_Posts}>
+
+                                    {/* <input placeholder="Website" type="url"/> */}
+                                    <div class="form-textarea">
+                                        <textarea placeholder="Write Your Story with us..." onChange={(e) => setPost(e.target.value)} name="post" value={post}></textarea>
+                                    </div>
+                                    <div class="form-submit">
+                                        <button id="submit" value="Post " type="submit" style={{ border: "none", borderRadius: "23%", background: "#86a0b6", width: "80px", height: "50px", marginBottom: "20px" }} >
+                                            Add Post
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <br />
+                        <br /><br /><br /><br />
+
+                        <h3 class="comments-title">Posts</h3>
+                        {Load && <h1>Loading .... </h1>}
+                        {posts && posts.map(p => (
+                            <div className="author-box">
+                                <div className="author-avatar">
+                                    <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>
+                                </div>
+                                <div className="author-content">
+                                    {/* <a href="#" className="author-name">Author: Jenny Watson</a> */}
+                                    <div class="comments-meta">
+                                        <h4>Robert Sonny <span class="comments-date">{p.Date}</span></h4>
+                                    </div>
+                                    <p>{p.post}</p>
+                                    <div className="socials">
+                                        <ul className="social-link">
+
+                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/post/${p.id}`} style={{ textDecoration: " none" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
+
+                                            {/*  */}
+                                            {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}
+                                            {/* <i class='far fa-heart' style='font-size:48px;color:red'></i> */}
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        )
+                        )
+                        }
+
                     </div>
-                    <br />
-                    <br /><br /><br /><br />
-
-                    <h3 class="comments-title">Posts</h3>
-                    {Load && <h1>Loading .... </h1>}
-                    {posts && posts.map(p => (
-                        <div className="author-box">
-                            <div className="author-avatar">
-                                <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>
-                            </div>
-                            <div className="author-content">
-                                {/* <a href="#" className="author-name">Author: Jenny Watson</a> */}
-                                <div class="comments-meta">
-                                    <h4>Robert Sonny <span class="comments-date">{p.Date}</span></h4>
-                                </div>
-                                <p>{p.post}</p>
-                                <div className="socials">
-                                    <ul className="social-link">
-                                    
-                                        <button type="submit" name='like' style={{ border: "none" }} >  <NavLink  to={`/post/${p.id}`}  style={{  textDecoration:" none" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
-
-                                        {/*  */}
-                                        {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}
-                                        {/* <i class='far fa-heart' style='font-size:48px;color:red'></i> */}
-                                    </ul>
-                                   
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    )
-                    )
-                    }
-
-                </div>
 
 
 
 
 
-            </section >
+                </section >
+            </div>
         </>
 
 

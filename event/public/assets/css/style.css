@@ -220,7 +220,7 @@ img {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 20px 0;
 }
 @media (max-width: 991px) {
   .section-padding {
@@ -10561,11 +10561,11 @@ static-hero-s4
 .wpo-blog-single-section .comment-respond form input,
 .wpo-blog-single-section .comment-respond form textarea {
   background-color: #fff;
-  width: 100%;
+  width: 60%;
   height: 55px;
   border: 1px solid #a4adbe;
   padding: 6px 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   outline: 0;
   border-radius: 30px;
   box-shadow: none;
@@ -10583,7 +10583,7 @@ static-hero-s4
   }
 }
 .wpo-blog-single-section .comment-respond form textarea {
-  height: 220px;
+  height: 120px;
   padding: 15px;
 }
 @media (max-width: 991px) {

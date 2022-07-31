@@ -11,7 +11,7 @@ const Contact = () => {
 
     
     const contact = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         axios.post(`https://62e6b4710e5d74566aeb5bb1.mockapi.io/contact`, {
             name,
             email,
@@ -20,7 +20,7 @@ const Contact = () => {
         });
      
     //   window.alert('add')
-  
+     
         swal({
             title: "Good job!",
             icon: "success",
