@@ -227,7 +227,7 @@ class CostumersController extends Controller
           return Costumers::all();
       }
   
-      function single($id)
+      function single1($id)
       {
           return Costumers::firstWhere('id', $id);
       }

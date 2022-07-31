@@ -148,7 +148,7 @@ class CategoriesController extends Controller
 
 
 
-    function index()
+    public function index()
     {
         return Categories::all();
     }
@@ -161,26 +161,26 @@ class CategoriesController extends Controller
 
 
     // Create (POST) function
-    function store(Request $request)
+    public function store(Request $request)
     {
         // validation 
-        request()->validate([
+        // request()->validate([
 
-            'name' => 'required|max:100'
+        //     'name' => 'required|max:100'
 
-        ]);
+        // ]);
 
 
         //create query
         return Categories::create([
-            'name' => request('name')
+            'name' => $request->input('name')
         ]);
     }
 
 
 
     // Update (PUT) function
-    function update(Categories $category)
+    public function update(Categories $category)
     {
 
         request()->validate([
@@ -195,7 +195,7 @@ class CategoriesController extends Controller
 
 
     // Delete (DELETE) function
-    function destroy(Categories $category)
+    public function destroy(Categories $category)
     {
         return  $category->delete();
     }

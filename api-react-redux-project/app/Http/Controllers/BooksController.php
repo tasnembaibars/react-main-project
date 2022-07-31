@@ -151,7 +151,7 @@ class BooksController extends Controller
      function index1()
      {
  
-         return Books::all();;
+         return Books::all();
      }
  
      function single1($id)
@@ -166,9 +166,9 @@ class BooksController extends Controller
      {
          //validation 
          request()->validate([
-             'date' => 'required',
-             'address' => 'required',
-             'date' => 'required',
+            //  'date' => 'required',
+            //  'hour' => 'required',
+            //  'date' => 'required',
              'book_state' => 'required',
              'service_id' => 'required',
              'costumer_id' => 'required'
@@ -177,9 +177,9 @@ class BooksController extends Controller
          //create command
          return Books::create([
              'date' => request('date'),
-             'user_phone' => request('user_phone'),
-             'address' => request('address'),
-             'sub_email' => request('sub_email'),
+             'phone' => request('phone'),
+             'hour' => request('hour'),
+             'email' => request('email'),
              'book_state' => request('book_state'),
              'service_id' => request('service_id'),
              'costumer_id' => request('costumer_id')
@@ -204,7 +204,7 @@ class BooksController extends Controller
          //validation 
          request()->validate([
              'date' => 'required',
-             'address' => 'required',
+             'hour' => 'required',
              'date' => 'required',
              'book_state' => 'required',
              'service_id' => 'required',
@@ -215,9 +215,9 @@ class BooksController extends Controller
          return $book->update([
  
              'date' => request('date'),
-             'user_phone' => request('user_phone'),
-             'address' => request('address'),
-             'sub_email' => request('sub_email'),
+             'phone' => request('phone'),
+             'hour' => request('hour'),
+             'semail' => request('email'),
              'book_state' => request('book_state'),
              'service_id' => request('service_id'),
              'costumer_id' => request('costumer_id')
