@@ -44,7 +44,7 @@ const NavBar = () => {
                 <div class="wpo-site-header">
                     <nav class="navigation navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <div class="row align-items-center">
+                            <div class="row align-items-right">
                                 <div class="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
                                     <div class="mobail-menu">
                                         <button type="button" class="navbar-toggler open-btn">
@@ -58,10 +58,10 @@ const NavBar = () => {
                                 <div class="col-lg-2 col-md-6 col-6">
                                     <div class="navbar-header">
                                         <a class="navbar-brand" href="/"><img src="assets/images/logo.png"
-                                            alt="" /></a>
+                                            alt="" style={{marginTop:"15px"}}/></a>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-md-1 col-1">
+                                <div class="col-lg-10 col-md-1 col-1">
                                     <div id="navbar" class="collapse navbar-collapse navigation-holder">
                                         <button class="menu-close"><i class="ti-close"></i></button>
                                         <ul class="nav navbar-nav mb-2 mb-lg-0">
@@ -86,14 +86,14 @@ const NavBar = () => {
 
                                             </li>
                                             <li class="menu-item-has-children">
-                                                <NavLink to="/post" >Posts</NavLink>
+                                                <NavLink to="/post2" >Posts</NavLink>
                                             </li>
                                             <li class="menu-item-has-children">
 
                                                 <NavLink to="/contact" >Contact</NavLink>
 
                                             </li>
-                                            <li class="menu-item-has-children" style={{marginLeft:"0px"}}>
+                                            <li class="menu-item-has-children" style={{marginLeft:"220px"}}>
                                             <a className="nav-link" style={{ color: "#1a3b55", marginLeft: "10px" }}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 
                                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -133,9 +133,8 @@ const NavBar = () => {
 
                                         </ul>
 
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-2">
+                                  
+                                {/* <div class="col-lg-2 col-md-2 col-2"> */}
                                     <div class="header-right">
                                         <div class="header-search-form-wrapper">
                                             <div class="cart-search-contact">
@@ -157,7 +156,9 @@ const NavBar = () => {
                                        
 
                                     </div>
+                                    </div>
                                 </div>
+                                {/* </div> */}
                             </div>
                         </div>
                     </nav>

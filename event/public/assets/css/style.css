@@ -220,7 +220,7 @@ img {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 20px 0;
 }
 @media (max-width: 991px) {
   .section-padding {
@@ -10561,11 +10561,11 @@ static-hero-s4
 .wpo-blog-single-section .comment-respond form input,
 .wpo-blog-single-section .comment-respond form textarea {
   background-color: #fff;
-  width: 100%;
+  width: 60%;
   height: 55px;
   border: 1px solid #a4adbe;
   padding: 6px 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   outline: 0;
   border-radius: 30px;
   box-shadow: none;
@@ -10583,7 +10583,7 @@ static-hero-s4
   }
 }
 .wpo-blog-single-section .comment-respond form textarea {
-  height: 220px;
+  height: 120px;
   padding: 15px;
 }
 @media (max-width: 991px) {
@@ -10793,7 +10793,7 @@ static-hero-s4
 }
 .wpo-contact-pg-section .office-info .office-info-item {
   text-align: center;
-  box-shadow: 0px 5px 15px 0px rgba(62, 65, 159, 0.1);
+  box-shadow: 0px 5px 15px 0px #98b4cd91;
   padding: 40px;
 }
 .wpo-contact-pg-section .office-info .office-info-item .office-info-icon {
@@ -10822,7 +10822,7 @@ static-hero-s4
   background: #fff;
   box-shadow: 0px 1px 15px 0px rgba(62, 65, 159, 0.1);
   padding-bottom: 0;
-  margin-bottom: -125px;
+  margin-bottom: 25px;
   position: relative;
   z-index: 99;
 }
