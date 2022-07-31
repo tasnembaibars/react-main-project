@@ -184,6 +184,10 @@ Route::put('/singlepost/{id}',[PostsController::class,'viewPost']);
 
 
 
+
+
+
+
 ////// **** Admin Routes **** /////
 
 

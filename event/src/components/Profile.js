@@ -3,8 +3,37 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function Profile() {
+
+    const [Persons, setapi] = useState([]);
+    const getData = () => {
+        axios.get(`http://127.0.0.1:8000/api/profile/${id}`)
+            .then((res) => {
+                setapi(res.data);
+            })
+    }
+
+
+    const [selectedFile, setSelectedFile] = useState();
+    const addUser = async (e) => {
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        await fetch(`http://127.0.0.1:8000/api/profile/${id}`, {
+          method: "PUT",
+          body: formData,
+        })
+        .then((result)=>{
+            getData();
+        })
+        .catch((err)=>{
+            console.log(err);
+          
+        });
+      };
+
+   
 
     const [users, setUsers] = useState({
         name: '', email: '', phone: '', password: '', picture: ''
@@ -34,7 +63,15 @@ function Profile() {
             .then(() => setUpdate(!update))
         console.log(users)
         if (!update) {
-            window.alert('Your profile has been updated successfuly')
+           
+                swal({
+                    title: "Good job!",
+                    text: " profile updated successfully!",
+                    icon: "success",
+                    button: "ok!",
+                  })
+                 ;
+          
 
         }
     }
@@ -69,7 +106,7 @@ function Profile() {
                             <form onSubmit={updateHandeler}>
                                 <div class="profile-info-brief p-3"><img class="img-fluid user-profile-avatar" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />
                                     <div class="text-center">
-                                    <input type="file" name='picture' />
+                                    <input type="file" name='picture'  />
                                         <hr class="m-2"/>
                                     </div>
                                 </div>
