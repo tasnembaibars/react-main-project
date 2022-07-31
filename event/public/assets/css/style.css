@@ -5069,7 +5069,7 @@ static-hero-s4
   color: #002642;
   font-family: "Muli";
   text-align: center;
-  margin-top: -20px;
+  margin-top: 0px;
 }
 @media (max-width: 1200px) {
   .wpo-fun-fact-section .grid h3 + p,
@@ -5521,7 +5521,8 @@ static-hero-s4
 .wpo-cta-section-s2,
 .wpo-cta-section-s3 {
   padding: 145px 0;
-  background: url(../images/cta/bg.jpg) no-repeat center center;
+  background: url(../images/contact/1.jpg) no-repeat center center;
+  background-size: cover;
   position: relative;
   z-index: 1;
 }

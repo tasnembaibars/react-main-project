@@ -63,19 +63,34 @@ function Single() {
 
     // update comments
     const [update, setUpdate] = useState(false)
+    const [editComment, setEditComment] = useState({
+        comment:'',costumer_id:'',post_id:''
+    })
     const updateHandler = (e) => {
         e.preventDefault();
 
         setUpdate(true);
 
     }
-
+     useEffect(()=>{
+        const getComment=async()=>{
+            const response= await axios.get (`http://127.0.0.1:8000/api/comments_post/${id}`)
+            // const dbData=await response.json();
+            setEditComment(response);
+            console.log(response);
+           
+        }
+        getComment();
+    },[update])
+   
+ 
     const editHandeler = (e) => {
-        e.preventDefault();
-        axios.put(`http://127.0.0.1:8000/api/comment/${id}`, { comment: comment, costumer_id, post_id })
-            .then((res) => setUpdate(res.data))
+        // e.preventDefault();
+        axios.put(`http://127.0.0.1:8000/api/comments_post/${id}`, editComment)
+            .then((res) => setEditComment(res.data))
+            // .then(()=>setUpdate(update))
         
-        console.log(comment)
+        console.log(editComment)
         if (!update) {
             window.alert('Your comment has been updated successfuly')
 
@@ -83,6 +98,7 @@ function Single() {
 
 
     }
+
    
 
     const deleteHandeler = (id) => {
@@ -246,7 +262,7 @@ function Single() {
 
                                                                             : null}
                                                                         {update ?
-                                                                            <input name='editComment' style={{ border: "none", background: "none" }} onChange={(e) => setComment({...comment,comment: e.target.value })} value={user.comment} />
+                                                                            <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
                                                                         <div className="comments-reply">
@@ -256,7 +272,7 @@ function Single() {
 
                                                                                 : null}
                                                                             {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href="/post"><span>update</span></a></button>
+                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>update</span></a></button>
 
                                                                                 : null}
                                                                             <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>

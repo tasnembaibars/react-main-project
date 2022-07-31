@@ -171,13 +171,45 @@ class ServicesController extends Controller
 
         //create command
 
+        if ($request->file('file')) {
+            $filepath = $request->file('file')->store('products');
+        } else {
+            $filepath = null;
+        }
 
-        
+        if ($request->file('file2')) {
+            $filepath2 = $request->file('file2')->store('products');
+        } else {
+            $filepath2 = null;
+        }
+
+        if ($request->file('file3')) {
+            $filepath3 = $request->file('file3')->store('products');
+        } else {
+            $filepath3 = null;
+        }
+
+        if ($request->file('file4')) {
+            $filepath4 = $request->file('file4')->store('products');
+        } else {
+            $filepath4 = null;
+        }
+
+
+
+
+
+
+
         return Services::create([
             'title' => request('title'),
             'price' => request('price'),
             'description' => request('description'),
-            'picture' => request('picture')
+            'categories_id' => request('categories_id'),
+            'picture' => $filepath,
+            'picture_two' => $filepath2,
+            'picture_three' => $filepath3,
+            'picture_four' => $filepath4
 
         ]);
     }

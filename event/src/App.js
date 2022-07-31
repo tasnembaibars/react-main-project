@@ -17,6 +17,7 @@ import Profile from './components/Profile';
 import './App.css';
 import CheckOut from './components/Checkout';
 import Singlepost from './components/Singlepost';
+import Booking from './components/Booking';
 import { createContext, useState } from 'react';
 export const userContext = createContext();
 
@@ -39,6 +40,7 @@ function App() {
       <Route path="/profile/:id" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
+      <Route path="/book" element={<Booking />} />
 
 
 
