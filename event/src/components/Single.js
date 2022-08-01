@@ -46,7 +46,7 @@ function Single() {
     console.log(comment)
 
     const [selectedPost, setSelectedPost] = useState([]);
-    // const [currentPost, setCurrentPost] = useState(1);
+    const [currentPost, setCurrentPost] = useState(1);
 
 
     //fetch all comments
@@ -79,11 +79,12 @@ function Single() {
     }
      useEffect(()=>{
         const getComment=async()=>{
-            const response= await axios.get (`http://127.0.0.1:8000/api/comments_post/${id}`)
-            // const dbData=await response.json();
-            setEditComment(response);
-            console.log(response);
+            const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+            const dbData=await response.json();
+            setEditComment(dbData);
+            console.log(dbData);
            
+            
         }
         getComment();
     },[update])
@@ -91,12 +92,11 @@ function Single() {
  
     const editHandeler = (e) => {
         e.preventDefault();
-        axios.put(`http://127.0.0.1:8000/api/comments_post/${id}`, editComment)
+        axios.put(`http://127.0.0.1:8000/api/comment/${id}`, editComment)
             .then((res) => setEditComment(res.data))
-            // .then(()=>setUpdate(update))
+            
         
-        console.log(editComment)
-        if (!update) {
+        if (update) {
             window.alert('Your comment has been updated successfuly')
 
         }
@@ -283,7 +283,7 @@ function Single() {
 
                                                                                 : null}
                                                                             {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>update</span></a></button>
+                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>edit</span></a></button>
 
                                                                                 : null}
                                                                             <button type='submit' onClick={()=>deleteHandeler(id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
