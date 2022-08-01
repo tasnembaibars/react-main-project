@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import emailjs from "emailjs-com";
+
 const Contact = () => {
 
     const [name, setname] = useState("");
@@ -9,23 +11,34 @@ const Contact = () => {
     const [message, setmessage] = useState("");
  
 
+    const sendEmail = (e) => {
+      
+      };
     
     const contact = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         axios.post(`https://62e6b4710e5d74566aeb5bb1.mockapi.io/contact`, {
             name,
             email,
             message
 
-        });
+        })
+        // e.preventDefault();
+    
+        emailjs.sendForm('service_2g5hjbh', 'template_nk1nx4e', e.target, '4wzL5Z_AqBhLCFm5q')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });;
      
     //   window.alert('add')
      
-        swal({
-            title: "Good job!",
-            icon: "success",
-            button: "ok!",
-          });
+        // swal({
+        //     title: "Good job!",
+        //     icon: "success",
+        //     button: "ok!",
+        //   });
    
     }
 
@@ -121,7 +134,7 @@ const Contact = () => {
                                         <textarea class="form-control" name="message" id="note" placeholder="Message..." onChange={(e) => setmessage(e.target.value)} required></textarea>
                                     </div>
                                     <div class="submit-area">
-                                        <button type="submit" class="theme-btn-s4" onClick={contact}>Get in Touch</button>
+                                        <button type="submit" class="theme-btn-s4" onClick={()=>contact()}>Get in Touch</button>
                                         <div id="loader">
                                             <i class="ti-reload"></i>
                                         </div>
