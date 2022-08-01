@@ -18,7 +18,9 @@ import './App.css';
 import CheckOut from './components/Checkout';
 import Singlepost from './components/Singlepost';
 import Booking from './components/Booking';
+import Products from './components/Products';
 import { createContext, useState } from 'react';
+import Products2 from './components/Products2';
 export const userContext = createContext();
 // import Booking from './components/Booking';
 function App() {
@@ -37,13 +39,12 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/profile/:id" element={<Profile/>} />
+      <Route path="/profile" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
       <Route path="/book" element={<Booking />} />
 
-
-
+      <Route path="/Products2/:id" element={<Products2 />} />
 
 {/* routes */}
 <Route path="/about" element={<About />} />

@@ -7,15 +7,15 @@ import swal from 'sweetalert';
 
 function Profile() {
 
-
-
+   const id =sessionStorage.getItem('user_id');
+   console.log(id);
     const [users, setUsers] = useState({
         name: '', email: '', phone: '', password: '', picture: ''
     });
     const [selectedFile, setSelectedFile] = useState();
 
     const [update, setUpdate] = useState(false);
-    const { id } = useParams();
+    const { c_id } = useParams();
     console.log(id);
 
   //retrieve user info

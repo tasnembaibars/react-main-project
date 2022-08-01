@@ -50,10 +50,10 @@ class CommentsPostController extends Controller
      $comment->save();
      return $comment;
   }
-//   public function index($id){
-//     return Comments_post::find($id);
+  public function index($id){
+    return Comments_post::find($id);
 
-//   }
+  }
 
   public function delete(Comments_post $comment)
       {

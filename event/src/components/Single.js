@@ -9,20 +9,17 @@ function Single() {
     const { id } = useParams();
     //insert comments
     const [comment, setComment] = useState("");
-    const [costumer_id, setCostumer_id] = useState(1);
-    const [post_id, setPost_id] = useState(1);
-
-    const navigate = useNavigate();
-    // let isLoggedIn = JSON.parse(localStorage.getItem("user"));
-    // if (!isLoggedIn) {
-    //   navigate("/login");
-    // }
+    const [costumer_id, setCostumer_id] = useState({});
+    const [post_id, setPost_id] = useState({});
+    const user_id =sessionStorage.getItem('user_id');
+    console.log(id);
+  
     const handleClick = async (e) => {
         e.preventDefault();
         const response = await fetch(`http://127.0.0.1:8000/api/comments_post`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ comment: comment, costumer_id, post_id }),
+            body: JSON.stringify({ comment: comment, costumer_id:user_id, post_id:id }),
 
         })
         
@@ -112,20 +109,18 @@ function Single() {
 
     const deleteHandeler = (id) => {
         axios.delete(`http://127.0.0.1:8000/api/comment/${id}`)     
-        swal({
-            title: "Good job!",
-            text: " comment deleted successfully!",
-            icon: "success",
-            button: "ok!",
-          })
+        // swal({
+        //     title: "Good job!",
+        //     text: " comment deleted successfully!",
+        //     icon: "success",
+        //     button: "ok!",
+        //   })
           .then(()=> {
             fetchComments();
         });
         
         // id.preventDefault();
 
-
-   
 
      }
           // fetch posts
@@ -291,7 +286,7 @@ function Single() {
                                                                                 <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>update</span></a></button>
 
                                                                                 : null}
-                                                                            <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
+                                                                            <button type='submit' onClick={()=>deleteHandeler(id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
 
                                                                         </div>
 
