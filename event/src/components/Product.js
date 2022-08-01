@@ -19,19 +19,31 @@ export default function Product() {
     console.log(all);
     return (
         <div>
+<<<<<<< HEAD
             <div className='container'>
  <section class="m-5 col-12" >
+=======
+ <section class="m-5 col-12">
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 
 <div className="row">
     <div class="col-6">
         <h1>{all.title}</h1>
+<<<<<<< HEAD
         <h5>{all.description}
         </h5>
+=======
+        <h4>{all.description}
+        </h4>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
         <h4 style={{ color: "#848892" }}> Price: {all.price} </h4>
         <div class="submit-area" >
             <br />
             <br />
+<<<<<<< HEAD
             
+=======
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
             <button type="submit" class="theme-btn-s4" name='like' style={{ color: "white" }}>  <NavLink to={`/book/${all.id}`} style={{ textDecoration: " none", color: "white" }} >Booking Now</NavLink> </button>
 
 
@@ -41,17 +53,29 @@ export default function Product() {
 
     <div class="col-6">
         <div class="img-holder">
+<<<<<<< HEAD
     
                 <img  src={`http://127.0.0.1:8000/${all.picture_four}`} alt class="img img-responsive" />
 
           
+=======
+            <a href="assets/images/portfolio/10.jpg" class="fancybox"
+                data-fancybox-group="gall-1">
+                <img src={`http://127.0.0.1:8000/${all.picture_four}`} alt class="img img-responsive" />
+
+            </a>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
         </div>
     </div>
 
 </div>
 
 </section>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
             {/* {Load && <h1>Loading .... </h1>} */}
             {/* {all.length>0 && all.map((p) => {
                 return (  */}

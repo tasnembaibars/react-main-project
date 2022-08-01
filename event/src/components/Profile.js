@@ -132,7 +132,11 @@ console.log(selectedFile,name,email,pass ,picture)
                             {/* <h6 class="mb-3">User Information</h6> */}
                             <form onSubmit={updateHandeler}>
                                 <div class="profile-info-brief p-3">{ picture ? (<img class="img-fluid user-profile-avatar" src={`http://127.0.0.1:8000/${picture}`} alt="" />)
+<<<<<<< HEAD
                                                                              : (< img class="img-fluid user-profile-avatar" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />)}
+=======
+                                                                             : (< img class="img-fluid user-profile-avatar" src="https://images.assetsdelivery.com/compings_v2/tuktukdesign/tuktukdesign1606/tuktukdesign160600119.jpg" alt="" />)}
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                     <div class="text-center">
                                     <input type="file" name='picture' onChange={(e) => setSelectedFile(e.target.files[0])} />
                                         <hr class="m-2"/>
@@ -152,6 +156,7 @@ console.log(selectedFile,name,email,pass ,picture)
                                             <td>
                                                 {/* <p class="text-muted mb-0">rathemes@gmail.com</p> */}
                                                 <input type="text" className="form-control" name='email' onChange={e => setEmail(e.target.value)} defaultValue={email} />
+<<<<<<< HEAD
                                             </td>
                                         </tr>
                                         <tr>
@@ -159,8 +164,11 @@ console.log(selectedFile,name,email,pass ,picture)
                                             <td>
                                                 {/* <p class="text-muted mb-0">Rathemes</p> */}
                                                 <input type="text" className="form-control" name='phone' placeholder='' onChange={e => setPhone(e.target.value)} defaultValue={phone} />
+=======
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                             </td>
                                         </tr>
+                                      
                                         <tr>
                                             <td><strong>Password:</strong></td>
                                             <td>
@@ -186,23 +194,30 @@ console.log(selectedFile,name,email,pass ,picture)
                 <div class="profile-section-main">
 
                     <ul class="nav nav-tabs profile-tabs" role="tablist">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile-overview" role="tab">Timeline</a></li>
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile-overview" role="tab">Your Posts</a></li>
                     </ul>
 
-                    <div class="tab-content profile-tabs-content">
+                    <div class="tab-content profile-tabs-content"  >
 
-                        <div class="tab-pane active" id="profile-overview" role="tabpanel">
+                        <div class="tab-pane active" id="profile-overview" role="tabpanel" >
 
                             {post.length > 0 && post.map(c => (
 
                                 <div class="stream-posts">
 
-                                    <div class="stream-post">
+                                    <div class="stream-post" >
 
+<<<<<<< HEAD
                                         <div class="sp-author">
                                             <a href="#" class="sp-author-avatar"><img src={c.picture} alt="" /></a>
                                             <h6 class="sp-author-name"><a href="#">{c.name}</a></h6></div>
                                         <div class="sp-content">
+=======
+                                        {/* <div class="sp-author" >
+                                            <a href="#" class="sp-author-avatar"><img src={c.picture} alt="" /></a>
+                                            <h6 class="sp-author-name" ><a href="#">{c.name}</a></h6></div> */}
+                                        <div class="sp-content" style={{marginLeft:'20px'}} >
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                             <div class="sp-info"></div>
                                             <h6>{c.Date}</h6>
                                             <p class="sp-paragraph mb-0">{c.post}</p>

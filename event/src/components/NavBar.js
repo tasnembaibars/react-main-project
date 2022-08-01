@@ -58,7 +58,11 @@ const NavBar = () => {
                                 <div class="col-lg-2 col-md-6 col-6">
                                     <div class="navbar-header">
                                         <a class="navbar-brand" href="/"><img src="../assets/images/logo.png"
+<<<<<<< HEAD
                                             alt="" style={{ marginTop: "15px" , width:"150px"}} /></a>
+=======
+                                            alt="" style={{ marginTop: "15px" }} /></a>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                     </div>
                                 </div>
                                 <div class="col-lg-10 col-md-1 col-1">

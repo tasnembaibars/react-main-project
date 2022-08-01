@@ -99,7 +99,11 @@ function Share() {
                                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                                     <li><a href="#"><i class="ti-linkedin"></i></a></li>
                                     <li><a href="#"><i class="ti-instagram"></i></a></li> */}
+<<<<<<< HEAD
                                     <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" > comment</i></NavLink> </button>
+=======
+                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.num}`} style={{ textDecoration: " none",fontSize:"17px" }}><i class="fa fa-comment-o" > join discussion</i></NavLink> </button>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                    
                                 </ul>
                             </div>

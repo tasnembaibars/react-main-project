@@ -39,7 +39,11 @@ function Blog() {
         }
     };
     const fetchComments = async () => {
+<<<<<<< HEAD
         const response = await fetch(`http://127.0.0.1:8000/api/comments`)
+=======
+        const response = await fetch(`http://127.0.0.1:8000/api/comments/${id}`)
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
         const res = await response.json()
         setAll(res)
     }
@@ -63,6 +67,14 @@ function Blog() {
     }, [])
     console.log('araa',all)
 
+<<<<<<< HEAD
+=======
+    const fetchComment = async () => {
+        const response = await fetch(`http://127.0.0.1:8000/api/comments/${id}`)
+        const res = await response.json()
+        setAll(res)
+    }
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 
 
  
@@ -70,7 +82,11 @@ function Blog() {
     // update comments
     const [update, setUpdate] = useState(false)
     const [editComment, setEditComment] = useState({
+<<<<<<< HEAD
         comment:'',costumer_id:'',post_id:''
+=======
+        comment:'',costumer_id:user_id,post_id:id
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
     })
     const updateHandler = (e) => {
         e.preventDefault();
@@ -78,6 +94,7 @@ function Blog() {
         setUpdate(true);
 
     }
+<<<<<<< HEAD
      useEffect(()=>{
         const getComment=async()=>{
             const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
@@ -102,15 +119,54 @@ function Blog() {
             window.alert('Your comment has been updated successfuly')
 
         }
+=======
+console.log('p',editComment.comment)
+
+// const editHandeler=()=>{}
+    //  useEffect((id)=>{
+    //     const getComment=async()=>{
+    //         const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+    //         const dbData=await response.json();
+    //         setEditComment(dbData);
+    // console.log('tt',dbData);
+           
+            
+    //     }
+    //     getComment();
+    // },[update])
+
+    // const getComment=()=>async()=>{
+    //     const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+    //     const dbData=await response.json();
+    //     setEditComment(dbData);
+    // }
+    const editHandeler =(id)=>{
+       
+        // e.preventDefault();
+      
+        axios.post(`http://127.0.0.1:8000/api/comment/${id}`, {
+            comment:editComment.comment
+        })
+          
+            .then((res) =>fetchComment(),setUpdate(false)
+            
+            )
+      
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 
 
     }
 
+<<<<<<< HEAD
     console.log(editComment)
+=======
+    // console.log('uu',editComment)
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
    
 
     const deleteHandeler = (id) => {
         axios.delete(`http://127.0.0.1:8000/api/comment/${id}`)     
+<<<<<<< HEAD
         // swal({
         //     title: "Good job!",
         //     text: " comment deleted successfully!",
@@ -122,6 +178,14 @@ function Blog() {
         });
         
         // id.preventDefault();
+=======
+     
+          .then(()=> {
+            fetchComment();
+        });
+        
+   
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 
 
      }
@@ -161,8 +225,13 @@ function Blog() {
                                 <div class="entry-meta">
                                     
                                     <ul>
+<<<<<<< HEAD
                                         <li><i class="fi flaticon-user"></i> By <a href="#">{post.name}</a> </li>
                                         <li><i class="fi flaticon-comment-white-oval-bubble"></i> Comments  </li>
+=======
+                                        <li><i class="fi flaticon-user"></i> By <a href="#">  {post.name}</a> </li>
+                                        <li><i class="fi flaticon-comment-white-oval-bubble"></i> discussion</li>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                         <li><i class="fi flaticon-calendar"></i> {post.Date}</li>
                                     </ul>
                                 </div>
@@ -230,6 +299,7 @@ function Blog() {
 
                                                                             : null}
                                                                         {update ?
+<<<<<<< HEAD
                                                                             <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
@@ -245,6 +315,26 @@ function Blog() {
                                                                                 : null}
                                                                             <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
 
+=======
+                                                                        
+                                                                            <input name='comment' style={{  background: "none" }}  onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
+
+                                                                            : null}
+                                                                        <div className="comments-reply">
+                                                                          
+                                                                            {user_id == user.id &&
+                                                                            <>
+                                                                            {!update ?
+                                                                                <button onClick={updateHandler} style={{ border: "none", background: "none" }}><a className="comment-reply-link" ><span>edit</span></a></button>
+
+                                                                                : null}
+                                                                            {update ?
+                                                                                <button onClick={()=>editHandeler(user.com)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" ><span>edit</span></a></button>
+
+                                                                                : null}
+                                                                            <button type='submit' onClick={()=>deleteHandeler(user.com)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" ><span>Delete</span></a></button>
+                                                                            </>  }
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                                                                         </div>
                                                         </div>
                                                     </div>

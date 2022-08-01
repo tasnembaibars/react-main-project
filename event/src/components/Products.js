@@ -62,12 +62,17 @@ console.log(all);
                 return ( */}
                     <section class="wpo-service-section-s3 section-padding">
                         
+<<<<<<< HEAD
                        
+=======
+                        <h2 class="hidden">{all.title}</h2>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
                         <div class="container">
                             <div class="wpo-service-wrap">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12">
                                         <div class="wpo-service-item">
+<<<<<<< HEAD
                                        
                                             <div class="wpo-service-text">
                                                 <div class="s-icon">
@@ -79,6 +84,17 @@ console.log(all);
             <br />
             <br />
                                                 <button type="submit" name='like' class="theme-btn-s4" >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none", color:"white" }}>Show services</NavLink> </button>
+=======
+                                            <div class="wpo-service-text">
+                                                <div class="s-icon">
+                                                    <i class="fi flaticon-gallery"></i>
+                                                </div>
+                                                <a href="service-single.html">{all.description}</a>
+                                                <div class="submit-area" >
+            <br />
+            <br />
+                                                <button type="submit" name='like' class="theme-btn-s4" >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none" }}>Show services</NavLink> </button>
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 </div>
                                             </div>
                                         </div>

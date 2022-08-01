@@ -46,9 +46,19 @@ function App() {
       <Route path="/Checkout" element={<CheckOut />} />
 
       <Route path="/book" element={<Booking />} />
+<<<<<<< HEAD
             {/* <Route path="/book" element={<Booking />} /> */}
+=======
+
+      <Route path="/book" element={<Booking />} />
+      {/* <Route path="/book" element={<Booking />} /> */}
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
       <Route path="/services/:id" element={<Products />} />
       <Route path="/book/:id" element={<Booking />} />
+
+      <Route path="/Product/:id" element={<Product />} />
+      <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/share" element={<Share />} />
 
       <Route path="/Product/:id" element={<Product />} />
       <Route path="/blog/:id" element={<Blog />} />
