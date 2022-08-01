@@ -2,27 +2,30 @@ import React, { useState, useEffect } from 'react';
 import '../Posts.css';
 import axios from "axios";
 import { useParams } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 export default function Products() {
     const { id } = useParams();
-    const [all, setAll] = useState({})
+    const [all, setAll] = useState([])
+    useEffect(() => {
    const fetchData = async()=>{
    const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
       const respdata = await resp.json()
       setAll(respdata);
     
   }
-  useEffect(() => {
+
     fetchData()
   }, []);
   console.log(all);
     return (
         <div>
+            
             {/* {Load && <h1>Loading .... </h1>} */}
-            {all.length>0 && all.map((p) => {
-                return (
+            {/* {all.length>0 && all.map((p) => {
+                return ( */}
                     <section class="wpo-service-section-s3 section-padding">
                         
-                        <h2 class="hidden">{p.title}</h2>
+                        <h2 class="hidden">{all.title}</h2>
                         <div class="container">
                             <div class="wpo-service-wrap">
                                 <div class="row">
@@ -30,10 +33,12 @@ export default function Products() {
                                         <div class="wpo-service-item">
                                             <div class="wpo-service-text">
                                                 <div class="s-icon">
-                                                    <i class="fi flaticon-gallery"></i>
+                                                <img src={`http://127.0.0.1:8000/${all.picture}`} height="330px" width="400px"/>
                                                 </div>
-                                                <a href="service-single.html">{p.description}</a>
+                                                <a href="service-single.html">{all.description}</a>
                                                 <p>widdeng</p>
+                                                {/* <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none" }}>Show service</NavLink> </button> */}
+                                                <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/book/${all.id}`} style={{ textDecoration: " none" }}>Booking Now</NavLink> </button>
                                             </div>
                                         </div>
                                     </div>
@@ -42,9 +47,9 @@ export default function Products() {
                         </div>
                     </section>
 
-                )
+                {/* )
             }
-            )}
+            )} */}
         </div>
     );
 }

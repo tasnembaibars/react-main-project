@@ -90,7 +90,7 @@ Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 
 Route::get('/services/{id}',[ServicesController::class,'view']);
 
-Route::get('/products2/{id}',[ServicesController::class,'view2']);
+Route::get('/product/{id}',[ServicesController::class,'view2']);
 
 
 
@@ -250,7 +250,7 @@ Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
 
 // start Booking
-Route::post('/Book',[BooksController::class,'store']);
+Route::post('/book',[BooksController::class,'store']);
 // end Booking
 //Araa
 
