@@ -45,7 +45,7 @@ function About() {
                         <div className="wpo-about-wrap">
                             <div className="wpo-about-item">
                                 <div className="wpo-about-img">
-                                    <img src="assets/images/about/1.png" />
+                                    <img src="assets/images/about/2.jpg" />
                                 </div>
                             </div>
                             <div className="ab-shape">
@@ -200,86 +200,7 @@ function About() {
             </div>
         </section>
         {/* <!-- end wpo-fun-fact-section --> */}
-        {/* <!-- start wpo-portfolio-section --> */}
-        <section className="wpo-portfolio-section section-padding">
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="wpo-section-title">
-                        <span>Wedding Ceremony</span>
-                        <h2>Celebrating Your Love</h2>
-                        <div className="section-title-img">
-                            <img src="assets/images/section-title.png" alt=""/>
-                        </div>
-                    </div>
-                </div>
-                <div className="sortable-gallery">
-                    <div className="gallery-filters"></div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="portfolio-grids gallery-container clearfix">
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/1.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Maria & Robin</a></h4>
-                                            <span>Austria- Feb 2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/2.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Rose & Harry</a></h4>
-                                            <span>Austria- Jan 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/3.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Aliana & David</a></h4>
-                                            <span>Austria- Mar 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/4.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Aliza & Ken</a></h4>
-                                            <span>Austria- April 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/5.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Michel & Dianee</a></h4>
-                                            <span>Austria- May 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/6.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Maria & Nevela</a></h4>
-                                            <span>Austria- Jul 2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> 
-            {/* <!-- end container --> */}
-        </section>
-        {/* <!-- end wpo-portfolio-section --> */}
+    
 
         {/* <!-- start wpo-pricing-section --> */}
         <section className="wpo-pricing-section section-padding pt-0">

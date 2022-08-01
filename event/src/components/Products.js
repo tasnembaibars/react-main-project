@@ -2,51 +2,62 @@ import React, { useState, useEffect } from 'react';
 import '../Posts.css';
 import axios from "axios";
 import { useParams } from 'react-router';
-
 export default function Products() {
     const { id } = useParams();
+    const [Load, setLoad] = useState(true);
+    // const [Product, setProduct] = useState([ ]);
 
-    const [Product, setProduct] = useState([]);
-    //  const [user_id, setuser_id] = useState({});
-    //  const [post_id, setpost_id] = useState({});
-    //  const [likes, setlike] = useState(0);
-    //  setpost_id(id);
-    //  setuser_id(1);
+    // useEffect(() => {
+    //     fetch(`http://127.0.0.1:8000/api/services/${id}`)
+    //     .then((response) => response.json())
+    //     .then(data => {
+    //             setProduct(data);
+    //             setLoad(false);
+    //             console.log('Product' , data);});
+    // }, []);
+
+    //fetch all comments
+    const [all, setAll] = useState([])
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/products/${id}`)
-            .then((response) => response.json())
-            .then(data => {
-                setProduct(data);
-                console.log(data);
-            });
+        const fetchproduct = async () => {
+            const response = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+            const res = await response.json()
+            setLoad(false);
+            setAll(res)
+        }
+        fetchproduct()
+    }, [])
+    console.log('all', all);
 
-
-    }, []);
     return (
         <div>
-{Product && Product.map(p => (
-            <section class="wpo-service-section-s3 section-padding">
-                <h2 class="hidden">{Product.title}</h2>
-                <div class="container">
-                    <div class="wpo-service-wrap">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <div class="wpo-service-item">
-                                    <div class="wpo-service-text">
-                                        <div class="s-icon">
-                                            <i class="fi flaticon-gallery"></i>
+            {Load && <h1>Loading .... </h1>}
+            {all.length>0 && all.map(p => {
+                return (
+                    <section class="wpo-service-section-s3 section-padding">
+                        <h2 class="hidden">{p.title}</h2>
+                        <div class="container">
+                            <div class="wpo-service-wrap">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="wpo-service-item">
+                                            <div class="wpo-service-text">
+                                                <div class="s-icon">
+                                                    <i class="fi flaticon-gallery"></i>
+                                                </div>
+                                                <a href="service-single.html">{p.description}</a>
+                                                <p>widdeng</p>
+                                            </div>
                                         </div>
-                                        <a href="service-single.html">{Product.	description}</a>
-                                        <p>widdeng</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-       
-))}
- </div>
+                    </section>
+
+                )
+            }
+            )}
+        </div>
     );
 }
