@@ -19,10 +19,21 @@ class PostsController extends Controller
     }
 
     function create (){
-        // ->where('rule' , 1)
-        return Posts::all();
+        $post= Posts::select('posts.*','costumers.*')
+        ->join('costumers','costumers.id','=','posts.costumer_id')
+       
+       ->get();
+        return $post;
+        
     }
-
+    function show ($id){
+        $post= Posts::select('posts.*','costumers.*')
+        ->join('costumers','costumers.id','=','posts.costumer_id')
+       
+       ->get()->firstwhere('id',$id);
+        return $post;
+        
+    }
 
 
     public function view($id)
@@ -49,6 +60,7 @@ class PostsController extends Controller
       }
       public function viewP($id){
         return Posts::find($id);
+        
        }
        public function viewComments($id){
         return Comments_post::all()->where('post_id',$id);

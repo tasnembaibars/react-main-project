@@ -34,7 +34,7 @@ function Posts2() {
         });
         console.log(post);
         if (response.ok) {
-            window.alert("comment added successfully")
+            window.alert("your post will be posted after admin acceptance")
         }
         window.location.href = "http://localhost:3000/Posts2";
     }
@@ -74,10 +74,10 @@ function Posts2() {
 
                                 <div className="gallery">
                                     <div>
-                                        <img src="assets/images/blog-details/1.jpeg" />
+                                        <img src="%PUBLIC_URL%/assets/images/blog-details/1.jpeg" />
                                     </div>
                                     <div>
-                                        <img src="assets/images/blog-details/2.jpg" />
+                                        <img src="%PUBLIC_URL%/assets/images/blog-details/2.jpg" />
                                     </div>
                                 </div>
                             </div>
@@ -105,18 +105,18 @@ function Posts2() {
                         {posts && posts.map(p => (
                             <div className="author-box">
                                 <div className="author-avatar">
-                                    <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>
+                                    <a href="#" target="_blank"><img src={`http://127.0.0.1:8000/${p.picture}`} alt height="70px" width="70px" /></a>
                                 </div>
                                 <div className="author-content">
-                                    {/* <a href="#" className="author-name">Author: Jenny Watson</a> */}
+                                    <a href="#" className="author-name">Author: {p.name}</a>
                                     <div class="comments-meta">
-                                        <h4>Robert Sonny <span class="comments-date">{p.Date}</span></h4>
+                                        <h4> <span class="comments-date">{p.post}</span></h4>
                                     </div>
-                                    <p>{p.post}</p>
+                                    <p>{p.Date}</p>
                                     <div className="socials">
                                         <ul className="social-link">
 
-                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/post/${p.id}`} style={{ textDecoration: " none" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
+                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/post/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
 
                                             {/*  */}
                                             {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}

@@ -50,8 +50,8 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
 
-Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+// Route::post('/post',[PostsController::class,'store']);
+// Route::get('/posts',[PostsController::class,'create']);
 
 
 
@@ -62,9 +62,9 @@ Route::get('/comments',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::put('/comment/{id}',[CommentsPostController::class,'update']);
-Route::get('/comment/{id}',[CommentsPostController::class,'edit']);
+Route::get('/comments_post/{id}',[CommentsPostController::class,'edit']);
 Route::delete('/comment/{comment}',[CommentsPostController::class,'delete']);
-Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
+Route::get('/comment/{id}',[CommentsPostController::class,'index']);
 
 
 
@@ -76,6 +76,7 @@ Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 // start Post
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
+Route::get('/fetch/{id}',[PostsController::class,'show']);
 Route::get('update/{id}',[PostsController::class,'update']);
 
 Route::get('/userposts/{id}',[PostsController::class,'view']);
