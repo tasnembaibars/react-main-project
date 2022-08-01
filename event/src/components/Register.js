@@ -28,7 +28,7 @@ function Register() {
                 setError(res.data.errors)
             }
             else {
-                alert('Successfully Regiseration');
+                // alert('Successfully Regiseration');
                 navigate('/login')
             }
 

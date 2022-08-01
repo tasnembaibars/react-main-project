@@ -190,68 +190,7 @@ function Index() {
                 </div> 
             </section>
        
-            {/* <section class="wpo-video-section section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="wpo-section-title">
-                            <span>Wedding Ceremony</span>
-                            <h2>Celebrating Your Love</h2>
-                            <div class="section-title-img">
-                                <img src="assets/images/section-title.png" alt=""/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wpo-video-item">
-                        <div class="wpo-video-img">
-                            <img src="assets/images/cta.jpg" alt=""/>
-                            <a href="https://www.youtube.com/embed/teLhLLlhfzc" class="video-btn" data-type="iframe"><i
-                                    class="fi flaticon-play"></i></a>
-                        </div>
-                    </div>
-                </div> 
-            </section> */}
-
-            {/* <section class="wpo-fun-fact-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-xs-12">
-                            <div class="wpo-fun-fact-grids clearfix">
-                                <div class="grid">
-                                    <div class="info">
-                                        <h3><span class="odometer" data-count="1200">00</span></h3>
-                                        <p>Happy Couples</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <h3><span class="odometer" data-count="1545">00</span></h3>
-                                        <p>Weddings</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <h3><span class="odometer" data-count="750">00</span>+</h3>
-                                        <p>Decoration</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <h3><span class="odometer" data-count="265">00</span>+</h3>
-                                        <p>Locations</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="f-shape-1">
-                        <img src="assets/images/f-shape-1.png" alt=""/>
-                    </div>
-                    <div class="f-shape-2">
-                        <img src="assets/images/f-shape-2.png" alt=""/>
-                    </div>
-                </div>
-            </section>
-      */}
+ 
             <section class="wpo-portfolio-section section-padding">
                 <div class="container-fluid">
                     <div class="row">
@@ -330,74 +269,7 @@ function Index() {
 
                 </div> 
             </section>
-{/* 
-            <section class="wpo-testimonials-section section-padding">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-12">
-                            <div class="wpo-testimonials-img">
-                                <img src="assets/images/testimonial/l-img.jpg" alt=""/>
-                                <div class="wpo-testimonials-img-shape">
-                                    <img src="assets/images/testimonial/shape.png" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 offset-lg-1 col-12">
-                            <div class="wpo-testimonials-wrap">
-                                <h2>What Our Client Say</h2>
-                                <div class="wpo-testimonials-active owl-carousel">
-                                    <div class="wpo-testimonials-item">
-                                        <p>This is not only a wedding planning agency but also a dreamy friend.
-                                            I am very glad to work with them.They make my dream come true. In my wedding
-                                            I found them as my best friends. </p>
-                                        <div class="wpo-testimonial-info">
-                                            <div class="wpo-testimonial-info-img">
-                                                <img src="assets/images/testimonial/img-1.jpg" alt=""/>
-                                            </div>
-                                            <div class="wpo-testimonial-info-text">
-                                                <h5>Jenefer Marvella</h5>
-                                                <span>Wedding 12/12/19</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-testimonials-item">
-                                        <p>This is not only a wedding planning agency but also a dreamy friend.
-                                            I am very glad to work with them.They make my dream come true. In my wedding
-                                            I found them as my best friends. </p>
-                                        <div class="wpo-testimonial-info">
-                                            <div class="wpo-testimonial-info-img">
-                                                <img src="assets/images/testimonial/img-3.jpg" alt=""/>
-                                            </div>
-                                            <div class="wpo-testimonial-info-text">
-                                                <h5>David Miller</h5>
-                                                <span>Wedding 06/12/21</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="wpo-testimonials-item">
-                                        <p>This is not only a wedding planning agency but also a dreamy friend.
-                                            I am very glad to work with them.They make my dream come true. In my wedding
-                                            I found them as my best friends. </p>
-                                        <div class="wpo-testimonial-info">
-                                            <div class="wpo-testimonial-info-img">
-                                                <img src="assets/images/testimonial/img-2.jpg" alt=""/>
-                                            </div>
-                                            <div class="wpo-testimonial-info-text">
-                                                <h5>Aliza Anney</h5>
-                                                <span>Wedding 08/12/21</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="wpo-testimonials-shape">
-                    <img src="assets/images/testimonial/shape2.png" alt=""/>
-                </div>
-            </section>
-           */}
+
                     <section class="wpo-product-section section-padding">
                         <div class="container">
                             <div class="row">
@@ -452,7 +324,7 @@ function Index() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-13">
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/3333.jpg" alt="" />
@@ -577,88 +449,6 @@ function Index() {
             </div>
         </section>
            
-            {/* <section class="wpo-banner-section">
-                <h4>There is only one happiness in this life, to love and be loved</h4>
-            </section> */}
-
-            {/* <section class="wpo-contact-section section-padding">
-                <div class="container">
-                    <div class="wpo-contact-section-wrapper">
-                        <div class="wpo-contact-form-area">
-                            <div class="wpo-section-title">
-                                <span>Let’s Meet</span>
-                                <h2>Make an inquiry</h2>
-                                <div class="section-title-img">
-                                    <img src="assets/images/section-title.png" alt=""/>
-                                </div>
-                            </div>
-                            <form method="post" class="contact-validation-active" id="contact-form-main">
-                                <div>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Name"/>
-                                </div>
-                                <div>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email"/>
-                                </div>
-                                <div>
-                                    <input type="text" class="form-control" name="adress" id="adress"
-                                        placeholder="Adress"/>
-                                </div>
-                                <div>
-                                    <select name="service" class="form-control">
-                                        <option disabled="disabled" selected>Services</option>
-                                        <option>Photography</option>
-                                        <option>The Rehearsal Dinner</option>
-                                        <option>The Afterparty</option>
-                                        <option>Videographers</option>
-                                        <option>Perfect Cake</option>
-                                        <option>All Of The Above</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select name="guest" class="form-control">
-                                        <option disabled="disabled" selected>Number Of Guests</option>
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select name="meal" class="form-control last">
-                                        <option disabled="disabled" selected>Meal Preferences</option>
-                                        <option>Chicken Soup</option>
-                                        <option>Motton Kabab</option>
-                                        <option>Chicken BBQ</option>
-                                        <option>Mix Salad</option>
-                                        <option>Beef Ribs </option>
-                                    </select>
-                                </div>
-                                <div class="submit-area">
-                                    <button type="submit" class="theme-btn-s3">Send An Inquiry</button>
-                                    <div id="c-loader">
-                                        <i class="ti-reload"></i>
-                                    </div>
-                                </div>
-                                <div class="clearfix error-handling-messages">
-                                    <div id="success">Thank you</div>
-                                    <div id="error"> Error occurred while sending email. Please try again later.
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="border-style"></div>
-                        </div>
-                        <div class="vector-1">
-                            <img src="assets/images/contact/1.png" alt=""/>
-                        </div>
-                        <div class="vector-2">
-                            <img src="assets/images/contact/2.png" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </section>
-       */}
             <section class="wpo-blog-section section-padding">
                 <div class="container">
                     <div class="row">
