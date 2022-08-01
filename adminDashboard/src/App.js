@@ -34,6 +34,18 @@ function App() {
 
   const [adminData, setAdminData] = useState([]);
 
+
+
+  // function check(){
+
+  //   if(sessionStorage.getItem('admin_id')){
+    
+
+  //    navigate('/admin')
+     
+  //   }
+  // }
+
   return (
     <>
 

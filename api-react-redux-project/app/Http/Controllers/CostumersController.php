@@ -146,7 +146,7 @@ class CostumersController extends Controller
 
       function index1()
       {
-          return Costumers::all();
+          return Costumers::orderBy('id', 'DESC')->get();
       }
 
       function single1($id)
