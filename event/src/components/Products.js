@@ -4,7 +4,34 @@ import axios from "axios";
 import { useParams } from 'react-router';
 export default function Products() {
     const { id } = useParams();
+    // const [Load, setLoad] = useState(true);
+    // const [Product, setProduct] = useState([ ]);
+
+    // useEffect(() => {
+    //     fetch(`http://127.0.0.1:8000/api/services/${id}`)
+    //     .then((response) => response.json())
+    //     .then(data => {
+    //             setProduct(data);
+    //             setLoad(false);
+    //             console.log('Product' , data);});
+    // }, []);
+
+    //fetch all product
+   
+    // useEffect(() => {
+        
+    //     // const fetchproduct = async () => {
+    //     //     const response = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+    //     //     const res = await response.json()
+          
+    //     //     setAll(res.services);
+    //     //      console.log('all', all);
+    //     // }
+    //     // fetchproduct()
+    // }, [])
     const [all, setAll] = useState({})
+
+
    const fetchData = async()=>{
    const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
       const respdata = await resp.json()
