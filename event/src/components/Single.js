@@ -272,7 +272,7 @@ function Single() {
 
                                                                                 : null}
                                                                             {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>update</span></a></button>
+                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>edit</span></a></button>
 
                                                                                 : null}
                                                                             <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
