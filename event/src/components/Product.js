@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import '../Posts.css';
 import axios from "axios";
 import { useParams } from 'react-router';
-export default function Products2() {
+export default function Product() {
     const { id } = useParams();
 
     const [Product, setProduct] = useState([]);

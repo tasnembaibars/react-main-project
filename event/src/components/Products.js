@@ -4,37 +4,24 @@ import axios from "axios";
 import { useParams } from 'react-router';
 export default function Products() {
     const { id } = useParams();
-    const [Load, setLoad] = useState(true);
-    // const [Product, setProduct] = useState([ ]);
-
-    // useEffect(() => {
-    //     fetch(`http://127.0.0.1:8000/api/services/${id}`)
-    //     .then((response) => response.json())
-    //     .then(data => {
-    //             setProduct(data);
-    //             setLoad(false);
-    //             console.log('Product' , data);});
-    // }, []);
-
-    //fetch all comments
-    const [all, setAll] = useState([])
-    useEffect(() => {
-        const fetchproduct = async () => {
-            const response = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
-            const res = await response.json()
-            setLoad(false);
-            setAll(res)
-        }
-        fetchproduct()
-    }, [])
-    console.log('all', all);
-
+    const [all, setAll] = useState({})
+   const fetchData = async()=>{
+   const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+      const respdata = await resp.json()
+      setAll(respdata);
+    
+  }
+  useEffect(() => {
+    fetchData()
+  }, []);
+  console.log(all);
     return (
         <div>
-            {Load && <h1>Loading .... </h1>}
-            {all.length>0 && all.map(p => {
+            {/* {Load && <h1>Loading .... </h1>} */}
+            {all.length>0 && all.map((p) => {
                 return (
                     <section class="wpo-service-section-s3 section-padding">
+                        
                         <h2 class="hidden">{p.title}</h2>
                         <div class="container">
                             <div class="wpo-service-wrap">
