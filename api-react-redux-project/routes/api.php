@@ -225,6 +225,16 @@ Route::delete('/books/{book}',[BooksController::class,'destroy1']);
 
 
 
+Route::get('/posts',[PostsController::class,'index1']);
+Route::get('/posts/{id}',[PostsController::class,'single1']);
+Route::post('/posts',[PostsController::class,'store1']);
+Route::put('/posts/{post}',[PostsController::class,'update1']);
+Route::put('/postsstate/{post}',[PostsController::class,'changeState']);
+Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
+
+
+
+
 
 
 

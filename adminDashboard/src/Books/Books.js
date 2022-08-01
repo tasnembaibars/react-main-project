@@ -126,12 +126,9 @@ const Books = () => {
 
                                         </select>
                                     </div>
-
-
                                 </div>
 
                                 <div className='col'>
-
                                     <div class="form-group">
                                         <label for="inputState">Service</label>
                                         <select name='book_state' onChange={e => setservice(e.target.value)} defaultValue={service_id}

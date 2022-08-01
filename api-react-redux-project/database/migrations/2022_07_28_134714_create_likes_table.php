@@ -18,8 +18,8 @@ class CreateLikesTable extends Migration
             $table->string('username');
             
             
-            $table->foreignId('post_id')->nullable()->constrained('posts');
-            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+            $table->foreignId('post_id')->nullable()->constrained('posts')->onDelete('cascade');
+            $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
             $table->timestamps();
         });
     }

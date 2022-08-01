@@ -22,7 +22,7 @@ const Header = () => {
             </form>
           </div>
           <ul className="navbar-nav navbar-nav-right">
-            <li className="nav-item  dropdown d-none d-md-block">
+            {/* <li className="nav-item  dropdown d-none d-md-block">
               <a className="nav-link dropdown-toggle" id="reportDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Reports </a>
               <div className="dropdown-menu navbar-dropdown" aria-labelledby="reportDropdown">
                 <a className="dropdown-item" href="#">
@@ -34,8 +34,8 @@ const Header = () => {
                 <a className="dropdown-item" href="#">
                   <i className="mdi mdi-file-word mr-2"></i>doc </a>
               </div>
-            </li>
-            <li className="nav-item  dropdown d-none d-md-block">
+            </li> */}
+            {/* <li className="nav-item  dropdown d-none d-md-block">
               <a className="nav-link dropdown-toggle" id="projectDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Projects </a>
               <div className="dropdown-menu navbar-dropdown" aria-labelledby="projectDropdown">
                 <a className="dropdown-item" href="#">
@@ -44,8 +44,8 @@ const Header = () => {
                 <a className="dropdown-item" href="#">
                   <i className="mdi mdi-pencil-outline mr-2"></i>Edit Project </a>
               </div>
-            </li>
-            <li className="nav-item nav-language dropdown d-none d-md-block">
+            </li> */}
+            {/* <li className="nav-item nav-language dropdown d-none d-md-block">
               <a className="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div className="nav-language-icon">
                   <i className="flag-icon flag-icon-us" title="us" id="us"></i>
@@ -73,46 +73,20 @@ const Header = () => {
                   </div>
                 </a>
               </div>
-            </li>
+            </li> */}
             <li className="nav-item nav-profile dropdown">
               <a className="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div className="nav-profile-img">
-                  <img src="assets/images/faces/face28.png" alt="image" />
+                  
                 </div>
                 <div className="nav-profile-text">
-                  <p className="mb-1 text-black">Henry Klein</p>
+                  <p className="mb-1 text-black"> User Name</p>
                 </div>
               </a>
               <div className="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
-                <div className="p-3 text-center bg-primary">
-                  <img className="img-avatar img-avatar48 img-avatar-thumb" src="assets/images/faces/face28.png" alt="" />
-                </div>
+
                 <div className="p-2">
-                  <h5 className="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
-                  <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
-                    <span>Inbox</span>
-                    <span className="p-0">
-                      <span className="badge badge-primary">3</span>
-                      <i className="mdi mdi-email-open-outline ml-1"></i>
-                    </span>
-                  </a>
-                  <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
-                    <span>Profile</span>
-                    <span className="p-0">
-                      <span className="badge badge-success">1</span>
-                      <i className="mdi mdi-account-outline ml-1"></i>
-                    </span>
-                  </a>
-                  <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    <span>Settings</span>
-                    <i className="mdi mdi-settings"></i>
-                  </a>
-                  <div role="separator" className="dropdown-divider"></div>
-                  <h5 className="dropdown-header text-uppercase  pl-2 text-dark mt-2">Actions</h5>
-                  <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
-                    <span>Lock Account</span>
-                    <i className="mdi mdi-lock ml-1"></i>
-                  </a>
+ 
                   <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <span>Log Out</span>
                     <i className="mdi mdi-logout ml-1"></i>
@@ -120,7 +94,7 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a className="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i className="mdi mdi-email-outline"></i>
                 <span className="count-symbol bg-success"></span>
@@ -160,7 +134,7 @@ const Header = () => {
                 <div className="dropdown-divider"></div>
                 <h6 className="p-3 mb-0 text-center">4 new messages</h6>
               </div>
-            </li>
+            </li> */}
             <li className="nav-item dropdown">
               <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                 <i className="mdi mdi-bell-outline"></i>

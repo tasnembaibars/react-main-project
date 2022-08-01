@@ -19,61 +19,63 @@ const Categoriese = () => {
 
 
 
-        const getData = () => {
-            axios.get(`http://127.0.0.1:8000/api/categories`)
-                .then((res) => {
-                    setapi(res.data);
-                })
-        }
+    const getData = () => {
+        axios.get(`http://127.0.0.1:8000/api/categories`)
+            .then((res) => {
+                setapi(res.data);
+            })
+    }
 
 
-        const hanldeDelete = (id) => {
-            axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
-                .then(() => {
-                    getData();
-                })
-        }
+    const hanldeDelete = (id) => {
+        axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
+            .then(() => {
+                getData();
+            })
+    }
 
 
-    
-        let successAdd = null
 
-        const addUser = (e) => {
-            e.preventDefault();
-    
-            axios.post(`http://127.0.0.1:8000/api/categories`, {
+    let successAdd = null
 
-                name: name
+    const addUser = (e) => {
+        e.preventDefault();
 
-            }).then(response => { 
-                console.log(response)
-             })
-             .catch(error => {
-               console.log(error)
-             });
+        axios.post(`http://127.0.0.1:8000/api/categories`, {
 
-            let successAdd = `         <div className="alert alert-success" role="alert">
+            name: name
+
+        }).then(() => {
+            getData();
+        })
+            .catch(error => {
+                console.log(error)
+            });
+
+            getData();
+
+        let successAdd = `         <div className="alert alert-success" role="alert">
                 add user success 
             </div>`
-        }
+    }
 
-console.log(name)
+    console.log(name)
     return (
         <>
 
-<div className='container text-black'>
+            <div className='container text-black'>
                 <div className='row'>
                     <div className='col'></div>
                     <div className='col-11'>
 
-                        
+
                         <div>{successAdd ? successAdd : ''}</div>
 
                         <form onSubmit={addUser}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Title</label>
                                 <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} required
-                                 className="form-control" placeholder="" />
+                                    className="form-control" placeholder="" />
                             </div>
 
                             <button type='submit' className="btn btn-primary">Submit</button>
