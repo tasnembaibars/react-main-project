@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 
 function Posts2() {
+    
     const [post, setPost] = useState('');
     // const [rule , setRule] = useState(0);
     // const [likesP , setLikesP] = useState(0);
@@ -124,7 +125,7 @@ function Posts2() {
                                     <div className="socials">
                                         <ul className="social-link">
 
-                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/post/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
+                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" > comment</i></NavLink> </button>
 
                                             {/*  */}
                                             {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}

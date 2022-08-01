@@ -9,7 +9,7 @@ import React from 'react';
                             <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
                                 <div class="widget about-widget">
                                     <div class="logo widget-title">
-                                        <img src="assets/images/logo.png" alt="blog"/>
+                                        <img src="../assets/images/logo.png" alt="blog"/>
                                     </div>
                                     <p>Welcome and open yourself to your truest love this year with us! With the Release
                                         Process</p>
@@ -74,17 +74,17 @@ import React from 'react';
                                         <h3>Instagram</h3>
                                     </div>
                                     <ul class="d-flex">
-                                        <li><a href=""><img src="assets/images/instragram/1.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/1.jpg"
                                                     alt=""/></a></li>
-                                        <li><a href=""><img src="assets/images/instragram/2.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/2.jpg"
                                                     alt=""/></a></li>
-                                        <li><a href=""><img src="assets/images/instragram/3.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/3.jpg"
                                                     alt=""/></a></li>
-                                        <li><a href=""><img src="assets/images/instragram/4.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/4.jpg"
                                                     alt=""/></a></li>
-                                        <li><a href=""><img src="assets/images/instragram/5.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/5.jpg"
                                                     alt=""/></a></li>
-                                        <li><a href=""><img src="assets/images/instragram/6.jpg"
+                                        <li><a href=""><img src="../assets/images/instragram/6.jpg"
                                                     alt=""/></a></li>
                                     </ul>
                                 </div>

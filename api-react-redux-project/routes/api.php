@@ -58,7 +58,7 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 // comment on post
 Route::post('/comments_post',[CommentsPostController::class,'store']);
-Route::get('/comments',[CommentsPostController::class,'create']);
+Route::get('/comments/{id}',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::put('/comment/{id}',[CommentsPostController::class,'update']);
