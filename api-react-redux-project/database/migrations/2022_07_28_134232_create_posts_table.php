@@ -18,9 +18,13 @@ class CreatePostsTable extends Migration
             $table->timestamp('Date')->useCurrent();
             $table->text('post');
             $table->integer('rule')->default(0);
+<<<<<<< HEAD
             $table->integer('likes')->default(0);
 
             $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
+=======
+            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+>>>>>>> d40de0503543f8109c1faca7295b0e900fae4958
             $table->timestamps();
         });
     }

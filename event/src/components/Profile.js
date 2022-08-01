@@ -3,8 +3,11 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function Profile() {
+
+
 
     const [users, setUsers] = useState({
         name: '', email: '', phone: '', password: '', picture: ''
@@ -197,7 +200,7 @@ console.log(selectedFile,name,email,pass ,picture)
                                     <div class="stream-post">
 
                                         <div class="sp-author">
-                                            <a href="#" class="sp-author-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" /></a>
+                                            <a href="#" class="sp-author-avatar"><img src={c.picture} alt="" /></a>
                                             <h6 class="sp-author-name"><a href="#">{c.name}</a></h6></div>
                                         <div class="sp-content">
                                             <div class="sp-info"></div>
