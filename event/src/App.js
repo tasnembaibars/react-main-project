@@ -33,21 +33,21 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Index />} />
-    <Route path="/post/:id" element={<Singlepost />} />
+    {/* <Route path="/post/:id" element={<Singlepost />} /> */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile/:id" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
-      {/* <Route path="/book" element={<Booking />} /> */}
+      <Route path="/book" element={<Booking />} />
 
 
 
 
 {/* routes */}
 <Route path="/about" element={<About />} />
-<Route path="/post2" element={<Single />} />
+<Route path="/post/:id" element={<Single />} />
 <Route path="/shop" element={<Shop />} />
 
     </Routes>
