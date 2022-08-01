@@ -21,6 +21,8 @@ import Booking from './components/Booking';
 import Products from './components/Products';
 import { createContext, useState } from 'react';
 import Product from './components/Product';
+import Blog from './components/Blog';
+import Share from './components/Share';
 export const userContext = createContext();
 // import Booking from './components/Booking';
 function App() {
@@ -47,13 +49,16 @@ function App() {
 =======
       {/* <Route path="/book" element={<Booking />} /> */}
       <Route path="/services/:id" element={<Products />} />
-<<<<<<< HEAD
-=======
       <Route path="/book/:id" element={<Booking />} />
+<<<<<<< HEAD
 >>>>>>> e95521bce25eb3b2eec4db6165998f5e82765e6e
 >>>>>>> 27bb64db685bd9bfd8a14e7d4c01337670189fb7
+=======
+>>>>>>> 06be71a4f4171562c7881cbf2f9b9c319e484fb2
 
       <Route path="/Product/:id" element={<Product />} />
+      <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/share" element={<Share />} />
 
 {/* routes */}
 <Route path="/about" element={<About />} />

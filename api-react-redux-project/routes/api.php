@@ -61,7 +61,7 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 // comment on post
 Route::post('/comments_post',[CommentsPostController::class,'store']);
-Route::get('/comments',[CommentsPostController::class,'create']);
+Route::get('/comments/{id}',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::put('/comment/{id}',[CommentsPostController::class,'update']);
@@ -78,7 +78,7 @@ Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 //Araa
 // start Post
 Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+Route::get('/attempt',[PostsController::class,'create']);
 Route::get('/fetch/{id}',[PostsController::class,'show']);
 Route::get('update/{id}',[PostsController::class,'update']);
 
