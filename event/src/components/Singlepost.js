@@ -68,7 +68,7 @@ const [posts, setPosts] = useState([]);
                                 <div className="socials">
                                     <ul className="social-link">
                                     {/* <button type="submit" name='like' className={[likeactive ? 'active-like' : null, 'button'].join(' ')} onClick={like} style={{ border: "none" }} ><i class='far fa-heart'></i> {likes} Likes</button> */}
-                                        <button type="submit" name='like' style={{ border: "none" }} ><i class="fa fa-comment-o" > 35 Comments </i></button>
+                                        <button type="submit" name='like' style={{ border: "none" }} ><i class="fa fa-comment-o" >  Comments </i></button>
                                     </ul>
                                     <div class="comments-area">
                                         <div class="comments-section">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 function Index() {
   return (
     <div>
@@ -391,129 +392,86 @@ function Index() {
                             </div>
                         </div>
                     </div>
-
                 </div> 
-
                 <div class="wpo-testimonials-shape">
                     <img src="assets/images/testimonial/shape2.png" alt=""/>
                 </div>
             </section>
            */}
-            <section class="wpo-product-section section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="wpo-section-title">
-                            <span>Our Shop</span>
-                            <h2>SPECIAL PRODUCT For YOU</h2>
-                            <div class="section-title-img">
-                                <img src="assets/images/section-title.png" alt=""/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wpo-product-wrap">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/portfolio/24.jpg" alt=""/>
-                                        <a href="/shop">view</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Cutlery</a></h3>
-                                        <span></span>
+                    <section class="wpo-product-section section-padding">
+                        <div class="container">
+                            <div class="row">
+                                <div class="wpo-section-title">
+                                    <span>Our Shop</span>
+                                    <h2>SPECIAL PRODUCT For YOU</h2>
+                                    <div class="section-title-img">
+                                        <img src="assets/images/section-title.png" alt="" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/portfolio/333.jpg" alt=""/>
-                                        <a href="/shop">view</a>
+                            <div class="wpo-product-wrap">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                        <div class="wpo-product-item">
+                                            <div class="wpo-product-img">
+                                                <img src="assets/images/portfolio/24.jpg" alt="" />
+                                                <a href="/shop">view</a>
+                                            </div>
+                                            <div class="wpo-product-text">
+                                                <h3><button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/1`} style={{ textDecoration: " none" }}>Cutlery</NavLink> </button>
+                                                </h3>
+                                                <span></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="/shop">Welcome Signs</a></h3>
-                                        <span></span>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                        <div class="wpo-product-item">
+                                            <div class="wpo-product-img">
+                                                <img src="assets/images/portfolio/333.jpg" alt="" />
+                                                <a href="/shop">view</a>
+                                            </div>
+                                            <div class="wpo-product-text">
+                                                <h3>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/2`} style={{ textDecoration: " none" }}>Welcome Signs</NavLink> </button>
+                                                </h3>
+                                                <span></span>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                        <div class="wpo-product-item">
+                                            <div class="wpo-product-img">
+                                                <img src="assets/images/portfolio/set.jpg" alt="" />
+                                                <a href="/shop">view</a>
+                                            </div>
+                                            <div class="wpo-product-text">
+                                                <h3>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/3`} style={{ textDecoration: " none" }}>Rings Set</NavLink> </button>
+                                                </h3>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                        <div class="wpo-product-item">
+                                            <div class="wpo-product-img">
+                                                <img src="assets/images/portfolio/3333.jpg" alt="" />
+                                                <a href="/shop">view</a>
+                                            </div>
+                                            <div class="wpo-product-text">
+                                                <h3>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/4`} style={{ textDecoration: " none" }}>Themes</NavLink> </button>
+                                                </h3>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/portfolio/set.jpg" alt=""/>
-                                        <a href="/shop">view</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Rings Set</a></h3>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/portfolio/3333.jpg" alt=""/>
-                                        <a href="/shop">view</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Themes</a></h3>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/product/5.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Bride’s Crown</a></h3>
-                                        <span>$125.00</span>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/product/6.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Wedding Rings</a></h3>
-                                        <span>$548.00</span>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/product/7.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Wedding Gown</a></h3>
-                                        <span>$380.00</span>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                <div class="wpo-product-item">
-                                    <div class="wpo-product-img">
-                                        <img src="assets/images/product/8.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
-                                    </div>
-                                    <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Hair Style</a></h3>
-                                        <span>$290.00</span>
-                                    </div>
-                                </div>
-                            </div> */}
-                        </div>
-                    </div>
 
-                </div> 
-            </section>
-          
+                        </div>
+                    </section>
 
             <div class="wpo-cta-section">
                 <div class="conatiner-fluid">
