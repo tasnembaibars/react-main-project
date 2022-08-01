@@ -5,11 +5,7 @@ import swal from 'sweetalert';
 import '../Posts.css';
 
 function Blog() {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
+ 
 
     const { id } = useParams();
     //insert comments
@@ -178,10 +174,10 @@ function Blog() {
 
                                 {/* <div class="gallery">
                                     <div>
-                                        <img src="assets/images/blog-details/1.jpeg" alt=""/>
+                                        <img src="../assets/images/blog-details/1.jpeg" alt=""/>
                                     </div>
                                     <div>
-                                        <img src="assets/images/blog-details/2.jpg" alt=""/>
+                                        <img src="../assets/images/blog-details/2.jpg" alt=""/>
                                     </div>
                                 </div> */}
                             </div>

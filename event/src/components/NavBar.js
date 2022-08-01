@@ -103,7 +103,7 @@ const NavBar = () => {
 
                                                     </li>
                                                     <li class="menu-item-has-children">
-                                                        <NavLink to="/Posts2" >Post</NavLink>
+                                                        <NavLink to="/share" >Post</NavLink>
 
                                                     </li>
                                                 </>

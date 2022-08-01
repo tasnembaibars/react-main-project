@@ -78,7 +78,7 @@ Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 //Araa
 // start Post
 Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+Route::get('/attempt',[PostsController::class,'create']);
 Route::get('/fetch/{id}',[PostsController::class,'show']);
 Route::get('update/{id}',[PostsController::class,'update']);
 

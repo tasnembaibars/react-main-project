@@ -22,6 +22,7 @@ import Products from './components/Products';
 import { createContext, useState } from 'react';
 import Product from './components/Product';
 import Blog from './components/Blog';
+import Share from './components/Share';
 export const userContext = createContext();
 // import Booking from './components/Booking';
 function App() {
@@ -49,6 +50,7 @@ function App() {
 
       <Route path="/Product/:id" element={<Product />} />
       <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/share" element={<Share />} />
 
 {/* routes */}
 <Route path="/about" element={<About />} />
