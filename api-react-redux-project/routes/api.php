@@ -12,6 +12,7 @@ use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('/profile/{id}',[CostumersController::class,'index']);
 
 //edit user info
 Route::post('/profile',[CostumersController::class,'store']);
-Route::put('/profile/{id}',[CostumersController::class,'update']);
+Route::post('/profile/{id}',[CostumersController::class,'update']);
 Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
@@ -49,8 +50,8 @@ Route::get('/profile/{id}',[CostumersController::class,'edit']);
 
 
 
-Route::post('/post',[PostsController::class,'store']);
-Route::get('/posts',[PostsController::class,'create']);
+// Route::post('/post',[PostsController::class,'store']);
+// Route::get('/posts',[PostsController::class,'create']);
 
 
 
@@ -61,9 +62,9 @@ Route::get('/comments',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::put('/comment/{id}',[CommentsPostController::class,'update']);
-Route::get('/comment/{id}',[CommentsPostController::class,'edit']);
+Route::get('/comments_post/{id}',[CommentsPostController::class,'edit']);
 Route::delete('/comment/{comment}',[CommentsPostController::class,'delete']);
-Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
+Route::get('/comment/{id}',[CommentsPostController::class,'index']);
 
 
 
@@ -75,15 +76,17 @@ Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 // start Post
 Route::post('/post',[PostsController::class,'store']);
 Route::get('/posts',[PostsController::class,'create']);
+Route::get('/fetch/{id}',[PostsController::class,'show']);
 Route::get('update/{id}',[PostsController::class,'update']);
 
 Route::get('/userposts/{id}',[PostsController::class,'view']);
 
-Route::put('/singlepost/{id}',[PostsController::class,'viewPost']);
-
+Route::get('/post/{id}',[PostsController::class,'viewP']);
+Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 // Route::get('images', [PostsController::class, 'index'])->name('images');
 // Route::post('images', [PostsController::class, 'upload'])->name('images');
 // Route::post('/post',[CommentsPostController::class,'store']);
+
 
 
 
@@ -222,6 +225,16 @@ Route::delete('/books/{book}',[BooksController::class,'destroy1']);
 
 
 
+Route::get('/posts',[PostsController::class,'index1']);
+Route::get('/posts/{id}',[PostsController::class,'single1']);
+Route::post('/posts',[PostsController::class,'store1']);
+Route::put('/posts/{post}',[PostsController::class,'update1']);
+Route::put('/postsstate/{post}',[PostsController::class,'changeState']);
+Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
+
+
+
+
 
 
 
@@ -240,3 +253,30 @@ Route::delete('/books/{book}',[BooksController::class,'destroy1']);
 Route::post('/Book',[BooksController::class,'store']);
 // end Booking
 //Araa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//start contact
+
+Route::post('/contact',[ContactController::class,'store']);
+
+//end contact
+
+
+

@@ -20,6 +20,8 @@ import UpdateCategoriese from './components/categury/UpdateCategoriese';
 import Books from './Books/Books';
 import UpdateBook from './Books/updatebook';
 
+import Posts from './components/posts/Posts';
+
 
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
 
               <Route path="/admin/books" element={<Books />} />
               <Route path="/admin/books/:id" element={<UpdateBook />} />
+
+              <Route path="/admin/posts" element={<Posts />} />
 
 
 

@@ -11,6 +11,16 @@ const Services = () => {
 
 
     const [Persons, setapi] = useState([]);
+    const [Cat, setcat] = useState([]);
+
+    const [Catname, setcatname] = useState([]);
+
+
+
+    const [selectedFile, setSelectedFile] = useState();
+    const [selectedFile2, setSelectedFile2] = useState();
+    const [selectedFile3, setSelectedFile3] = useState();
+    const [selectedFile4, setSelectedFile4] = useState();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -18,10 +28,20 @@ const Services = () => {
 
 
 
-    const fileBrowseHandler = (event) => {
-        let value = URL.createObjectURL(event.target.files[0]);
-        setImageUrl(value);
-    };
+    // const fileBrowseHandler = (event) => {
+    //     let value = URL.createObjectURL(event.target.files[0]);
+    //     setImageUrl(value);
+    // };
+
+
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/categories`)
+                .then((res) => setcat(res.data))
+        }
+        , [])
+
+
 
     useEffect(
         () => {
@@ -52,33 +72,65 @@ const Services = () => {
 
 
 
-    const addUser = (e) => {
-        e.preventDefault();
+    // const addUser = (e) => {
+    //     e.preventDefault();
 
-        axios.post(`http://127.0.0.1:8000/api/services`, {
-            title: name,
-            price: email,
-            description: pass,
+    //     axios.post(`http://127.0.0.1:8000/api/services`, {
+    //         title: name,
+    //         price: email,
+    //         description: pass,
+    //         file: selectedFile
 
 
-        }).then(() => {
+
+    //     }).then(() => {
+    //         getData();
+    //     })
+
+    //     setName('')
+    //     setEmail('')
+    //     setPass('')
+
+
+    //     console.log(selectedFile)
+
+
+    //     let successAdd = `         <div className="alert alert-success" role="alert">
+    //         add user success 
+    //     </div>`
+    // }
+
+
+
+    const addUser = async (e) => {
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        formData.append("file2", selectedFile2);
+        formData.append("file3", selectedFile3);
+        formData.append("file4", selectedFile4);
+        formData.append("categories_id", Catname);
+        formData.append("title", name);
+        formData.append("price", email);
+        formData.append("description", pass);
+        await fetch("http://127.0.0.1:8000/api/services", {
+          method: "POST",
+          body: formData,
+        })
+        .then((result)=>{
             getData();
         })
+        .catch((err)=>{
+            console.log(err);
+          
+        });
+      };
 
 
-
-        setName('')
-        setEmail('')
-        setPass('')
-
-
-        console.log(picture)
+        // console.log(selectedFile)
+        // console.log(selectedFile2)
+        // console.log(selectedFile3)
 
 
-        let successAdd = `         <div className="alert alert-success" role="alert">
-            add user success 
-        </div>`
-    }
     return (
         <>
             <div className='container text-black'>
@@ -101,10 +153,38 @@ const Services = () => {
                                 <label for="exampleInputPassword1">Description</label>
                                 <input type="text" name='password' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control"  placeholder="" />
                             </div>
+
                             
+                                    <div class="form-group">
+                                        <label for="inputState">Categuriese</label>
+                                        <select name='book_state' onChange={e => setcatname(e.target.value)} defaultValue={Catname}
+                                            id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            {Cat.map(a => <option value={a.id}> {a.name} </option>)}
+
+                                        </select>
+                                    </div>
+
+
+                                
+                            
+                            <div className='row'>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file input</label>
-                                <input type="file"  name='picture' onChange={fileBrowseHandler} class="form-control-file"  />
+                                <input type="file"  name='picture' onChange={(e) => setSelectedFile(e.target.files[0])} class="form-control-file"  />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file"  name='picture_two' onChange={(e) => setSelectedFile2(e.target.files[0])} class="form-control-file"  />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file"  name='picture_three' onChange={(e) => setSelectedFile3(e.target.files[0])} class="form-control-file"  />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file"  name='picture_four' onChange={(e) => setSelectedFile4(e.target.files[0])} class="form-control-file"  />
+                            </div>
                             </div>
 
                             <button type='submit' className="btn btn-primary">Submit</button>
@@ -119,6 +199,7 @@ const Services = () => {
                                     <th> title</th>
                                     <th> price</th>
                                     <th> picture</th>
+                                    <th> categury</th>
                                     <th> Edit / Delete</th>
                                 </tr>
                             </thead>
@@ -131,7 +212,9 @@ const Services = () => {
                                         <td>{a.id}</td>
                                         <td>{a.title}</td>
                                         <td>{a.price}</td>
-                                        <td>{a.picture}</td>
+                                        <td><img src= {`http://127.0.0.1:8000/${a.picture}`}  /> </td>
+
+                                        <td>{a.categories_id}</td>
 
                                         <td>
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>

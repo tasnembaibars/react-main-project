@@ -14,7 +14,7 @@ function Index() {
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="slide-inner slide-bg-image" data-background="slider/slide-1.jpg">
+                            <div class="slide-inner slide-bg-image" style={{backgroundImage: `url("slider/10.jpg")`}}>
                                 {/* <!-- <div class="gradient-overlay"></div> --> */}
                                 <div class="container-fluid">
                                     <div class="slide-content">
@@ -27,7 +27,7 @@ function Index() {
                                         </div>
                                         <div class="clearfix"></div>
                                         <div data-swiper-parallax="500" class="slide-btns">
-                                            <a href="about.html" class="theme-btn">Discover More</a>
+                                            <a href="/about" class="theme-btn">Discover More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -76,9 +76,9 @@ function Index() {
                             </div> 
                         </div> 
                     </div>
-                    <div class="swiper-pagination"></div>
+                    {/* <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev"></div> */}
                 </div>
             </section>
 
@@ -269,28 +269,29 @@ function Index() {
                                 <div class="portfolio-grids gallery-container clearfix">
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/1.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/img-4.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Maria & Robin</a></h4>
-                                                <span>Austria- Feb 2019</span>
+                                                <h4><a href="/shop">Maria & Rabea</a></h4>
+                                                <span>Amman- Feb 2021</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/2.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/19.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Rose & Harry</a></h4>
-                                                <span>Austria- Jan 2020</span>
+                                                <h4><a href="/shop">Renad & Hazem</a></h4>
+                                                <span>Irbid- Jan 2020</span>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="grid">
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/3.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Aliana & David</a></h4>
-                                                <span>Austria- Mar 2020</span>
+                                                <h4><a href="/shop">Alia & Raad</a></h4>
+                                                <span>Amman- Mar 2022</span>
                                             </div>
                                         </div>
                                     </div>
@@ -298,26 +299,26 @@ function Index() {
                                         <div class="img-holder">
                                             <img src="assets/images/portfolio/4.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Aliza & Ken</a></h4>
-                                                <span>Austria- April 2020</span>
+                                                <h4><a href="/shop">Ali & Kenda</a></h4>
+                                                <span>Amman- April 2020</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/5.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/16.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Michel & Dianee</a></h4>
-                                                <span>Austria- May 2020</span>
+                                                <h4><a href="/shop">Mira & Mazen</a></h4>
+                                                <span>Irbid- May 2021</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="img-holder">
-                                            <img src="assets/images/portfolio/6.jpg" alt=""/>
+                                            <img src="assets/images/portfolio/57.jpg" alt=""/>
                                             <div class="hover-content">
-                                                <h4><a href="portfolio-single.html">Maria & Nevela</a></h4>
-                                                <span>Austria- Jul 2021</span>
+                                                <h4><a href="/shop">Maria & Noor</a></h4>
+                                                <span>Amman- Jan 2022</span>
                                             </div>
                                         </div>
                                     </div>
@@ -414,52 +415,52 @@ function Index() {
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
-                                        <img src="assets/images/product/1.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
+                                        <img src="assets/images/portfolio/24.jpg" alt=""/>
+                                        <a href="/shop">view</a>
                                     </div>
                                     <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Wedding Gown</a></h3>
-                                        <span>$380.00</span>
+                                        <h3><a href="shop-single.html">Cutlery</a></h3>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
-                                        <img src="assets/images/product/2.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
+                                        <img src="assets/images/portfolio/333.jpg" alt=""/>
+                                        <a href="/shop">view</a>
                                     </div>
                                     <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Bridal Flower</a></h3>
-                                        <span>$65.00</span>
+                                        <h3><a href="/shop">Welcome Signs</a></h3>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
-                                        <img src="assets/images/product/3.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
+                                        <img src="assets/images/portfolio/set.jpg" alt=""/>
+                                        <a href="/shop">view</a>
                                     </div>
                                     <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Wedding Gown</a></h3>
-                                        <span>$285.00</span>
+                                        <h3><a href="shop-single.html">Rings Set</a></h3>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
-                                        <img src="assets/images/product/4.jpg" alt=""/>
-                                        <a href="cart.html">Add To Cart</a>
+                                        <img src="assets/images/portfolio/3333.jpg" alt=""/>
+                                        <a href="/shop">view</a>
                                     </div>
                                     <div class="wpo-product-text">
-                                        <h3><a href="shop-single.html">Wedding Cake</a></h3>
-                                        <span>$176.00</span>
+                                        <h3><a href="shop-single.html">Themes</a></h3>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
                                         <img src="assets/images/product/5.jpg" alt=""/>
@@ -470,8 +471,8 @@ function Index() {
                                         <span>$125.00</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            </div> */}
+                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
                                         <img src="assets/images/product/6.jpg" alt=""/>
@@ -482,8 +483,8 @@ function Index() {
                                         <span>$548.00</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            </div> */}
+                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
                                         <img src="assets/images/product/7.jpg" alt=""/>
@@ -494,8 +495,8 @@ function Index() {
                                         <span>$380.00</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            </div> */}
+                            {/* <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                 <div class="wpo-product-item">
                                     <div class="wpo-product-img">
                                         <img src="assets/images/product/8.jpg" alt=""/>
@@ -506,7 +507,7 @@ function Index() {
                                         <span>$290.00</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -519,108 +520,108 @@ function Index() {
                     <div class="wpo-cta-item">
                         <span><img src="assets/images/cta/1.png" alt=""/></span>
                         <h2>Lets Celebrate Your Love</h2>
-                        <a class="theme-btn-s2" href="contact.html">Contact Us</a>
+                        <a class="theme-btn-s2" href="/contact">Contact Us</a>
                     </div>
                 </div>
             </div>
 
             
-            <section class="wpo-pricing-section section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="wpo-section-title">
-                            <span>Pricing</span>
-                            <h2>Wedding Packages</h2>
-                            <div class="section-title-img">
-                                <img src="assets/images/section-title.png" alt=""/>
-                            </div>
+             <section className="wpo-pricing-section section-padding pt-5">
+            <div className="container">
+                <div className="row">
+                    <div className="wpo-section-title">
+                        <span>Pricing</span>
+                        <h2>Wedding Packages</h2>
+                        <div className="section-title-img">
+                            <img src="assets/images/section-title.png" alt=""/>
                         </div>
                     </div>
-                    <div class="wpo-pricing-wrap">
-                        <div class="row">
-                            <div class="col col-lg-4 col-md-6 col-12">
-                                <div class="wpo-pricing-item">
-                                    <div class="wpo-pricing-top">
-                                        <div class="wpo-pricing-img">
-                                            <img src="assets/images/pricing/1.png" alt=""/>
-                                        </div>
-                                        <div class="wpo-pricing-text">
-                                            <h4>Basic Package</h4>
-                                            <h2>$250<span>/Monthly</span></h2>
-                                        </div>
+                </div>
+                <div className="wpo-pricing-wrap">
+                    <div className="row">
+                        <div className="col col-lg-4 col-md-6 col-12">
+                            <div className="wpo-pricing-item">
+                                <div className="wpo-pricing-top">
+                                    <div className="wpo-pricing-img">
+                                        <img src="assets/images/pricing/22.jpg" alt=""/>
                                     </div>
-                                    <div class="wpo-pricing-bottom">
-                                        <div class="wpo-pricing-bottom-text">
-                                            <ul>
-                                                <li>Stylish makeup for bride.</li>
-                                                <li>Top label arrengement</li>
-                                                <li>Amazing meal & breakfast</li>
-                                                <li>Manicure & Pedicure</li>
-                                                <li>Full body Polish</li>
-                                            </ul>
-                                            <a href="pricing.html">Choose Package</a>
-                                        </div>
+                                    <div className="wpo-pricing-text">
+                                        <h4>Basic Package</h4>
+                                        <h2>JD150<span></span></h2>
+                                    </div>
+                                </div>
+                                <div className="wpo-pricing-bottom">
+                                    <div className="wpo-pricing-bottom-text">
+                                        <ul>
+                                            <li>Simple theme decoration.</li>
+                                            <li>Cutlery for 20 person</li>
+                                            <li>Desert added to the theme set</li>
+                                            <li>Welcome sign</li>
+                                            <li>Couple name sign</li>
+                                        </ul>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-4 col-md-6 col-12">
-                                <div class="wpo-pricing-item">
-                                    <div class="wpo-pricing-top">
-                                        <div class="wpo-pricing-img">
-                                            <img src="assets/images/pricing/2.png" alt=""/>
-                                        </div>
-                                        <div class="wpo-pricing-text">
-                                            <h4>Standard Package</h4>
-                                            <h2>$550<span>/Monthly</span></h2>
-                                        </div>
+                        </div>
+                        <div className="col col-lg-4 col-md-6 col-12">
+                            <div className="wpo-pricing-item">
+                                <div className="wpo-pricing-top">
+                                    <div className="wpo-pricing-img">
+                                        <img src="assets/images/pricing/3.jpg" alt=""/>
                                     </div>
-                                    <div class="wpo-pricing-bottom">
-                                        <div class="wpo-pricing-bottom-text">
-                                            <ul>
-                                                <li>Stylish makeup for bride.</li>
-                                                <li>Top label arrengement</li>
-                                                <li>Amazing meal & breakfast</li>
-                                                <li>Manicure & Pedicure</li>
-                                                <li>Full body Polish</li>
-                                            </ul>
-                                            <a href="pricing.html">Choose Package</a>
-                                        </div>
+                                    <div className="wpo-pricing-text">
+                                        <h4>Standard Package</h4>
+                                        <h2>JD350<span></span></h2>
+                                    </div>
+                                </div>
+                                <div className="wpo-pricing-bottom">
+                                    <div className="wpo-pricing-bottom-text">
+                                        <ul>
+                                            <li>Bigger bridal theme.</li>
+                                            <li>Cutlery for 60 person</li>
+                                            <li> Additional backyard decoration</li>
+                                            <li>Additional desserts</li>
+                                            <li>Welcoming sign & rings set</li>
+                                        </ul>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-4 col-md-6 col-12">
-                                <div class="wpo-pricing-item">
-                                    <div class="wpo-pricing-top">
-                                        <div class="wpo-pricing-img">
-                                            <img src="assets/images/pricing/3.png" alt=""/>
-                                        </div>
-                                        <div class="wpo-pricing-text">
-                                            <h4>Luxary Package</h4>
-                                            <h2>$880<span>/Monthly</span></h2>
-                                        </div>
+                        </div>
+                        <div className="col col-lg-4 col-md-6 col-12">
+                            <div className="wpo-pricing-item">
+                                <div className="wpo-pricing-top">
+                                    <div className="wpo-pricing-img">
+                                        <img src="assets/images/pricing/4.jpg" alt=""/>
                                     </div>
-                                    <div class="wpo-pricing-bottom">
-                                        <div class="wpo-pricing-bottom-text">
-                                            <ul>
-                                                <li>Stylish makeup for bride.</li>
-                                                <li>Top label arrengement</li>
-                                                <li>Amazing meal & breakfast</li>
-                                                <li>Manicure & Pedicure</li>
-                                                <li>Full body Polish</li>
-                                            </ul>
-                                            <a href="pricing.html">Choose Package</a>
-                                        </div>
+                                    <div className="wpo-pricing-text">
+                                        <h4>Luxary Package</h4>
+                                        <h2>JD580<span></span></h2>
+                                    </div>
+                                </div>
+                                <div className="wpo-pricing-bottom">
+                                    <div className="wpo-pricing-bottom-text">
+                                        <ul>
+                                            <li>Decoration-wedding halls</li>
+                                            <li>Top Cutlery arrengement</li>
+                                            <li>Event planner & monitor</li>
+                                            <li>Invitation cards</li>
+                                            <li>Souvenir for guests</li>
+                                        </ul>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
            
-            <section class="wpo-banner-section">
+            {/* <section class="wpo-banner-section">
                 <h4>There is only one happiness in this life, to love and be loved</h4>
-            </section>
+            </section> */}
 
             {/* <section class="wpo-contact-section section-padding">
                 <div class="container">
@@ -705,7 +706,7 @@ function Index() {
                     <div class="row">
                         <div class="wpo-section-title">
                             <span>News</span>
-                            <h2>From Our Blog</h2>
+                            <h2>Messages From Our Brides</h2>
                             <div class="section-title-img">
                                 <img src="assets/images/section-title.png" alt=""/>
                             </div>
@@ -716,15 +717,15 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-1.jpg" alt=""/>
+                                        <img src="assets/images/contact/4.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
                                             <li>By <a href="blog-single.html">Loura Sweety</a></li>
                                             <li>25 Sep 2021</li>
                                         </ul>
-                                        <h2><a href="blog.html">Best wedding gift you may
-                                                like & choose.</a>
+                                        <h2><a href="blog.html">Best Engagement gift you may
+                                                recieve is to have a good planner for your party.</a>
                                         </h2>
                                     </div>
                                 </div>
@@ -732,7 +733,7 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-2.jpg" alt=""/>
+                                        <img src="assets/images/contact/5.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
@@ -747,14 +748,14 @@ function Index() {
                             <div class="col col-lg-4 col-md-6 col-12">
                                 <div class="wpo-blog-item">
                                     <div class="wpo-blog-img">
-                                        <img src="assets/images/blog/img-3.jpg" alt=""/>
+                                        <img src="assets/images/contact/1.jpg" alt=""/>
                                     </div>
                                     <div class="wpo-blog-content">
                                         <ul>
                                             <li>By <a href="blog-single.html">Aliana de</a></li>
                                             <li>21 Sep 2021</li>
                                         </ul>
-                                        <h2><a href="blog.html">Top 10 wedding fresh flower decoration idea.</a>
+                                        <h2><a href="blog.html">Best Cutlery arrangement you might recieve .</a>
                                         </h2>
                                     </div>
                                 </div>
@@ -769,27 +770,7 @@ function Index() {
 
         </div>
 
-        <div class="color-switcher-wrap">
-            <div class="color-switcher-item">
-                {/* <div class="color-toggle-btn">
-                    <i class="fa fa-cog"></i>
-                </div> */}
-                <ul id="switcher">
-                    <li class="btn btn1" id="Button1"></li>
-                    <li class="btn btn2" id="Button2"></li>
-                    <li class="btn btn3" id="Button3"></li>
-                    <li class="btn btn4" id="Button4"></li>
-                    <li class="btn btn5" id="Button5"></li>
-                    <li class="btn btn6" id="Button6"></li>
-                    <li class="btn btn7" id="Button7"></li>
-                    <li class="btn btn8" id="Button8"></li>
-                    <li class="btn btn9" id="Button9"></li>
-                    <li class="btn btn10" id="Button10"></li>
-                    <li class="btn btn11" id="Button11"></li>
-                    <li class="btn btn12" id="Button12"></li>
-                </ul>
-            </div>
-        </div>
+        
 
     </div>
  

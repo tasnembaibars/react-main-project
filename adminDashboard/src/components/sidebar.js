@@ -26,7 +26,7 @@ const Sidebar = () => {
 
             </NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span className="icon-bg"><i className="mdi mdi-crosshairs-gps menu-icon"></i></span>
               <span className="menu-title">UI Elements</span>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                 <li className="nav-item"> <a className="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
-          </li>
+          </li> */}
           <li className="nav-item">
 
             <NavLink to='/admin/users'>
@@ -55,7 +55,7 @@ const Sidebar = () => {
             <NavLink to='/admin/services'>
 
               <div className="nav-link" href="/admin/services">
-                <span className="icon-bg"><i className="mdi mdi-contacts menu-icon"></i></span>
+                <span className="icon-bg"><i className="mdi mdi-table-large library-books"></i></span>
                 <span className="menu-title">Products</span>
               </div>
 
@@ -80,12 +80,23 @@ const Sidebar = () => {
 
           </li>
           <li className="nav-item">
+            <NavLink to='/admin/posts'>
+              <div className="nav-link">
+              <span className="icon-bg">
+                <i className="mdi mdi-file-document-box menu-icon"></i>
+              </span>
+                <span className="menu-title">Posts</span>
+              </div>
+            </NavLink>
+
+          </li>
+          {/* <li className="nav-item">
             <a className="nav-link" href="pages/tables/basic-table.html">
               <span className="icon-bg"><i className="mdi mdi-table-large menu-icon"></i></span>
               <span className="menu-title">Tables</span>
             </a>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          {/* <li className="nav-item">
             <a className="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span className="icon-bg"><i className="mdi mdi-lock menu-icon"></i></span>
               <span className="menu-title">User Pages</span>
@@ -100,18 +111,18 @@ const Sidebar = () => {
                 <li className="nav-item"> <a className="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
               </ul>
             </div>
-          </li>
-          <li className="nav-item documentation-link">
+          </li> */}
+          {/* <li className="nav-item documentation-link">
             <a className="nav-link" href="http://www.bootstrapdash.com/demo/connect-plus-free/jquery/documentation/documentation.html" target="_blank">
               <span className="icon-bg">
                 <i className="mdi mdi-file-document-box menu-icon"></i>
               </span>
               <span className="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> */}
           <li className="nav-item sidebar-user-actions">
             <div className="user-details">
-              <div className="d-flex justify-content-between align-items-center">
+              {/* <div className="d-flex justify-content-between align-items-center">
                 <div>
                   <div className="d-flex align-items-center">
                     <div className="sidebar-profile-img">
@@ -123,10 +134,10 @@ const Sidebar = () => {
                   </div>
                 </div>
                 <div className="badge badge-danger">3</div>
-              </div>
+              </div> */}
             </div>
           </li>
-          <li className="nav-item sidebar-user-actions">
+          {/* <li className="nav-item sidebar-user-actions">
             <div className="sidebar-user-menu">
               <a href="#" className="nav-link"><i className="mdi mdi-settings menu-icon"></i>
                 <span className="menu-title">Settings</span>
@@ -138,7 +149,7 @@ const Sidebar = () => {
               <a href="#" className="nav-link"><i className="mdi mdi-speedometer menu-icon"></i>
                 <span className="menu-title">Take Tour</span></a>
             </div>
-          </li>
+          </li> */}
           <li className="nav-item sidebar-user-actions">
             <div className="sidebar-user-menu">
               <a href="#" className="nav-link"><i className="mdi mdi-logout menu-icon"></i>
