@@ -5,25 +5,16 @@ const Dashboard = () => {
         <>
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="row" id="proBanner">
-                        <div class="col-12">
-                            <span class="d-flex align-items-center purchase-popup">
-                                <p>Like what you see? Check out our premium version for more.</p>
-                                <a href="https://github.com/BootstrapDash/ConnectPlusAdmin-Free-Bootstrap-Admin-Template" target="_blank" class="btn ml-auto download-button">Download Free Version</a>
-                                <a href="http://www.bootstrapdash.com/demo/connect-plus/jquery/template/" target="_blank" class="btn purchase-button">Upgrade To Pro</a>
-                                <i class="mdi mdi-close" id="bannerClose"></i>
-                            </span>
-                        </div>
-                    </div>
+
                     <div class="d-xl-flex justify-content-between align-items-start">
                         <h2 class="text-dark font-weight-bold mb-2"> Overview dashboard </h2>
                         <div class="d-sm-flex justify-content-xl-between align-items-center mb-2">
-                            <div class="btn-group bg-white p-3" role="group" aria-label="Basic example">
+                            {/* <div class="btn-group bg-white p-3" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-link text-light py-0 border-right">7 Days</button>
                                 <button type="button" class="btn btn-link text-dark py-0 border-right">1 Month</button>
                                 <button type="button" class="btn btn-link text-light py-0">3 Month</button>
-                            </div>
-                            <div class="dropdown ml-0 ml-md-4 mt-2 mt-lg-0">
+                            </div> */}
+                            {/* <div class="dropdown ml-0 ml-md-4 mt-2 mt-lg-0">
                                 <button class="btn bg-white dropdown-toggle p-3 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-calendar mr-1"></i>24 Mar 2019 - 24 Mar 2019 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
                                     <h6 class="dropdown-header">Settings</h6>
@@ -33,7 +24,7 @@ const Dashboard = () => {
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Separated link</a>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div class="row">
@@ -106,7 +97,7 @@ const Dashboard = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    {/* <div class="row">
                                         <div class="col-12 grid-margin">
                                             <div class="card">
                                                 <div class="card-body">
@@ -167,44 +158,8 @@ const Dashboard = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-4 grid-margin stretch-card">
-                                            <div class="card card-danger-gradient">
-                                                <div class="card-body mb-4">
-                                                    <h4 class="card-title text-white">Account Retention</h4>
-                                                    <canvas id="account-retension"></canvas>
-                                                </div>
-                                                <div class="card-body bg-white pt-4">
-                                                    <div class="row pt-4">
-                                                        <div class="col-sm-6">
-                                                            <div class="text-center border-right border-md-0">
-                                                                <h4>Conversion</h4>
-                                                                <h1 class="text-dark font-weight-bold mb-md-3">$306</h1>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="text-center">
-                                                                <h4>Cancellation</h4>
-                                                                <h1 class="text-dark font-weight-bold">$1,520</h1>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8  grid-margin stretch-card">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-xl-flex justify-content-between mb-2">
-                                                        <h4 class="card-title">Page views analytics</h4>
-                                                        <div class="graph-custom-legend primary-dot" id="pageViewAnalyticLengend"></div>
-                                                    </div>
-                                                    <canvas id="page-view-analytic"></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div> */}
+                                    
                                 </div>
                             </div>
                         </div>
