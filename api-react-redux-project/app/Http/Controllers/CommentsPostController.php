@@ -16,12 +16,13 @@ class CommentsPostController extends Controller
        $comment->save();  
     }
 
-    public function create()
+    public function create($id)
     {
         
          $comments= Comments_post::select('comments_posts.*','costumers.*')
         ->join('costumers','costumers.id','=','comments_posts.costumer_id')
         ->join('posts','posts.id','=','comments_posts.post_id')
+        ->where('posts.id',$id)
         ->get();
         return $comments;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
@@ -7,7 +7,25 @@ import {useContext} from 'react';
 
 const Login = () => {
 
+
+
   const navigate = useNavigate();
+
+
+  useEffect(()=>{check();},)
+  function check(){
+
+    if(sessionStorage.getItem('admin_id')){
+    
+
+     navigate('/admin')
+
+    }
+  }
+
+
+
+
 
   const { adminData, setAdminData } = useContext(userContext)
    
@@ -39,7 +57,10 @@ const Login = () => {
       console.log(error.response.data.message);
   });
 
-    
+
+
+
+
 
   }
     console.log(adminData)

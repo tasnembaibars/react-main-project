@@ -29,8 +29,8 @@ class PostsController extends Controller
     function show ($id){
         $post= Posts::select('posts.*','costumers.*')
         ->join('costumers','costumers.id','=','posts.costumer_id')
-       
-       ->get()->firstwhere('id',$id);
+        ->where('posts.id',$id)
+       ->get();
         return $post;
         
     }
