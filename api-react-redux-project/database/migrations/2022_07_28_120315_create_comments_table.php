@@ -20,8 +20,8 @@ class CreateCommentsTable extends Migration
 
 
             
-            $table->foreignId('service_id')->nullable()->constrained('services');
-            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+            $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
+            $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
             $table->timestamps();
         });
     }

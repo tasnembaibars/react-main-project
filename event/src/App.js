@@ -17,9 +17,14 @@ import Profile from './components/Profile';
 import './App.css';
 import CheckOut from './components/Checkout';
 import Singlepost from './components/Singlepost';
+import Booking from './components/Booking';
+import Products from './components/Products';
 import { createContext, useState } from 'react';
+import Product from './components/Product';
+import Blog from './components/Blog';
+import Share from './components/Share';
 export const userContext = createContext();
-
+// import Booking from './components/Booking';
 function App() {
   
   const [userData, setUserData] = useState([]);
@@ -32,20 +37,26 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Index />} />
-    <Route path="/Singlepost/:id" element={<Singlepost />} />
+    {/* <Route path="/post/:id" element={<Singlepost />} /> */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/profile/:id" element={<Profile/>} />
+      <Route path="/profile" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
 
+      <Route path="/book" element={<Booking />} />
+            {/* <Route path="/book" element={<Booking />} /> */}
+      <Route path="/services/:id" element={<Products />} />
+      <Route path="/book/:id" element={<Booking />} />
 
-
+      <Route path="/Product/:id" element={<Product />} />
+      <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/share" element={<Share />} />
 
 {/* routes */}
 <Route path="/about" element={<About />} />
-<Route path="/post" element={<Single />} />
+<Route path="/post/:id" element={<Single />} />
 <Route path="/shop" element={<Shop />} />
 
     </Routes>

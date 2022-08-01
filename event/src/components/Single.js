@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useFetch } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import swal from 'sweetalert';
+import '../Posts.css';
 
 function Single() {
 
     const { id } = useParams();
     //insert comments
     const [comment, setComment] = useState("");
-    const [costumer_id, setCostumer_id] = useState(1);
-    const [post_id, setPost_id] = useState(1);
-
-    const navigate = useNavigate();
-    // let isLoggedIn = JSON.parse(localStorage.getItem("user"));
-    // if (!isLoggedIn) {
-    //   navigate("/login");
-    // }
+    const [costumer_id, setCostumer_id] = useState({});
+    const [post_id, setPost_id] = useState({});
+    const user_id =sessionStorage.getItem('user_id');
+    console.log(id);
+  
     const handleClick = async (e) => {
         e.preventDefault();
         const response = await fetch(`http://127.0.0.1:8000/api/comments_post`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ comment: comment, costumer_id, post_id }),
+            body: JSON.stringify({ comment: comment, costumer_id:user_id, post_id:id }),
 
-        });
+        })
+        
+        ;
         if (response.ok) {
             // window.alert("comment added successfully")
             swal({
@@ -32,11 +32,16 @@ function Single() {
                 icon: "success",
                 button: "ok!",
               })
-              .then(function() {
-                window.location.href="/post";
+              .then(()=> {
+                fetchComments();
             });
         }
     };
+    const fetchComments = async () => {
+        const response = await fetch(`http://127.0.0.1:8000/api/comments`)
+        const res = await response.json()
+        setAll(res)
+    }
 
     console.log(comment)
 
@@ -63,67 +68,86 @@ function Single() {
 
     // update comments
     const [update, setUpdate] = useState(false)
+    const [editComment, setEditComment] = useState({
+        comment:'',costumer_id:'',post_id:''
+    })
     const updateHandler = (e) => {
         e.preventDefault();
 
         setUpdate(true);
 
     }
-
-    const editHandeler = (e) => {
+     useEffect(()=>{
+        const getComment=async()=>{
+            const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+            const dbData=await response.json();
+            setEditComment(dbData);
+            console.log(response);
+           
+            
+        }
+        getComment();
+    },[update])
+   
+ 
+    const editHandeler = async(e) => {
         e.preventDefault();
-        axios.put(`http://127.0.0.1:8000/api/comment/${id}`, { comment: comment, costumer_id, post_id })
-            .then((res) => setUpdate(res.data))
+      
+       await axios.put(`http://127.0.0.1:8000/api/comment/${id}`, editComment)
+            .then((res) => setEditComment(res.data))
+            
         
-        console.log(comment)
-        if (!update) {
+        if (update) {
             window.alert('Your comment has been updated successfuly')
 
         }
 
 
     }
+
+    console.log(editComment)
    
 
     const deleteHandeler = (id) => {
         axios.delete(`http://127.0.0.1:8000/api/comment/${id}`)     
-        swal({
-            title: "Good job!",
-            text: " comment deleted successfully!",
-            icon: "success",
-            button: "ok!",
-          })
-          .then(function() {
-            window.location.href="/post";
+        // swal({
+        //     title: "Good job!",
+        //     text: " comment deleted successfully!",
+        //     icon: "success",
+        //     button: "ok!",
+        //   })
+          .then(()=> {
+            fetchComments();
         });
+        
+        // id.preventDefault();
+
 
      }
+          // fetch posts
+          const [posts, setPosts] = useState([]);
+
+          useEffect(() => {
+            const fetchPosts=async()=>{
+                const response=await fetch(`http://127.0.0.1:8000/api/fetch/${id}`)
+                const data=await response.json()
+        
+                  .then(data => {
+                      setPosts(data);
+                      console.log(data);
+                  });
+            }
+          
+            fetchPosts()     
+          }, []);
+          console.log(posts);
+
 
     return (
         // <!-- start page-wrapper -->
         <div className="page-wrapper">
 
 
-            {/* <!-- start wpo-page-title --> */}
-            <section className="wpo-page-title">
-                <div className="container">
-                    <div className="row">
-                        <div className="col col-xs-12">
-                            <div className="wpo-breadcumb-wrap">
-                                <h2>Blog Single</h2>
-                                <ol className="wpo-breadcumb-wrap">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>Blog</li>
-                                    <li>Blog Single</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- end row --> */}
-                </div>
-                {/* <!-- end container --> */}
-            </section>
-            {/* <!-- end page-title --> */}
 
             {/* <!-- start wpo-blog-single-section --> */}
             <section className="wpo-blog-single-section wpo-blog-single-left-sidebar-section section-padding">
@@ -133,13 +157,13 @@ function Single() {
                             <div className="wpo-blog-content">
                                 <div className="post format-standard-image">
                                     <div className="entry-media">
-                                        <img src="assets/images/blog/img-4.jpg" alt />
+                                        {/* <img src="assets/images/blog/img-4.jpg" alt /> */}
                                     </div>
                                     <div className="entry-meta">
                                         <ul>
-                                            <li><i className="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li>
-                                            <li><i className="fi flaticon-comment-white-oval-bubble"></i> Comments 35 </li>
-                                            <li><i className="fi flaticon-calendar"></i> 24 Jun 2021</li>
+                                            {/* <li><i className="fi flaticon-user"></i> By <a href="#">Jenny Watson</a> </li> */}
+                                            {/* <li><i className="fi flaticon-comment-white-oval-bubble"></i> Comments 35 </li> */}
+                                            {/* <li><i className="fi flaticon-calendar"></i> 24 Jun 2021</li> */}
                                         </ul>
                                     </div>
                                     <h2>Best wedding gift you may like & choose.</h2>
@@ -149,14 +173,16 @@ function Single() {
                                     </blockquote>
                                     <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself,</p>
 
-                                    <div className="gallery">
+                                    {/* <div className="gallery">
                                         <div>
-                                            <img src="assets/images/blog-details/1.jpg" />
+                                        <img src="%PUBLIC_URL%/assets/images/blog-details/1.jpeg" />
+
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog-details/2.jpg" />
+                                        <img src="%PUBLIC_URL%/assets/images/blog-details/2.jpg" />
+
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <div className="tag-share clearfix">
@@ -182,14 +208,15 @@ function Single() {
                                     </div>
                                 </div>
                                 {/* <!-- end tag-share --> */}
-
+                                {/* {posts.length>0 && posts.map((post)=>{
+                                    return( */}
                                 <div className="author-box">
                                     <div className="author-avatar">
-                                        <a href="#" target="_blank"><img src="assets/images/blog-details/author.jpg" alt /></a>
+                                        <a href="#" target="_blank"><img src={`http://127.0.0.1:8000/${posts.picture}`} alt height="70px" width="70px" /></a>
                                     </div>
                                     <div className="author-content">
-                                        <a href="#" className="author-name">Author: Jenny Watson</a>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                                        <a href="#" className="author-name">Author:{posts.name}</a><span>{posts.Date}</span>
+                                        <p>{posts.post}.</p>
                                         <div className="socials">
                                             <ul className="social-link">
                                                 <li><a href="#"><i className="ti-facebook"></i></a></li>
@@ -200,7 +227,8 @@ function Single() {
                                         </div>
                                     </div>
                                 </div>
-
+                                {/* ) */}
+{/* })} */}
                                 {/* <!-- end author-box --> */}
 
                                 <div className="more-posts">
@@ -220,15 +248,15 @@ function Single() {
 
                                 <div className="comments-area">
                                     <div className="comments-section">
-                                        <h3 className="comments-title">5 Comments</h3>
+                                        <h3 className="comments-title"> Comments</h3>
                                         <ol className="comments">
                                             <li className="comment even thread-even depth-1" id="comment-1">
                                                 {all.length > 0 && all.map((user) => {
-                                                    if (user.post_id !== currentPost) return;
+                                                    // if (user.post_id !== currentPost) return;
                                                     return (
                                                         <div id="div-comment-1">
                                                             <div className="comment-theme">
-                                                                <div className="comment-image"><img src="assets/images/blog-details/comments-author/img-1.jpg" alt /></div>
+                                                                <div className="comment-image"><img src={`http://127.0.0.1:8000/${user.picture}`} alt height="70px" width="70px" /></div>
                                                             </div>
 
                                                             <div className="comment-main-area">
@@ -246,7 +274,7 @@ function Single() {
 
                                                                             : null}
                                                                         {update ?
-                                                                            <input name='editComment' style={{ border: "none", background: "none" }} onChange={(e) => setComment({...comment,comment: e.target.value })} value={user.comment} />
+                                                                            <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
                                                                         <div className="comments-reply">
@@ -256,10 +284,10 @@ function Single() {
 
                                                                                 : null}
                                                                             {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href="/post"><span>update</span></a></button>
+                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>edit</span></a></button>
 
                                                                                 : null}
-                                                                            <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
+                                                                            <button type='submit' onClick={()=>deleteHandeler(id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
 
                                                                         </div>
 

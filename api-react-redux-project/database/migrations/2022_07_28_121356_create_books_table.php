@@ -22,8 +22,8 @@ class CreateBooksTable extends Migration
             $table->string('hour')->nullable();
             $table->string('email')->nullable();
             $table->boolean('book_state')->nullable()->default(0);
-            $table->foreignId('service_id')->nullable()->constrained('services');
-            $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+            $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
+            $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
             $table->timestamps();
         });
     }

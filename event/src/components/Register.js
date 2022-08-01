@@ -28,7 +28,7 @@ function Register() {
                 setError(res.data.errors)
             }
             else {
-                alert('Successfully Regiseration');
+                // alert('Successfully Regiseration');
                 navigate('/login')
             }
 
@@ -44,7 +44,7 @@ function Register() {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                        <div style={{color:'red'}}>{error[0]}</div>
+                        
                             <form class="wpo-accountWrapper" action="#" onSubmit={handleSubmit}>
                                 <div class="wpo-accountInfo">
                                     <div class="wpo-accountInfoHeader">
@@ -64,6 +64,7 @@ function Register() {
                                     <div class="fromTitle">
                                         <h2>Signup</h2>
                                         <p>Sign into your pages account</p>
+                                        <div style={{color:'red'}}>{error[0]}</div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-12">

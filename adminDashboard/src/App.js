@@ -20,56 +20,49 @@ import UpdateCategoriese from './components/categury/UpdateCategoriese';
 import Books from './Books/Books';
 import UpdateBook from './Books/updatebook';
 
+import Posts from './components/posts/Posts';
+import Login from './components/login';
+
+import Admin from './admin';
+import {createContext, useState} from 'react';
+
+export const userContext = createContext();
+
 
 
 function App() {
+
+  const [adminData, setAdminData] = useState([]);
+
+
+
+  // function check(){
+
+  //   if(sessionStorage.getItem('admin_id')){
+    
+
+  //    navigate('/admin')
+     
+  //   }
+  // }
+
   return (
     <>
-      <Router>
-        <div class="container-scroller">
 
-          <Header />
-          <div class="container-fluid page-body-wrapper">
-            <Saidebar />
+      <Router>
+      <userContext.Provider value={{ adminData, setAdminData }}>
             <Routes>
 
-              <Route path="/admin" element={<Dashboard />} />
+              <Route path="/admin/*" element={<Admin />} />
 
-              <Route path="/admin/users" element={<Users />} />
-              <Route path="/admin/users/:id" element={<UpdateUser />} />
-
-              <Route path="/admin/services" element={<Services />} />
-              <Route path="/admin/services/:id" element={<UpdateServices />} />
-
-              <Route path="/admin/categoriese" element={<Categoriese />} />
-              <Route path="/admin/categoriese/:id" element={<UpdateCategoriese />} />
-
-
-              <Route path="/admin/books" element={<Books />} />
-              <Route path="/admin/books/:id" element={<UpdateBook />} />
-
-
-
-              {/* <Route path="/contact" element={<  />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/categury" element={<Cat />} /> */}
+              <Route path="/" element={<Login />} />
 
             </Routes>
 
-          </div>
-
-          < Footer />
-
-        </div>
-
+       </userContext.Provider>
       </Router>
 
-
-
-
-
-
-
+      
     </>
 
   );

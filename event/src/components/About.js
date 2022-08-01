@@ -19,8 +19,8 @@ function About() {
         {/* <!-- end preloader --> */}
 
          {/* <!-- start wpo-page-title -->  */}
-        <section className="wpo-page-title">
-            <div className="container">
+        {/* <section className="wpo-page-title"> */}
+            {/* <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
                         <div className="wpo-breadcumb-wrap">
@@ -32,10 +32,10 @@ function About() {
                         </div>
                     </div>
                 </div>
-                 {/* <!-- end row --> */}
-            </div>
+                 <!-- end row -->
+            </div> */}
              {/* <!-- end container --> */}
-        </section>
+        {/* </section> */}
         {/* <!-- end page-title --> */}
         {/* <!-- start of wpo-about-section --> */}
         <section className="wpo-about-section-s2 section-padding">
@@ -45,7 +45,7 @@ function About() {
                         <div className="wpo-about-wrap">
                             <div className="wpo-about-item">
                                 <div className="wpo-about-img">
-                                    <img src="assets/images/about/1.png" />
+                                    <img src="assets/images/about/2.jpg" />
                                 </div>
                             </div>
                             <div className="ab-shape">
@@ -89,7 +89,7 @@ function About() {
                 <div className="wpo-service-active owl-carousel">
                     <div className="wpo-service-item">
                         <div className="wpo-service-img">
-                            <img src="assets/images/service/img-1.jpg" />
+                            <img src="%PUBLIC_URL%/assets/images/service/img-1.jpg" />
 
                             <div className="wpo-service-text">
                                 <div className="s-icon">
@@ -172,25 +172,25 @@ function About() {
                         <div className="wpo-fun-fact-grids clearfix">
                             <div className="grid">
                                 <div className="info">
-                                    <h3><span className="odometer" data-count="1200">00</span></h3>
+                                    <h3><span className="odometer" data-count="1200">100</span></h3>
                                     <p>Happy Couples</p>
                                 </div>
                             </div>
                             <div className="grid">
                                 <div className="info">
-                                    <h3><span className="odometer" data-count="1545">00</span></h3>
+                                    <h3><span className="odometer" data-count="1545">45</span>+</h3>
                                     <p>Weddings</p>
                                 </div>
                             </div>
                             <div className="grid">
                                 <div className="info">
-                                    <h3><span className="odometer" data-count="750">00</span>+</h3>
+                                    <h3><span className="odometer" data-count="750">30</span>+</h3>
                                     <p>Decoration</p>
                                 </div>
                             </div>
                             <div className="grid">
                                 <div className="info">
-                                    <h3><span className="odometer" data-count="265">00</span>+</h3>
+                                    <h3><span className="odometer" data-count="265">20</span>+</h3>
                                     <p>Locations</p>
                                 </div>
                             </div>
@@ -200,86 +200,7 @@ function About() {
             </div>
         </section>
         {/* <!-- end wpo-fun-fact-section --> */}
-        {/* <!-- start wpo-portfolio-section --> */}
-        <section className="wpo-portfolio-section section-padding">
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="wpo-section-title">
-                        <span>Wedding Ceremony</span>
-                        <h2>Celebrating Your Love</h2>
-                        <div className="section-title-img">
-                            <img src="assets/images/section-title.png" alt=""/>
-                        </div>
-                    </div>
-                </div>
-                <div className="sortable-gallery">
-                    <div className="gallery-filters"></div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="portfolio-grids gallery-container clearfix">
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/1.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Maria & Robin</a></h4>
-                                            <span>Austria- Feb 2019</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/2.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Rose & Harry</a></h4>
-                                            <span>Austria- Jan 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/3.jpg" alt=""/>
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Aliana & David</a></h4>
-                                            <span>Austria- Mar 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/4.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Aliza & Ken</a></h4>
-                                            <span>Austria- April 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/5.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Michel & Dianee</a></h4>
-                                            <span>Austria- May 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grid">
-                                    <div className="img-holder">
-                                        <img src="assets/images/portfolio/6.jpg" />
-                                        <div className="hover-content">
-                                            <h4><a href="portfolio-single.html">Maria & Nevela</a></h4>
-                                            <span>Austria- Jul 2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> 
-            {/* <!-- end container --> */}
-        </section>
-        {/* <!-- end wpo-portfolio-section --> */}
+    
 
         {/* <!-- start wpo-pricing-section --> */}
         <section className="wpo-pricing-section section-padding pt-0">
@@ -299,23 +220,23 @@ function About() {
                             <div className="wpo-pricing-item">
                                 <div className="wpo-pricing-top">
                                     <div className="wpo-pricing-img">
-                                        <img src="assets/images/pricing/1.png" alt=""/>
+                                        <img src="assets/images/pricing/22.jpg" alt=""/>
                                     </div>
                                     <div className="wpo-pricing-text">
                                         <h4>Basic Package</h4>
-                                        <h2>$250<span>/Monthly</span></h2>
+                                        <h2>JD150<span></span></h2>
                                     </div>
                                 </div>
                                 <div className="wpo-pricing-bottom">
                                     <div className="wpo-pricing-bottom-text">
                                         <ul>
-                                            <li>Stylish makeup for bride.</li>
-                                            <li>Top label arrengement</li>
-                                            <li>Amazing meal & breakfast</li>
-                                            <li>Manicure & Pedicure</li>
-                                            <li>Full body Polish</li>
+                                            <li>Simple theme decoration.</li>
+                                            <li>Cutlery for 20 person</li>
+                                            <li>Desert added to the theme set</li>
+                                            <li>Welcome sign</li>
+                                            <li>Couple name sign</li>
                                         </ul>
-                                        <a href="pricing.html">Choose Package</a>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>
@@ -324,23 +245,23 @@ function About() {
                             <div className="wpo-pricing-item">
                                 <div className="wpo-pricing-top">
                                     <div className="wpo-pricing-img">
-                                        <img src="assets/images/pricing/2.png" alt=""/>
+                                        <img src="assets/images/pricing/3.jpg" alt=""/>
                                     </div>
                                     <div className="wpo-pricing-text">
                                         <h4>Standard Package</h4>
-                                        <h2>$550<span>/Monthly</span></h2>
+                                        <h2>JD350<span></span></h2>
                                     </div>
                                 </div>
                                 <div className="wpo-pricing-bottom">
                                     <div className="wpo-pricing-bottom-text">
                                         <ul>
-                                            <li>Stylish makeup for bride.</li>
-                                            <li>Top label arrengement</li>
-                                            <li>Amazing meal & breakfast</li>
-                                            <li>Manicure & Pedicure</li>
-                                            <li>Full body Polish</li>
+                                            <li>Bigger bridal theme.</li>
+                                            <li>Cutlery for 60 person</li>
+                                            <li> Additional backyard decoration</li>
+                                            <li>Additional desserts</li>
+                                            <li>Welcoming sign & rings set</li>
                                         </ul>
-                                        <a href="pricing.html">Choose Package</a>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>
@@ -349,23 +270,23 @@ function About() {
                             <div className="wpo-pricing-item">
                                 <div className="wpo-pricing-top">
                                     <div className="wpo-pricing-img">
-                                        <img src="assets/images/pricing/3.png" alt=""/>
+                                        <img src="assets/images/pricing/4.jpg" alt=""/>
                                     </div>
                                     <div className="wpo-pricing-text">
                                         <h4>Luxary Package</h4>
-                                        <h2>$880<span>/Monthly</span></h2>
+                                        <h2>JD580<span></span></h2>
                                     </div>
                                 </div>
                                 <div className="wpo-pricing-bottom">
                                     <div className="wpo-pricing-bottom-text">
                                         <ul>
-                                            <li>Stylish makeup for bride.</li>
-                                            <li>Top label arrengement</li>
-                                            <li>Amazing meal & breakfast</li>
-                                            <li>Manicure & Pedicure</li>
-                                            <li>Full body Polish</li>
+                                            <li>Decoration-wedding halls</li>
+                                            <li>Top Cutlery arrengement</li>
+                                            <li>Event planner & monitor</li>
+                                            <li>Invitation cards</li>
+                                            <li>Souvenir for guests</li>
                                         </ul>
-                                        <a href="pricing.html">Choose Package</a>
+                                        <a href="/book">Choose Package</a>
                                     </div>
                                 </div>
                             </div>

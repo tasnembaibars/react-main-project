@@ -16,24 +16,19 @@ class CommentsPostController extends Controller
        $comment->save();  
     }
 
-    public function create()
+    public function create($id)
     {
-        // $comments= Comments_post::all();
-        // return response()->json($comments);
-        // $comments = DB::table('comments_posts')
-         $comments= Comments_post::select('comments_posts.*','costumers.name')
+        
+         $comments= Comments_post::select('comments_posts.*','costumers.*')
         ->join('costumers','costumers.id','=','comments_posts.costumer_id')
         ->join('posts','posts.id','=','comments_posts.post_id')
+        ->where('posts.id',$id)
         ->get();
         return $comments;
 
        
        
-       // $users = DB::table('users')
-    // ->join('contacts', 'users.id', '=', 'contacts.user_id')
-    // ->join('orders', 'users.id', '=', 'orders.user_id')
-    // ->select('users.*', 'contacts.phone', 'orders.price')
-    // ->get();
+  
 
     }
 
@@ -49,8 +44,8 @@ class CommentsPostController extends Controller
          $comment=Comments_post::find($id);
          $comment->update([
          'comment'=>$request->input('comment'),
-         'costumer_id'=>$request->input('costumer_id'),
-         'post_id'=>$request->input('post_id'),
+        //  'costumer_id'=>$request->input('costumer_id'),
+        //  'post_id'=>$request->input('post_id'),
          
      ]);
      $comment->save();

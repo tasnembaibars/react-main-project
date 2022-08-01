@@ -5,10 +5,12 @@ import { useState } from "react";
 import axios from "axios";
 import { userContext } from "../App";
 import { useContext } from "react";
+
 // import userContext
 import { useNavigate } from "react-router-dom";
 function Login() {
     const navigate = useNavigate();
+  
 
     const { userData, setUserData } = useContext(userContext)
 
@@ -32,7 +34,8 @@ function Login() {
                 setError(res.data.errors)
             } else {
                 sessionStorage.setItem("user_id", res.data.id);
-                navigate("/");
+                
+                navigate(`/`);
             }
         }).catch((error) => {
             console.log(error.response.data.message);
@@ -52,7 +55,7 @@ function Login() {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div style={{ color: "red" }}>{error[0]}</div>
+                           
                             <form class="wpo-accountWrapper" action="#" onSubmit={handleSubmit}>
                                 <div class="wpo-accountInfo">
                                     <div class="wpo-accountInfoHeader">
@@ -72,6 +75,7 @@ function Login() {
                                     <div class="fromTitle">
                                         <h2>Login</h2>
                                         <p>Sign into your pages account</p>
+                                        <p style={{ color: "red" }}>{error[0]}</p>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-12">
@@ -82,6 +86,7 @@ function Login() {
                                                     email: e.target.value,
                                                 }))
                                                 }
+                                                value={user.email}
                                                 type="email"
                                                 id="email"
                                                 name="email"
@@ -97,6 +102,7 @@ function Login() {
 
                                                 }))
                                                 }
+                                                    value={user.password}
                                                     class="pwd6"
                                                     type="password"
                                                     placeholder="Your Password"
