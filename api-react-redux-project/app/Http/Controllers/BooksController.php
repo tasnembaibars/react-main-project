@@ -13,7 +13,10 @@ class BooksController extends Controller
         $Books->phone= $request->phone;
         $Books->hour= $request->hour;
         $Books->date= $request->date;
+        // $Books->costumer_id = $request->userid;
+        // $Books->service_id= $request->id;
         $Books->save();
+        
      }
 
 
@@ -151,7 +154,7 @@ class BooksController extends Controller
      function index1()
      {
  
-         return Books::all();
+         return Books::orderBy('id', 'DESC')->get();
      }
  
      function single1($id)

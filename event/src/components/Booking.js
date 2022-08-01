@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
+import { useParams } from 'react-router-dom';
 
 function Booking() {
     const [email, setemail] = useState({});
     const [phone, setphone] = useState({});
     const [date, setdate] = useState({});
     const [hour, sethour] = useState({});
+    const { id } = useParams();
+    const userid =sessionStorage.getItem('user_id');
+    console.log(id);
 
     //  start Add books
     const booking = async (e) => {
@@ -13,7 +16,7 @@ function Booking() {
         const response = await fetch(`http://127.0.0.1:8000/api/Book`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour }),
+            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour, costumer_id:userid,	service_id:id}),
 
         });
 

@@ -44,13 +44,14 @@ const Posts = () => {
 
 
 
-    const handleactive = (id, idstate) => {
+    const handleactive = (id, idstate ) => {
         if (idstate) {
             axios.put(`http://127.0.0.1:8000/api/postsstate/${id}`, {
                 rule: 0,
 
             }).then((res) => {
-                setapi(res.data);
+                getData();
+                
             })
 
         } else {
@@ -58,13 +59,14 @@ const Posts = () => {
                 rule: 1,
 
             }).then((res) => {
-                setapi(res.data);
+                getData();
+                
             })
         }
 
     }
 
-    const addUser = (e) => {
+    const addUser = (e,reset) => {
         e.preventDefault();
 
         axios.post(`http://localhost:8000/api/posts`, {
@@ -76,6 +78,8 @@ const Posts = () => {
 
         }).then(() => {
             getData();
+
+            reset();
         });
 
 
@@ -85,6 +89,9 @@ const Posts = () => {
     }
 
 
+    // const cancelCourse = () => { 
+    //     document.getElementById("create-course-form").reset();
+    //   }
 
 console.log(Persons)
 
@@ -107,7 +114,7 @@ console.log(Persons)
 
                         {successAdd ? successAdd : ''}
 
-                        <form onSubmit={addUser}>
+                        <form onSubmit={addUser} id="create-course-form" >
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Post :</label>
                                 <textarea type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} rows="5" className="form-control" ></textarea>
@@ -145,7 +152,7 @@ console.log(Persons)
 
                         <hr></hr>
                         <h2 className='mt-3'>Posts :</h2>
-                        <table className="table">
+                        <table className="table responsive">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -165,7 +172,7 @@ console.log(Persons)
                                         <td>{a.id}</td>
                                         <td>{a.name}</td>
                                         <td>{a.Date}</td>
-                                        <td>{a.post}</td>
+                                        <td><textarea className='' value={a.post} rows="5" width='200px' disabled></textarea></td>
                                         <td>{a.rule ? <span className='text-success'>Acive</span> : <span className='text-warning'>not Active</span>}</td>
                                         <td>
 
@@ -176,7 +183,7 @@ console.log(Persons)
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
                                             <button onClick={() => hanldeDelete(a.costumer_id)} className='btn btn-outline-danger ml-2' >Block User</button>
 
-                                            {a.rule == 1 && <button onClick={() => usee(`/admin/books/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>}
+                                            {/* {a.rule == 1 && <button onClick={() => usee(`/admin/books/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>} */}
                                         </td>
 
 

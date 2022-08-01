@@ -62,7 +62,7 @@ const Books = () => {
                 book_state: 1,
 
             }).then((res) => {
-                setapi(res.data);
+                getData();
             })
         }
 

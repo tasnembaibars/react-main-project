@@ -49,7 +49,7 @@ const Contact = () => {
       
           
             {/* <!-- end page-title --> */}
- <section className="wpo-page-title"> 
+ {/* <section className="wpo-page-title">  */}
             {/* <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">
@@ -65,9 +65,9 @@ const Contact = () => {
                  <!-- end row -->
             </div> */}
              {/* <!-- end container --> */}
-       </section>
+       {/* </section> */}
             {/* <!-- start wpo-contact-pg-section --> */}
-            <section class="wpo-contact-pg-section section-padding">
+            <section class="wpo-contact-pg-section section-padding" style={{marginTop:'70px'}}>
                 <div class="container">
                     <div class="row">
                         <div class="col col-lg-10 offset-lg-1">
