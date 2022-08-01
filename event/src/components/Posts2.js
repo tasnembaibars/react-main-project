@@ -2,15 +2,23 @@ import React, { useState, useEffect } from 'react';
 import '../Posts.css';
 import axios from "axios";
 import { Link, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+
 function Posts2() {
     const [post, setPost] = useState('');
     // const [rule , setRule] = useState(0);
     // const [likesP , setLikesP] = useState(0);
     // const [costumer_id , setCostumer_id] = useState(1);
+    const id =sessionStorage.getItem('user_id');
 
+    // const navigate = useNavigate();
+    // let id = JSON.parse(localStorage.getItem("user_id"));
+    // if (!id) {
+    //   navigate("/login");
+    // }
     const [posts, setPosts] = useState([]);
     const [Load, setLoad] = useState(true);
-
+    console.log(id);
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/posts')
             .then((response) => response.json())
@@ -29,7 +37,7 @@ function Posts2() {
         const response = await fetch(`http://127.0.0.1:8000/api/post`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ post: post }),
+            body: JSON.stringify({ post: post ,costumer_id:id}),
 
         });
         console.log(post);
@@ -105,7 +113,7 @@ function Posts2() {
                         {posts && posts.map(p => (
                             <div className="author-box">
                                 <div className="author-avatar">
-                                    <a href="#" target="_blank"><img src={`http://127.0.0.1:8000/${p.picture}`} alt height="70px" width="70px" /></a>
+                                    <a href="" target="_blank"><img src={`http://127.0.0.1:8000/${p.picture}`} alt height="70px" width="70px" /></a>
                                 </div>
                                 <div className="author-content">
                                     <a href="#" className="author-name">Author: {p.name}</a>

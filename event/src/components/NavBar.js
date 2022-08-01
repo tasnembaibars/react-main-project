@@ -71,10 +71,10 @@ const NavBar = () => {
 
                                             </li>
 
-                                            <li class="menu-item-has-children">
+                                            {/* <li class="menu-item-has-children">
                                                 <NavLink to="/shop" >Shop</NavLink>
 
-                                            </li>
+                                            </li> */}
 
                                             <li class="menu-item-has-children">
                                                 <NavLink to="/Posts2" >Post</NavLink>
@@ -116,7 +116,7 @@ const NavBar = () => {
                                                     <>
 
                                                         <li >
-                                                            <NavLink to="profile/:id" >Account</NavLink>
+                                                            <NavLink to="profile" >Account</NavLink>
                                                         </li>
 
                                                         <li >
