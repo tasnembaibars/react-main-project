@@ -35,21 +35,25 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Index />} />
-    <Route path="/post/:id" element={<Singlepost />} />
+    {/* <Route path="/post/:id" element={<Singlepost />} /> */}
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile/:id" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
+<<<<<<< HEAD
       {/* <Route path="/book" element={<Booking />} /> */}
       <Route path="/services/:id" element={<Products />} />
+=======
+      <Route path="/book" element={<Booking />} />
+>>>>>>> 1b73975ce7e5fc0e6eb659343552eafe2225701e
 
       <Route path="/Products2/:id" element={<Products2 />} />
 
 {/* routes */}
 <Route path="/about" element={<About />} />
-<Route path="/post2" element={<Single />} />
+<Route path="/post/:id" element={<Single />} />
 <Route path="/shop" element={<Shop />} />
 
     </Routes>
