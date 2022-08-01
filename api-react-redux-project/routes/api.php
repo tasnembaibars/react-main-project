@@ -220,7 +220,7 @@ Route::delete('/categories/{category}',[CategoriesController::class,'destroy']);
 
 Route::get('/books',[BooksController::class,'index1']);
 Route::get('/books/{id}',[BooksController::class,'single1']);
-Route::post('/books',[BooksController::class,'store1']);
+Route::post('/book',[BooksController::class,'store1']);
 Route::put('/books/{book}',[BooksController::class,'update1']);
 Route::put('/booksstate/{book}',[BooksController::class,'changeState']);
 Route::delete('/books/{book}',[BooksController::class,'destroy1']);
@@ -235,7 +235,7 @@ Route::put('/posts/{post}',[PostsController::class,'update1']);
 Route::put('/postsstate/{post}',[PostsController::class,'changeState']);
 Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
-
+// Route::post('/po',[PostsController::class,'store']);
 
 
 
