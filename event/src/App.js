@@ -39,12 +39,12 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/profile/:id" element={<Profile/>} />
+      <Route path="/profile" element={<Profile/>} />
       <Route path="/Posts2" element={<Posts2 />} />
       <Route path="/Checkout" element={<CheckOut />} />
       {/* <Route path="/book" element={<Booking />} /> */}
       <Route path="/services/:id" element={<Products />} />
-      <Route path="/book" element={<Booking />} />
+      <Route path="/book/:id" element={<Booking />} />
 
       <Route path="/Product/:id" element={<Product />} />
 

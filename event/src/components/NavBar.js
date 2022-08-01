@@ -71,13 +71,13 @@ const NavBar = () => {
 
                                             </li>
 
-                                            <li class="menu-item-has-children">
+                                            {/* <li class="menu-item-has-children">
                                                 <NavLink to="/shop" >Shop</NavLink>
 
-                                            </li>
+                                            </li> */}
 
                                             <li class="menu-item-has-children">
-                                                <NavLink to="/Posts2" >Post2</NavLink>
+                                                <NavLink to="/Posts2" >Post</NavLink>
 
                                             </li>
                                             <li class="menu-item-has-children">
@@ -85,9 +85,9 @@ const NavBar = () => {
 
 
                                             </li>
-                                            <li class="menu-item-has-children">
+                                            {/* <li class="menu-item-has-children">
                                                 <NavLink to="/post2" >Posts</NavLink>
-                                            </li>
+                                            </li> */}
                                             <li class="menu-item-has-children">
 
                                                 <NavLink to="/contact" >Contact</NavLink>
@@ -116,7 +116,7 @@ const NavBar = () => {
                                                     <>
 
                                                         <li >
-                                                            <NavLink to="profile/:id" >Account</NavLink>
+                                                            <NavLink to="profile" >Account</NavLink>
                                                         </li>
 
                                                         <li >

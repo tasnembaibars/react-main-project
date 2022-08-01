@@ -2,7 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom';
 
 
+
 const Sidebar = () => {
+  
+  const admin_id = sessionStorage.getItem('admin_id');
+
+  const handlClick= () => {
+    sessionStorage.clear();
+    window.location.href = 'http://localhost:3000/'
+
+
+  }
+
   return (
     <>
 
@@ -150,12 +161,38 @@ const Sidebar = () => {
                 <span className="menu-title">Take Tour</span></a>
             </div>
           </li> */}
-          <li className="nav-item sidebar-user-actions">
-            <div className="sidebar-user-menu">
-              <a href="#" className="nav-link"><i className="mdi mdi-logout menu-icon"></i>
-                <span className="menu-title">Log Out</span></a>
-            </div>
-          </li>
+          { admin_id == null ?(
+            <>
+            
+            <li className="nav-item sidebar-user-actions">
+               <div className="sidebar-user-menu">
+                 <NavLink to="/" onClick={handlClick} className="nav-link"><i className="mdi mdi-logout menu-icon"></i>
+                   <span className="menu-title">Log in</span></NavLink>
+               </div>
+             </li>
+
+            
+            </>
+           
+          ):(
+             <>
+              <li className="nav-item sidebar-user-actions">
+               <div className="sidebar-user-menu">
+                 <NavLink to="/" onClick={handlClick} className="nav-link"><i className="mdi mdi-logout menu-icon"></i>
+                   <span className="menu-title">Log Out</span></NavLink>
+               </div>
+             </li>
+
+
+             </>
+
+          )
+
+
+
+
+          }
+       
         </ul>
       </nav>
 

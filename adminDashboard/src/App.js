@@ -24,16 +24,21 @@ import Posts from './components/posts/Posts';
 import Login from './components/login';
 
 import Admin from './admin';
+import {createContext, useState} from 'react';
 
+export const userContext = createContext();
 
 
 
 function App() {
+
+  const [adminData, setAdminData] = useState([]);
+
   return (
     <>
 
       <Router>
-        
+      <userContext.Provider value={{ adminData, setAdminData }}>
             <Routes>
 
               <Route path="/admin/*" element={<Admin />} />
@@ -42,7 +47,7 @@ function App() {
 
             </Routes>
 
-
+       </userContext.Provider>
       </Router>
 
       

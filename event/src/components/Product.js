@@ -17,14 +17,14 @@ export default function Product() {
             .then((response) => response.json())
             .then(data => {
                 setProduct(data);
-                console.log(data);
+                
             });
-
+            console.log(Product);
 
     }, []);
     return (
         <div>
-{Product && Product.map(p => (
+{/* {Product && Product.map(p => ( */}
             <section class="wpo-service-section-s3 section-padding">
                 <h2 class="hidden">{Product.title}</h2>
                 <div class="container">
@@ -34,7 +34,7 @@ export default function Product() {
                                 <div class="wpo-service-item">
                                     <div class="wpo-service-text">
                                         <div class="s-icon">
-                                            <i class="fi flaticon-gallery"></i>
+                                        <img src={`http://127.0.0.1:8000/${Product.picture}`} height="100px" width="100px"/>
                                         </div>
                                         <a href="service-single.html">{Product.	description}</a>
                                         <p>widdeng</p>
@@ -46,7 +46,7 @@ export default function Product() {
                 </div>
             </section>
        
-))}
+{/* ))} */}
  </div>
     );
 }

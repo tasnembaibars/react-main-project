@@ -418,7 +418,7 @@ function Index() {
                                                 <a href="/shop">view</a>
                                             </div>
                                             <div class="wpo-product-text">
-                                                <h3><button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/1`} style={{ textDecoration: " none" }}>Cutlery</NavLink> </button>
+                                                <h3><button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/13`} style={{ textDecoration: " none" }}>Cutlery</NavLink> </button>
                                                 </h3>
                                                 <span></span>
                                             </div>
@@ -432,7 +432,7 @@ function Index() {
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/2`} style={{ textDecoration: " none" }}>Welcome Signs</NavLink> </button>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/13`} style={{ textDecoration: " none" }}>Welcome Signs</NavLink> </button>
                                                 </h3>
                                                 <span></span>
                                             </div>
@@ -446,7 +446,7 @@ function Index() {
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/3`} style={{ textDecoration: " none" }}>Rings Set</NavLink> </button>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/13`} style={{ textDecoration: " none" }}>Rings Set</NavLink> </button>
                                                 </h3>
                                                 <span></span>
                                             </div>
@@ -460,7 +460,7 @@ function Index() {
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/4`} style={{ textDecoration: " none" }}>Themes</NavLink> </button>
+                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/13`} style={{ textDecoration: " none" }}>Themes</NavLink> </button>
                                                 </h3>
                                                 <span></span>
                                             </div>

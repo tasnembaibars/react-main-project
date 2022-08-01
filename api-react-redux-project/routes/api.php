@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ use App\Http\Controllers\ContactController;
 /*Login and Register */
  Route::post('register', [CostumersController::class, 'registerAPI']);
  Route::post('login', [CostumersController::class, 'loginAPI']);
+ /* login Admin */
+ Route::post('loginAdmin', [AdminController::class, 'loginAdm']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -64,7 +67,7 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::put('/comment/{id}',[CommentsPostController::class,'update']);
 Route::get('/comments_post/{id}',[CommentsPostController::class,'edit']);
 Route::delete('/comment/{comment}',[CommentsPostController::class,'delete']);
-Route::get('/comment/{id}',[CommentsPostController::class,'index']);
+Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
 
 
 
@@ -90,7 +93,7 @@ Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 
 Route::get('/services/{id}',[ServicesController::class,'view']);
 
-Route::get('/products2/{id}',[ServicesController::class,'view2']);
+Route::get('/product/{id}',[ServicesController::class,'view2']);
 
 
 
@@ -250,7 +253,7 @@ Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
 
 // start Booking
-Route::post('/Book',[BooksController::class,'store']);
+Route::post('/book',[BooksController::class,'store']);
 // end Booking
 //Araa
 
