@@ -21,6 +21,10 @@ class CreatePostsTable extends Migration
             $table->integer('likes')->default(0);
 
             $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
+<<<<<<< HEAD
+=======
+            // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+>>>>>>> e95521bce25eb3b2eec4db6165998f5e82765e6e
             $table->timestamps();
         });
     }

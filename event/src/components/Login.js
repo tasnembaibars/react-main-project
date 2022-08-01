@@ -5,10 +5,12 @@ import { useState } from "react";
 import axios from "axios";
 import { userContext } from "../App";
 import { useContext } from "react";
+
 // import userContext
 import { useNavigate } from "react-router-dom";
 function Login() {
     const navigate = useNavigate();
+  
 
     const { userData, setUserData } = useContext(userContext)
 
@@ -32,7 +34,8 @@ function Login() {
                 setError(res.data.errors)
             } else {
                 sessionStorage.setItem("user_id", res.data.id);
-                navigate("/");
+                
+                navigate(`/`);
             }
         }).catch((error) => {
             console.log(error.response.data.message);

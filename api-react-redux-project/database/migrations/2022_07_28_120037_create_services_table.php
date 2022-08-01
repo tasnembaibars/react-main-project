@@ -19,16 +19,12 @@ class CreateServicesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->decimal('price', 9, 2);
-            $table->decimal('min_price', 9, 2)->nullable();
-            $table->decimal('max_price', 9, 2)->nullable();
             $table->string('picture')->nullable();
             $table->string('picture_two')->nullable();
             $table->string('picture_three')->nullable();
             $table->string('picture_four')->nullable();
             $table->string('picture_five')->nullable();
             $table->string('picture_six')->nullable();
-
-
             $table->foreignId('categories_id')->nullable()->constrained('categories');
             $table->string('gategury')->nullable();
             $table->timestamps();
