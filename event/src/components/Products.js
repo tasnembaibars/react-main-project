@@ -62,21 +62,23 @@ console.log(all);
                 return ( */}
                     <section class="wpo-service-section-s3 section-padding">
                         
-                        <h2 class="hidden">{all.title}</h2>
+                       
                         <div class="container">
                             <div class="wpo-service-wrap">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12">
                                         <div class="wpo-service-item">
+                                       
                                             <div class="wpo-service-text">
                                                 <div class="s-icon">
-                                                    <i class="fi flaticon-gallery"></i>
+                                                <img src={`http://127.0.0.1:8000/${all.picture}`} alt class="img img-responsive" />
                                                 </div>
-                                                <a href="service-single.html">{all.description}</a>
+                                                <h2 className='text-center '>{all.title}</h2>
+                                                <a href="service-single.html">Price: {all.price}</a>
                                                 <div class="submit-area" >
             <br />
             <br />
-                                                <button type="submit" name='like' class="theme-btn-s4" >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none" }}>Show services</NavLink> </button>
+                                                <button type="submit" name='like' class="theme-btn-s4" >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none", color:"white" }}>Show services</NavLink> </button>
 </div>
                                             </div>
                                         </div>

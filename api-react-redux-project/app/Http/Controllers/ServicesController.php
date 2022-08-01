@@ -126,16 +126,16 @@ class ServicesController extends Controller
 
 
     public function view($id){
-        // return Services::all()->where('categories_id',$id);
-        $tables = Services::where('categories_id', $id)->get();
-        if($tables->count() > 0){
+        return Services::all()->where('categories_id',$id);
+        // $tables = Services::where('categories_id', $id)->get();
+        // if($tables->count() > 0){
 
-            return response()->json($tables);
-        }
-         return response()->json(['message' => 'No tables found'], 404);
+        //     return response()->json($tables);
+        // }
+        //  return response()->json(['message' => 'No tables found'], 404);
        }
 
-       
+
        public function view2($id){
         return Services::all()->where('id',$id);
        }

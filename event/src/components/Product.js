@@ -19,17 +19,19 @@ export default function Product() {
     console.log(all);
     return (
         <div>
- <section class="m-5 col-12">
+            <div className='container'>
+ <section class="m-5 col-12" >
 
 <div className="row">
     <div class="col-6">
         <h1>{all.title}</h1>
-        <h4>{all.description}
-        </h4>
+        <h5>{all.description}
+        </h5>
         <h4 style={{ color: "#848892" }}> Price: {all.price} </h4>
         <div class="submit-area" >
             <br />
             <br />
+            
             <button type="submit" class="theme-btn-s4" name='like' style={{ color: "white" }}>  <NavLink to={`/book/${all.id}`} style={{ textDecoration: " none", color: "white" }} >Booking Now</NavLink> </button>
 
 
@@ -39,18 +41,17 @@ export default function Product() {
 
     <div class="col-6">
         <div class="img-holder">
-            <a href="assets/images/portfolio/10.jpg" class="fancybox"
-                data-fancybox-group="gall-1">
-                <img src={`http://127.0.0.1:8000/${all.picture_four}`} alt class="img img-responsive" />
+    
+                <img  src={`http://127.0.0.1:8000/${all.picture_four}`} alt class="img img-responsive" />
 
-            </a>
+          
         </div>
     </div>
 
 </div>
 
 </section>
-
+</div>
             {/* {Load && <h1>Loading .... </h1>} */}
             {/* {all.length>0 && all.map((p) => {
                 return (  */}

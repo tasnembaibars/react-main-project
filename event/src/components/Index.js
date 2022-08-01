@@ -287,11 +287,17 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/24.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                                
                                             </div>
                                             <div class="wpo-product-text">
-                                                <h3><button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/1`} style={{ textDecoration: " none" }}>Cutlery</NavLink> </button>
-                                                </h3>
+                                                <h3>
+                                                <div class="submit-area" >
+            <br />
+             
+                                                    
+                                                    
+                                                    <button type="submit" name='like'  class="theme-btn-s4">  <NavLink to={`/services/4`} style={{ textDecoration: " none" , color:"white"}}>Cutlery</NavLink> </button>
+                                                </div></h3>
                                                 <span></span>
                                             </div>
                                         </div>
@@ -300,11 +306,16 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/333.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                               
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/2`} style={{ textDecoration: " none" }}>Welcome Signs</NavLink> </button>
+                                                <div class="submit-area" >
+            <br />
+            
+                                                    <button type="submit" name='like'  class="theme-btn-s4" >  <NavLink to={`/services/5`} style={{ textDecoration: " none" , color:"white"}}>Welcome Signs</NavLink> </button>
+                                               
+                                                </div>
                                                 </h3>
                                                 <span></span>
                                             </div>
@@ -314,12 +325,15 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/set.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                               
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/3`} style={{ textDecoration: " none" }}>Rings Set</NavLink> </button>
-                                                </h3>
+                                                <div class="submit-area" >
+            <br />
+            
+                                                    <button type="submit" name='like'   class="theme-btn-s4">  <NavLink to={`/services/3`} style={{ textDecoration: " none" , color:"white"}}>Rings Set</NavLink> </button>
+                                               </div>  </h3>
                                                 <span></span>
                                             </div>
                                         </div>
@@ -328,12 +342,15 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/3333.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                               
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
-                                                    <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/4`} style={{ textDecoration: " none" }}>Themes</NavLink> </button>
-                                                </h3>
+                                                <div class="submit-area" >
+            <br />
+            
+                                                    <button type="submit" name='like'  class="theme-btn-s4" >  <NavLink to={`/services/4`} style={{ textDecoration: " none", color:"white" }}>Themes</NavLink> </button>
+                                               </div> </h3>
                                                 <span></span>
                                             </div>
                                         </div>
