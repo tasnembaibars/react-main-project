@@ -42,7 +42,7 @@ function Register() {
 
             });
         }else{
-            document.getElementById('eror').innerHTML="not match please try again";
+            document.getElementById('eror').innerHTML="password not match please try again";
         }
 
 
@@ -77,7 +77,7 @@ function Register() {
                                     <div class="fromTitle">
                                         <h2>Signup</h2>
                                         <p>Sign into your pages account</p>
-                                        <div style={{ color: 'red' }}>{error[0]}</div>
+                                        
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-12">
@@ -94,6 +94,7 @@ function Register() {
                                                 value={user.email}
                                                 required />
                                         </div>
+                                        <span style={{ color: 'red' }}>{error[0]}</span>
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <label>Password</label>
@@ -107,6 +108,7 @@ function Register() {
                                                     <button class="btn btn-default reveal3" type="button"><i class="fa fa-eye"></i></button>
                                                 </span> */}
                                             </div>
+                                            <span style={{ color: 'red' }}>{error[1]}</span>
                                         </div>
 
                                         <div class="col-lg-12 col-md-12 col-12">
