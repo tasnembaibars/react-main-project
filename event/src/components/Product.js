@@ -50,7 +50,6 @@ export default function Product() {
 </div>
 
 </section>
-
             {/* {Load && <h1>Loading .... </h1>} */}
             {/* {all.length>0 && all.map((p) => {
                 return (  */}

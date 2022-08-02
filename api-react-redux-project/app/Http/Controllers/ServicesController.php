@@ -126,6 +126,18 @@ class ServicesController extends Controller
 
 
     public function view($id){
+<<<<<<< HEAD
+        return Services::all()->where('categories_id',$id);
+        // $tables = Services::where('categories_id', $id)->get();
+        // if($tables->count() > 0){
+
+        //     return response()->json($tables);
+        // }
+        //  return response()->json(['message' => 'No tables found'], 404);
+       }
+
+
+=======
         // return Services::all()->where('categories_id',$id);
         $tables = Services::where('categories_id', $id)->get();
         if($tables->count() > 0){
@@ -136,6 +148,7 @@ class ServicesController extends Controller
        }
 
        
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
        public function view2($id){
         return Services::all()->where('id',$id);
        }

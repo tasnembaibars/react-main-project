@@ -64,7 +64,7 @@ Route::post('/comments_post',[CommentsPostController::class,'store']);
 Route::get('/comments/{id}',[CommentsPostController::class,'create']);
 Route::get('/commentor/{id}',[CostumersController::class,'view']);
 Route::post('/comments_post',[CommentsPostController::class,'store']);
-Route::put('/comment/{id}',[CommentsPostController::class,'update']);
+Route::post('/comment/{id}',[CommentsPostController::class,'update']);
 Route::get('/comments_post/{id}',[CommentsPostController::class,'edit']);
 Route::delete('/comment/{comment}',[CommentsPostController::class,'delete']);
 Route::delete('/comment/{id}',[CommentsPostController::class,'index']);
@@ -235,7 +235,6 @@ Route::put('/posts/{post}',[PostsController::class,'update1']);
 Route::put('/postsstate/{post}',[PostsController::class,'changeState']);
 Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
-// Route::post('/po',[PostsController::class,'store']);
 
 
 
