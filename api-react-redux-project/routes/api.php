@@ -235,11 +235,6 @@ Route::put('/posts/{post}',[PostsController::class,'update1']);
 Route::put('/postsstate/{post}',[PostsController::class,'changeState']);
 Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
-<<<<<<< HEAD
-
-=======
-// Route::post('/po',[PostsController::class,'store']);
->>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
 
 
 

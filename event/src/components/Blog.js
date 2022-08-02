@@ -242,22 +242,8 @@ console.log('p',editComment.comment)
                                                                             <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
-                                                                        <div className="comments-reply">
-                                                                            {/* <a className="comment-reply-link" href="#"><span>Reply</span></a> */}
-                                                                            {!update ?
-                                                                                <button onClick={updateHandler} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href=""><span>edit</span></a></button>
-
-                                                                                : null}
-                                                                            {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>edit</span></a></button>
-
-                                                                                : null}
-                                                                            <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
-
-
-                                                                            <input name='comment' style={{  background: "none" }}  onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
-                                                                           
-                                                                           
+                                                                        
+                                                
                                                                         <div className="comments-reply">
                                                                           
                                                                             {user_id == user.id &&
@@ -273,7 +259,7 @@ console.log('p',editComment.comment)
                                                                             <button type='submit' onClick={()=>deleteHandeler(user.com)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" ><span>Delete</span></a></button>
                                                                             </>  }
 
-                                                                        </div>
+                                                                        
                                                         </div></div>
                                                     </div>
                                                 </div>
