@@ -154,7 +154,7 @@ class BooksController extends Controller
      function index1()
      {
  
-         return Books::all();
+         return Books::orderBy('id', 'DESC')->get();
      }
  
      function single1($id)

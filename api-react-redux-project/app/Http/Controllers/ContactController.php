@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\contact;
 use App\Http\Requests\StorecontactRequest;
 use App\Http\Requests\UpdatecontactRequest;
-
+use Symfony\Component\HttpFoundation\Request;
 class ContactController extends Controller
 {
     /**

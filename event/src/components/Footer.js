@@ -59,8 +59,8 @@ import React from 'react';
                                     <div class="contact-ft">
                                         <p>Would you have any enquiries.Please feel free to contuct us</p>
                                         <ul>
-                                            <li><i class="fi flaticon-email"></i>Nay@gmail.com</li>
-                                            <li><i class="fi flaticon-phone-call"></i>+962 (079) 869523</li>
+                                           <a href='mailto:Aamta@gmail.com'><li><i class="fi flaticon-email"></i>Aamta@gmail.com</li></a>
+                                            <a href='tel:+962(079)869523'><li><i class="fi flaticon-phone-call"></i>+962 (079) 869523</li></a>
                                             <li><i class="fi flaticon-maps-and-flags"></i>Irbid – 1075 Firs Avenuenue
                                             </li>
                                         </ul>

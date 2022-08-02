@@ -5,11 +5,7 @@ import swal from 'sweetalert';
 import '../Posts.css';
 
 function Blog() {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
+ 
 
     const { id } = useParams();
     //insert comments
@@ -43,7 +39,7 @@ function Blog() {
         }
     };
     const fetchComments = async () => {
-        const response = await fetch(`http://127.0.0.1:8000/api/comments`)
+        const response = await fetch(`http://127.0.0.1:8000/api/comments/${id}`)
         const res = await response.json()
         setAll(res)
     }
@@ -67,6 +63,11 @@ function Blog() {
     }, [])
     console.log('araa',all)
 
+    const fetchComment = async () => {
+        const response = await fetch(`http://127.0.0.1:8000/api/comments/${id}`)
+        const res = await response.json()
+        setAll(res)
+    }
 
 
  
@@ -74,7 +75,7 @@ function Blog() {
     // update comments
     const [update, setUpdate] = useState(false)
     const [editComment, setEditComment] = useState({
-        comment:'',costumer_id:'',post_id:''
+        comment:'',costumer_id:user_id,post_id:id
     })
     const updateHandler = (e) => {
         e.preventDefault();
@@ -82,50 +83,53 @@ function Blog() {
         setUpdate(true);
 
     }
-     useEffect(()=>{
-        const getComment=async()=>{
-            const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
-            const dbData=await response.json();
-            setEditComment(dbData);
-            console.log(response);
+console.log('p',editComment.comment)
+
+// const editHandeler=()=>{}
+    //  useEffect((id)=>{
+    //     const getComment=async()=>{
+    //         const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+    //         const dbData=await response.json();
+    //         setEditComment(dbData);
+    // console.log('tt',dbData);
            
             
-        }
-        getComment();
-    },[update])
-   
- 
-    const editHandeler = async(e) => {
-        e.preventDefault();
-      
-       await axios.put(`http://127.0.0.1:8000/api/comment/${id}`, editComment)
-            .then((res) => setEditComment(res.data))
-            
-        
-        if (update) {
-            window.alert('Your comment has been updated successfuly')
+    //     }
+    //     getComment();
+    // },[update])
 
-        }
+    // const getComment=()=>async()=>{
+    //     const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
+    //     const dbData=await response.json();
+    //     setEditComment(dbData);
+    // }
+    const editHandeler =(id)=>{
+       
+        // e.preventDefault();
+      
+        axios.post(`http://127.0.0.1:8000/api/comment/${id}`, {
+            comment:editComment.comment
+        })
+          
+            .then((res) =>fetchComment(),setUpdate(false)
+            
+            )
+      
 
 
     }
 
-    console.log(editComment)
+    // console.log('uu',editComment)
    
 
     const deleteHandeler = (id) => {
         axios.delete(`http://127.0.0.1:8000/api/comment/${id}`)     
-        // swal({
-        //     title: "Good job!",
-        //     text: " comment deleted successfully!",
-        //     icon: "success",
-        //     button: "ok!",
-        //   })
+     
           .then(()=> {
-            fetchComments();
+            fetchComment();
         });
         
-        // id.preventDefault();
+   
 
 
      }
@@ -165,8 +169,8 @@ function Blog() {
                                 <div class="entry-meta">
                                     
                                     <ul>
-                                        <li><i class="fi flaticon-user"></i> By <a href="#">{post.name}</a> </li>
-                                        <li><i class="fi flaticon-comment-white-oval-bubble"></i> Comments  </li>
+                                        <li><i class="fi flaticon-user"></i> By <a href="#">  {post.name}</a> </li>
+                                        <li><i class="fi flaticon-comment-white-oval-bubble"></i> discussion</li>
                                         <li><i class="fi flaticon-calendar"></i> {post.Date}</li>
                                     </ul>
                                 </div>
@@ -178,10 +182,10 @@ function Blog() {
 
                                 {/* <div class="gallery">
                                     <div>
-                                        <img src="assets/images/blog-details/1.jpeg" alt=""/>
+                                        <img src="../assets/images/blog-details/1.jpeg" alt=""/>
                                     </div>
                                     <div>
-                                        <img src="assets/images/blog-details/2.jpg" alt=""/>
+                                        <img src="../assets/images/blog-details/2.jpg" alt=""/>
                                     </div>
                                 </div> */}
                             </div>
@@ -234,23 +238,29 @@ function Blog() {
 
                                                                             : null}
                                                                         {update ?
+
                                                                             <input name='comment' style={{  background: "none" }} onChange={(e)=>setEditComment({...editComment,comment:e.target.value})}  defaultValue={user.comment}/>
 
                                                                             : null}
+                                                                        
+                                                
                                                                         <div className="comments-reply">
-                                                                            {/* <a className="comment-reply-link" href="#"><span>Reply</span></a> */}
+                                                                          
+                                                                            {user_id == user.id &&
+                                                                            <>
                                                                             {!update ?
-                                                                                <button onClick={updateHandler} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href=""><span>edit</span></a></button>
+                                                                                <button onClick={updateHandler} style={{ border: "none", background: "none" }}><a className="comment-reply-link" ><span>edit</span></a></button>
 
                                                                                 : null}
                                                                             {update ?
-                                                                                <button onClick={()=>editHandeler(user.id)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" href=""><span>edit</span></a></button>
+                                                                                <button onClick={()=>editHandeler(user.com)} style={{ border: "none", background: "none" }} type='submit'><a className="comment-reply-link" ><span>edit</span></a></button>
 
                                                                                 : null}
-                                                                            <button type='submit' onClick={()=>deleteHandeler(user.id)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" href="#"><span>Delete</span></a></button>
+                                                                            <button type='submit' onClick={()=>deleteHandeler(user.com)} style={{ border: "none", background: "none" }}><a className="comment-reply-link" ><span>Delete</span></a></button>
+                                                                            </>  }
 
-                                                                        </div>
-                                                        </div>
+                                                                        
+                                                        </div></div>
                                                     </div>
                                                 </div>
                                             </div>
