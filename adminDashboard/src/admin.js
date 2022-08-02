@@ -17,9 +17,12 @@ import UpdateCategoriese from './components/categury/UpdateCategoriese';
 
 
 import Books from './Books/Books';
+import addBook from './Books/addBook';
 import UpdateBook from './Books/updatebook';
 
 import Posts from './components/posts/Posts';
+
+import Chat from './chat/chat';
 
 
 
@@ -47,9 +50,13 @@ function Admin() {
 
 
               <Route path="/books" element={<Books />} />
+              {/* <Route path="/add-book" element={<addBook />} /> */}
+
               <Route path="/books/:id" element={<UpdateBook />} />
 
               <Route path="/posts" element={<Posts />} />
+
+              <Route path="/chat" element={<Chat />} />
 
 
 

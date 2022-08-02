@@ -5,10 +5,10 @@ import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 
 function Posts2() {
-    
+
     const [post, setPost] = useState('');
-   
-    const id =sessionStorage.getItem('user_id');
+
+    const id = sessionStorage.getItem('user_id');
 
     // const navigate = useNavigate();
     // let id = JSON.parse(localStorage.getItem("user_id"));
@@ -33,10 +33,33 @@ function Posts2() {
     //  start Add post
     const add_Posts = async (e) => {
         e.preventDefault();
+
+
+        var wordInput = post
+        wordInput = wordInput.toLowerCase();
+
+        // split the words by spaces (" ")
+        var arr = wordInput.split(" ");
+        // bad words to look for, keep this array in lowercase
+        var badWords = ["legos", "cloud", "manifold",'pull'];
+
+        // .toLowerCase will do the case insensitive match!
+        var foundBadWords = arr.filter(el => badWords.includes(el));
+
+        console.log(foundBadWords.join(", "));
+        console.log(foundBadWords.length)
+
+        if(foundBadWords.length > 0){
+            return  window.alert("The post has not been registered. * It contains words that violate our Community Standards ")
+        }
+
+
+
+
         const response = await fetch(`http://127.0.0.1:8000/api/post`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ post: post ,costumer_id:id}),
+            body: JSON.stringify({ post: post, costumer_id: id }),
 
         });
         console.log(post);
@@ -57,10 +80,10 @@ function Posts2() {
                 <section className="wpo-blog-single-section wpo-blog-single-left-sidebar-section section-padding">
                     <div class="container">
                         <div class="row">
-                            
 
-                         <a href="#comment" style={{textDecoration: 'none',color:"#5495ca",fontSize:"20px"}}>Add Post <span > <img src="https://img.icons8.com/pastel-glyph/64/000000/circled-chevron-down.png" width="40" height="40"/></span></a>
-                               
+
+                            <a href="#comment" style={{ textDecoration: 'none', color: "#5495ca", fontSize: "20px" }}>Add Post <span > <img src="https://img.icons8.com/pastel-glyph/64/000000/circled-chevron-down.png" width="40" height="40" /></span></a>
+
                             <div className="post format-standard-image">
                                 <div className="entry-media">
                                     {/* <img src="assets/images/blog-details/1.jpeg" alt /> */}
@@ -123,7 +146,7 @@ function Posts2() {
                                     <div className="socials">
                                         <ul className="social-link">
 
-                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" > comment</i></NavLink> </button>
+                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.id}`} style={{ textDecoration: " none", fontSize: "20px" }}><i class="fa fa-comment-o" > comment</i></NavLink> </button>
 
                                             {/*  */}
                                             {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}
