@@ -22,6 +22,12 @@ class CreatePostsTable extends Migration
 
             $table->foreignId('costumer_id')->nullable()->constrained('costumers')->onDelete('cascade');
 <<<<<<< HEAD
+
+            // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+
+            // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -32,6 +38,7 @@ class CreatePostsTable extends Migration
 =======
             // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
 >>>>>>> 06be71a4f4171562c7881cbf2f9b9c319e484fb2
+>>>>>>> 9a45d31a5269e1447f90bd9d1f2b07b21a8030c6
             $table->timestamps();
         });
     }
