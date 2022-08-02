@@ -27,6 +27,11 @@ class CreatePostsTable extends Migration
 
             // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
 
+            // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+
+
+            // $table->foreignId('costumer_id')->nullable()->constrained('costumers');
+
             $table->timestamps();
         });
     }
