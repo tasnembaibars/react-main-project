@@ -18,17 +18,14 @@ class CommentsPostController extends Controller
 
     public function create($id)
     {
-        
-         $comments= Comments_post::select('comments_posts.*','costumers.*')
+
+         $comments= Comments_post::select('comments_posts.*','comments_posts.id as com','costumers.*')
         ->join('costumers','costumers.id','=','comments_posts.costumer_id')
         ->join('posts','posts.id','=','comments_posts.post_id')
         ->where('posts.id',$id)
         ->get();
         return $comments;
 
-       
-       
-  
 
     }
 

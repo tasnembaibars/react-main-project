@@ -19,13 +19,15 @@ class PostsController extends Controller
     }
 
     function create (){
-        $post= Posts::select('posts.*','costumers.*')
+        $post= Posts::select('posts.*','posts.id as num','costumers.*')
         ->join('costumers','costumers.id','=','posts.costumer_id')
-       
+
        ->get();
         return $post;
-        
+
     }
+
+
     function show ($id){
         $post= Posts::select('posts.*','costumers.*')
         ->join('costumers','costumers.id','=','posts.costumer_id')
