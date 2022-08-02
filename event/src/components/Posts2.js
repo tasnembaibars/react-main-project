@@ -5,10 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 
 function Posts2() {
+    
     const [post, setPost] = useState('');
-    // const [rule , setRule] = useState(0);
-    // const [likesP , setLikesP] = useState(0);
-    // const [costumer_id , setCostumer_id] = useState(1);
+   
     const id =sessionStorage.getItem('user_id');
 
     // const navigate = useNavigate();
@@ -60,7 +59,7 @@ function Posts2() {
                         <div class="row">
                             
 
-                                    <a href="#comment" style={{textDecoration: 'none',color:"#5495ca",fontSize:"20px"}}>Add Post <span > <img src="https://img.icons8.com/pastel-glyph/64/000000/circled-chevron-down.png" width="40" height="40"/></span></a>
+                         <a href="#comment" style={{textDecoration: 'none',color:"#5495ca",fontSize:"20px"}}>Add Post <span > <img src="https://img.icons8.com/pastel-glyph/64/000000/circled-chevron-down.png" width="40" height="40"/></span></a>
                                
                             <div className="post format-standard-image">
                                 <div className="entry-media">
@@ -124,7 +123,7 @@ function Posts2() {
                                     <div className="socials">
                                         <ul className="social-link">
 
-                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/post/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" >Comments</i></NavLink> </button>
+                                            <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/blog/${p.id}`} style={{ textDecoration: " none",fontSize:"20px" }}><i class="fa fa-comment-o" > comment</i></NavLink> </button>
 
                                             {/*  */}
                                             {/* <i style="font-size:24px" class="fa">&#xf0e5;</i> */}

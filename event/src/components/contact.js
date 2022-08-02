@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import emailjs from "emailjs-com";
+
 const Contact = () => {
 
     const [name, setname] = useState("");
@@ -9,23 +11,34 @@ const Contact = () => {
     const [message, setmessage] = useState("");
  
 
+    const sendEmail = (e) => {
+      
+      };
     
     const contact = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         axios.post(`https://62e6b4710e5d74566aeb5bb1.mockapi.io/contact`, {
             name,
             email,
             message
 
-        });
+        })
+        // e.preventDefault();
+    
+        emailjs.sendForm('service_2g5hjbh', 'template_nk1nx4e', e.target, '4wzL5Z_AqBhLCFm5q')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });;
      
     //   window.alert('add')
      
-        swal({
-            title: "Good job!",
-            icon: "success",
-            button: "ok!",
-          });
+        // swal({
+        //     title: "Good job!",
+        //     icon: "success",
+        //     button: "ok!",
+        //   });
    
     }
 
@@ -121,7 +134,7 @@ const Contact = () => {
                                         <textarea class="form-control" name="message" id="note" placeholder="Message..." onChange={(e) => setmessage(e.target.value)} required></textarea>
                                     </div>
                                     <div class="submit-area">
-                                        <button type="submit" class="theme-btn-s4" onClick={contact}>Get in Touch</button>
+                                        <button type="submit" class="theme-btn-s4" onClick={()=>contact()}>Get in Touch</button>
                                         <div id="loader">
                                             <i class="ti-reload"></i>
                                         </div>
@@ -144,7 +157,7 @@ const Contact = () => {
             <section class="wpo-contact-map-section">
                 <h2 class="hidden">Contact map</h2>
                 <div class="wpo-contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976314309273!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1547528325671" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53808.19199344085!2d35.81239014833433!3d32.55252499618217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c76916dac0453%3A0x5416e113d81f7d82!2sIrbid!5e0!3m2!1sen!2sjo!4v1659427488545!5m2!1sen!2sjo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
 
@@ -155,9 +168,9 @@ const Contact = () => {
             {/* <!-- color-switcher --> */}
             <div class="color-switcher-wrap">
                 <div class="color-switcher-item">
-                    <div class="color-toggle-btn">
+                    {/* <div class="color-toggle-btn">
                         <i class="fa fa-cog"></i>
-                    </div>
+                    </div> */}
                     <ul id="switcher">
                         <li class="btn btn1" id="Button1"></li>
                         <li class="btn btn2" id="Button2"></li>

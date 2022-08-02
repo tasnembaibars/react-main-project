@@ -1,62 +1,80 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function Booking() {
     const [email, setemail] = useState({});
     const [phone, setphone] = useState({});
     const [date, setdate] = useState({});
     const [hour, sethour] = useState({});
-    const { id } = useParams();
-    const userid =sessionStorage.getItem('user_id');
-    console.log(id);
 
     //  start Add books
     const booking = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://127.0.0.1:8000/api/Book`, {
+        const response = await fetch(`http://127.0.0.1:8000/api/book`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour, costumer_id:userid,	service_id:id}),
+            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour }),
 
         });
 
         if (response.ok) {
-            window.alert("you have booked successfully")
+            swal({
+                title: "Good job!",
+                text: " Booked successfully!",
+                icon: "success",
+                button: "ok!",
+            })
         }
     }
-  return (
-    <div>
-                      <section class="wpo-contact-section section-padding">
 
-<div class="container">
 
-    <div class="wpo-contact-section-wrapper">
-        <div class="wpo-contact-form-area">
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
 
-            <div class="wpo-section-title">
-                
-                <h2>Appointment</h2>
-                <div class="section-title-img">
-                    <img src="assets/images/section-title.png" alt="" />
-                </div>
-            </div>
-            <form class="contact-validation-active" id="contact-form-main">
-                <div>
-                    <input type="email" class="form-control" name="email" id="name" placeholder="Email" onChange={(e) => setemail(e.target.value)} />
-                </div>
-                <div>
-                    <input type="number" class="form-control" name="phone" id="email"
-                        placeholder="Phone" onChange={(e) => setphone(e.target.value)} />
-                </div>
-                <div>
-                    <input type="time" class="form-control" name="hour" id="Hour"
-                        placeholder="Hour"onChange={(e) => sethour(e.target.value)} />
-                </div>
-                <div>
-                    <input type="date" class="form-control" name="date" id="Date"
-                        placeholder="Date" onChange={(e) => setdate(e.target.value)}/>
-                </div>
-                {/* <div>
+
+    const onKeyPressed = (e) => {
+        e.preventDefault()
+    }
+
+
+    return (
+        <div>
+            <section class="wpo-contact-section section-padding">
+
+                <div class="container">
+
+                    <div class="wpo-contact-section-wrapper">
+                        <div class="wpo-contact-form-area">
+
+                            <div class="wpo-section-title">
+
+                                <h2>Appointment</h2>
+                                <div class="section-title-img">
+                                    <img src="assets/images/section-title.png" alt="" />
+                                </div>
+                            </div>
+                            <form class="contact-validation-active" id="contact-form-main">
+                                <div>
+                                    <input type="email" class="form-control" name="email" id="name" placeholder="Email" onChange={(e) => setemail(e.target.value)} />
+                                </div>
+                                <div>
+                                    <input type="number" class="form-control" name="phone" id="email"
+                                        placeholder="Phone" onChange={(e) => setphone(e.target.value)} />
+                                </div>
+                                <div>
+                                    <input type="time" class="form-control" name="hour" id="Hour"
+                                        placeholder="Hour" onChange={(e) => sethour(e.target.value)} onKeyDown={onKeyPressed} />
+                                </div>
+                                <div>
+                                    <input type="date" class="form-control" name="date" id="Date"
+                                        placeholder="Date" onChange={(e) => setdate(e.target.value)} min={disablePastDate()} onKeyDown={onKeyPressed} />
+                                </div>
+                                {/* <div>
             <select name="service" class="form-control">
                 <option disabled="disabled" selected>Services</option>
                 <option>Photography</option>
@@ -77,7 +95,7 @@ function Booking() {
                 <option>05</option>
             </select>
         </div> */}
-                {/* <div>
+                                {/* <div>
             <select name="meal" class="form-control last">
                 <option disabled="disabled" selected>Meal Preferences</option>
                 <option>Chicken Soup</option>
@@ -87,31 +105,31 @@ function Booking() {
                 <option>Beef Ribs </option>
             </select>
         </div> */}
-                <div class="submit-area">
-                    <button type="submit" class="theme-btn-s3" onClick={booking}>Make appointment</button>
-                    <div id="c-loader">
-                        <i class="ti-reload"></i>
-                    </div>
-                </div>
-                <div class="clearfix error-handling-messages">
-                    <div id="success">Thank you</div>
-                    <div id="error"> Error occurred while sending email. Please try again later.
-                    </div>
-                </div>
-            </form>
-            <div class="border-style"></div>
-        </div>
-        {/* <div class="vector-1">
+                                <div class="submit-area">
+                                    <button type="submit" class="theme-btn-s3" onClick={booking}>Make appointment</button>
+                                    <div id="c-loader">
+                                        <i class="ti-reload"></i>
+                                    </div>
+                                </div>
+                                <div class="clearfix error-handling-messages">
+                                    <div id="success">Thank you</div>
+                                    <div id="error"> Error occurred while sending email. Please try again later.
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="border-style"></div>
+                        </div>
+                        {/* <div class="vector-1">
     <img src="assets/images/contact/1.png" alt=""/>
 </div> */}
-        <div class="vector-2">
-            <img src="assets/images/contact/2.png" alt="" />
+                        <div class="vector-2">
+                            <img src="assets/images/contact/2.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-</div>
-</section>
-    </div>
-  )
+    )
 }
 
 export default Booking

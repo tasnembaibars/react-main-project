@@ -4,22 +4,59 @@ import axios from "axios";
 import { useParams } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 export default function Products() {
-    const { id } = useParams();
-    const [all, setAll] = useState([])
-    useEffect(() => {
-   const fetchData = async()=>{
-   const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
-      const respdata = await resp.json()
-      setAll(respdata);
+    // const { id } = useParams();
+    // const [Load, setLoad] = useState(true);
+    // const [Product, setProduct] = useState([ ]);
+
+    // useEffect(() => {
+    //     fetch(`http://127.0.0.1:8000/api/services/${id}`)
+    //     .then((response) => response.json())
+    //     .then(data => {
+    //             setProduct(data);
+    //             setLoad(false);
+    //             console.log('Product' , data);});
+    // }, []);
+
+    //fetch all product
+   
+    // useEffect(() => {
+        
+    //     // const fetchproduct = async () => {
+    //     //     const response = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+    //     //     const res = await response.json()
+          
+    //     //     setAll(res.services);
+    //     //      console.log('all', all);
+    //     // }
+    //     // fetchproduct()
+    // }, [])
+//     const [all, setAll] = useState({})
+
+
+//    const fetchData = async()=>{
+//    const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+//       const respdata = await resp.json()
+//       setAll(respdata);
     
-  }
+//   }
+//   useEffect(() => {
+//     fetchData()
+//   }, []);
+//   console.log(all);
+const { id } = useParams();
+const [all, setAll] = useState([])
+useEffect(() => {
+    const fetchData = async () => {
+        const resp = await fetch(`http://127.0.0.1:8000/api/services/${id}`)
+        const respdata = await resp.json()
+        setAll(respdata);
+    }
 
     fetchData()
-  }, []);
-  console.log(all);
+}, []);
+console.log(all);
     return (
         <div>
-            
             {/* {Load && <h1>Loading .... </h1>} */}
             {/* {all.length>0 && all.map((p) => {
                 return ( */}
@@ -33,12 +70,14 @@ export default function Products() {
                                         <div class="wpo-service-item">
                                             <div class="wpo-service-text">
                                                 <div class="s-icon">
-                                                <img src={`http://127.0.0.1:8000/${all.picture}`} height="330px" width="400px"/>
+                                                    <i class="fi flaticon-gallery"></i>
                                                 </div>
                                                 <a href="service-single.html">{all.description}</a>
-                                                <p>widdeng</p>
-                                                {/* <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none" }}>Show service</NavLink> </button> */}
-                                                <button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/book/${all.id}`} style={{ textDecoration: " none" }}>Booking Now</NavLink> </button>
+                                                <div class="submit-area" >
+            <br />
+            <br />
+                                                <button type="submit" name='like' class="theme-btn-s4" >  <NavLink to={`/product/${all.id}`} style={{ textDecoration: " none" }}>Show services</NavLink> </button>
+</div>
                                             </div>
                                         </div>
                                     </div>

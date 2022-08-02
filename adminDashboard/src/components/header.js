@@ -1,8 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
+
+
 const Header = () => {
-    return ( 
-        <>
-        <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+
+
+
+
+
+  const navigate = useNavigate();
+  // const hist =useHistory();
+
+  // if(!sessionStorage.getItem('admin_id')){
+
+
+  //   return navigate('/');
+  //   window.location.reload(false);
+  //   // return <Redirect to="/login"/>
+  // }
+
+  useEffect(() => { check(); },)
+  function check() {
+
+    if (!(sessionStorage.getItem('admin_id'))) {
+
+
+      navigate('/')
+
+    }
+  }
+
+  
+
+  const handlClick= () => {
+    sessionStorage.clear();
+    window.location.href = 'http://localhost:3000/'
+
+
+  }
+
+
+
+  return (
+    <>
+      <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a className="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
           <a className="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
@@ -77,7 +120,7 @@ const Header = () => {
             <li className="nav-item nav-profile dropdown">
               <a className="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div className="nav-profile-img">
-                  
+
                 </div>
                 <div className="nav-profile-text">
                   <p className="mb-1 text-black"> User Name</p>
@@ -86,11 +129,11 @@ const Header = () => {
               <div className="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
 
                 <div className="p-2">
- 
-                  <a className="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
+
+                  <NavLink to='/' onClick={handlClick} className="dropdown-item py-1 d-flex align-items-center justify-content-between">
                     <span>Log Out</span>
                     <i className="mdi mdi-logout ml-1"></i>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </li>
@@ -188,8 +231,8 @@ const Header = () => {
           </button>
         </div>
       </nav>
-        </>
-     );
+    </>
+  );
 }
- 
+
 export default Header;

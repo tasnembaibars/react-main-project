@@ -82,7 +82,7 @@ function Single() {
             const response= await fetch (`http://127.0.0.1:8000/api/comments_post/${id}`)
             const dbData=await response.json();
             setEditComment(dbData);
-            console.log(dbData);
+            console.log(response);
            
             
         }
@@ -90,9 +90,10 @@ function Single() {
     },[update])
    
  
-    const editHandeler = (e) => {
+    const editHandeler = async(e) => {
         e.preventDefault();
-        axios.put(`http://127.0.0.1:8000/api/comment/${id}`, editComment)
+      
+       await axios.put(`http://127.0.0.1:8000/api/comment/${id}`, editComment)
             .then((res) => setEditComment(res.data))
             
         
