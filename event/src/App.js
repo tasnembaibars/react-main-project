@@ -49,6 +49,7 @@ function App() {
 
       {/* <Route path="/book" element={<Booking />} /> */}
       {/* <Route path="/book" element={<Booking />} /> */}
+      {/* <Route path="/book" element={<Booking />} /> */}
       <Route path="/catogry/:id" element={<Products />} />
       <Route path="/book/:id" element={<Booking />} />
 
