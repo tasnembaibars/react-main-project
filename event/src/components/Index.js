@@ -287,7 +287,7 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/24.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                                <a href="/services/1">view</a>
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3><button type="submit" name='like' style={{ border: "none" }} >  <NavLink to={`/services/1`} style={{ textDecoration: " none" }}>Cutlery</NavLink> </button>
@@ -300,7 +300,7 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/333.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                                <a href="/services/2">view</a>
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
@@ -314,7 +314,7 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/set.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                                <a href="/services/3">view</a>
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
@@ -328,7 +328,7 @@ function Index() {
                                         <div class="wpo-product-item">
                                             <div class="wpo-product-img">
                                                 <img src="assets/images/portfolio/3333.jpg" alt="" />
-                                                <a href="/shop">view</a>
+                                                <a href="/services/4">view</a>
                                             </div>
                                             <div class="wpo-product-text">
                                                 <h3>
