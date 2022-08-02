@@ -44,10 +44,7 @@ function App() {
       <Route path="/Checkout" element={<CheckOut />} />
       {/* <Route path="/book" element={<Booking />} /> */}
       <Route path="/services/:id" element={<Products />} />
-<<<<<<< HEAD
-=======
       <Route path="/book/:id" element={<Booking />} />
->>>>>>> e95521bce25eb3b2eec4db6165998f5e82765e6e
 
       <Route path="/Product/:id" element={<Product />} />
 
