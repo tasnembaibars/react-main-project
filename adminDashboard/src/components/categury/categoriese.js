@@ -88,7 +88,7 @@ const Categoriese = () => {
                                 <tr>
                                     <th>Id</th>
                                     <th> title</th>
-                                    <th> date</th>
+                                    {/* <th> date</th> */}
 
                                     <th> Edit / Delete</th>
                                 </tr>
@@ -101,7 +101,7 @@ const Categoriese = () => {
                                     <tr>
                                         <td>{a.id}</td>
                                         <td>{a.name}</td>
-                                        <td>{a.created_at}</td>
+                                        {/* <td>{a.created_at}</td> */}
 
                                         <td>
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>

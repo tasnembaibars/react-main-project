@@ -28,20 +28,10 @@ const analytics = firebase.analytics();
 const Chat = () => {
     return (
         <>
-
-            {/* <header>
-        <h1>⚛️🔥💬</h1>
         
-      </header> */}
-
-
-
-
-
             <section>
                 {<ChatRoom />}
             </section>
-
 
         </>
     );

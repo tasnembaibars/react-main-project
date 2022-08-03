@@ -29,12 +29,12 @@ const UpdateCategoriese = () => {
         e.preventDefault();
 
         axios.put(`http://127.0.0.1:8000/api/categories/${id}`, {
-            title: name,
+            name: name,
         })
         // history.replace('/profile')
         usee('/admin/categoriese')
     }
-
+// console.log(name)
     
     return (
         <>

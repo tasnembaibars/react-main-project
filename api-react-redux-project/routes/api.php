@@ -201,6 +201,11 @@ Route::delete('/costumers/{costumer}',[CostumersController::class,'destroy1']);
 
 
 
+Route::get('/google/{email}',[CostumersController::class,'google']);
+Route::post('/googlereg',[CostumersController::class,'googlereg']);
+
+
+
 Route::get('/services',[ServicesController::class,'index']);
 Route::get('/services/{id}',[ServicesController::class,'single']);
 Route::post('/services',[ServicesController::class,'store']);
@@ -220,7 +225,7 @@ Route::delete('/categories/{category}',[CategoriesController::class,'destroy']);
 
 Route::get('/books',[BooksController::class,'index1']);
 Route::get('/books/{id}',[BooksController::class,'single1']);
-Route::post('/book',[BooksController::class,'store1']);
+Route::post('/booksss',[BooksController::class,'store1']);
 Route::put('/books/{book}',[BooksController::class,'update1']);
 Route::put('/booksstate/{book}',[BooksController::class,'changeState']);
 Route::delete('/books/{book}',[BooksController::class,'destroy1']);

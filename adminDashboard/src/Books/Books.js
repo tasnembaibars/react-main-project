@@ -57,7 +57,7 @@ const Books = () => {
                 book_state: 0,
 
             }).then((res) => {
-                setapi(res.data);
+                getData();
             })
 
         } else {
@@ -95,7 +95,7 @@ const Books = () => {
     const addUser = (e) => {
         e.preventDefault();
 
-        axios.post(`http://127.0.0.1:8000/api/books`, {
+        axios.post(`http://127.0.0.1:8000/api/booksss`, {
             date: date,
             phone: phone,
             hour: hour,
@@ -323,8 +323,8 @@ const Books = () => {
                                         <td>
 
                                             {a.book_state ?
-                                                <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-warning mr-2' >DesActive</button>
-                                                : <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-success mr-2' >Activate</button>}
+                                                <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-warning mr-2' >Ignore</button>
+                                                : <button onClick={() => handleactive(a.id, a.book_state)} className='btn btn-outline-success mr-2' >Accept</button>}
 
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
 

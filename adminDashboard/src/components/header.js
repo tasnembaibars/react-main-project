@@ -57,14 +57,14 @@ const Header = () => {
             <span className="mdi mdi-menu"></span>
           </button>
           <div className="search-field d-none d-xl-block">
-            <form className="d-flex align-items-center h-100" action="#">
+            {/* <form className="d-flex align-items-center h-100" action="#">
               <div className="input-group">
                 <div className="input-group-prepend bg-transparent">
                   <i className="input-group-text border-0 mdi mdi-magnify"></i>
                 </div>
                 <input type="text" className="form-control bg-transparent border-0" placeholder="Search products" />
               </div>
-            </form>
+            </form> */}
           </div>
           <ul className="navbar-nav navbar-nav-right">
             {/* <li className="nav-item  dropdown d-none d-md-block">
@@ -181,10 +181,10 @@ const Header = () => {
               </div>
             </li> */}
             <li className="nav-item dropdown">
-              <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              {/* <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                 <i className="mdi mdi-bell-outline"></i>
                 <span className="count-symbol bg-danger"></span>
-              </a>
+              </a> */}
               <div className="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                 <h6 className="p-3 mb-0 bg-primary text-white py-4">Notifications</h6>
                 <div className="dropdown-divider"></div>

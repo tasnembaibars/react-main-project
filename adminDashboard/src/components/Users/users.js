@@ -56,13 +56,15 @@ const Users = () => {
 
         }).then(() => {
             getData();
+            setName('');
+            setEmail('');
+            setPass('');
+
         });
 
 
 
-        setName('')
-        setEmail('')
-        setPass('')
+       
 
 
         console.log(picture)
@@ -85,7 +87,7 @@ const Users = () => {
                         <form onSubmit={addUser}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Name</label>
-                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jhone" />
+                                <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Email address</label>

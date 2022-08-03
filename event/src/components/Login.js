@@ -6,15 +6,47 @@ import axios from "axios";
 import { userContext } from "../App";
 import { useContext } from "react";
 
-// import userContext
+
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
+import 'firebase/compat/analytics';
 import { useNavigate } from "react-router-dom";
+
+
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+firebase.initializeApp({
+    apiKey: "AIzaSyCVLpIwIDmd0Ds0Zfc0kORoOB5QbJCDqCY",
+    authDomain: "event-e0433.firebaseapp.com",
+    projectId: "event-e0433",
+    storageBucket: "event-e0433.appspot.com",
+    messagingSenderId: "967239756286",
+    appId: "1:967239756286:web:32c693829eabbe5c1438af",
+    measurementId: "G-5Q2B2NK8LY"
+})
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
+
+
+// import userContext
+
 function Login() {
+
+
+    const [user] = useAuthState(auth);
+    const user1 = auth.currentUser
     const navigate = useNavigate();
   
 
     const { userData, setUserData } = useContext(userContext)
 
-    const [user, setUser] = useState({
+    const [userlog, setUser] = useState({
         email: "",
         password: "",
     });
@@ -27,7 +59,7 @@ function Login() {
         axios({
             method: "post",
             url: "http://localhost:8000/api/login",
-            data: user
+            data: userlog
         }).then((res) => {
             setUserData(res.data)
             if (res.data.errors) {
@@ -41,6 +73,41 @@ function Login() {
             console.log(error.response.data.message);
         });
 
+
+    }
+    const signInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider);
+
+
+        
+
+
+
+
+        if (auth.currentUser) {
+            sessionStorage.setItem("user_id", auth.currentUser.uid);
+            sessionStorage.setItem("ures_name", auth.currentUser.defualtname);
+            sessionStorage.setItem("firebasestate", '1')
+            
+            navigate(`/`);
+            // console.log('from aut', sessionStorage.getItem('user_id'))
+
+        }
+
+
+
+    }
+    // if(user1.uid){
+    //     console.log('among us',user1.uid)
+    // }
+
+    if (auth.currentUser) {
+        sessionStorage.setItem("user_id", auth.currentUser.uid);
+        sessionStorage.setItem("firebasestate", '1');
+        // console.log(auth.currentUser)
+        // console.log('from aut', sessionStorage.getItem('user_id'))
+        // return navigate(`/`);
 
     }
 
@@ -86,7 +153,7 @@ function Login() {
                                                     email: e.target.value,
                                                 }))
                                                 }
-                                                value={user.email}
+                                                value={userlog.email}
                                                 type="email"
                                                 id="email"
                                                 name="email"
@@ -102,7 +169,7 @@ function Login() {
 
                                                 }))
                                                 }
-                                                    value={user.password}
+                                                    value={userlog.password}
                                                     class="pwd6"
                                                     type="password"
                                                     placeholder="Your Password"
@@ -119,6 +186,7 @@ function Login() {
                                     </div>
                                     <h4 class="or"><span>OR</span></h4>
                                     <ul class="wpo-socialLoginBtn">
+                                    <li><button class="google+" onClick={signInWithGoogle}><span><i class="fa fa-google" style={{color:'red'}}></i></span></button></li>
                                         <li><button class="facebook" tabindex="0" type="button"><span><i class="fa fa-facebook"></i></span></button></li>
                                         <li><button class="twitter" tabindex="0" type="button"><span><i class="fa fa-twitter"></i></span></button></li>
                                         <li><button class="linkedin" tabindex="0" type="button"><span><i class="fa fa-linkedin"></i></span></button></li>

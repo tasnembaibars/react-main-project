@@ -16,6 +16,7 @@ function Share() {
     // }
     const [posts, setPosts] = useState([]);
     const [Load, setLoad] = useState(true);
+
     console.log(id);
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/attempt')

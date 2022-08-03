@@ -1,12 +1,80 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
+
+
+
+
+
+
+
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
+import 'firebase/compat/analytics';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+firebase.initializeApp({
+    apiKey: "AIzaSyCVLpIwIDmd0Ds0Zfc0kORoOB5QbJCDqCY",
+    authDomain: "event-e0433.firebaseapp.com",
+    projectId: "event-e0433",
+    storageBucket: "event-e0433.appspot.com",
+    messagingSenderId: "967239756286",
+    appId: "1:967239756286:web:32c693829eabbe5c1438af",
+    measurementId: "G-5Q2B2NK8LY"
+})
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const NavBar = () => {
     const user_id = sessionStorage.getItem('user_id');
 
+    const firebasestate = sessionStorage.getItem('user_id');
+
     const handleClick = () => {
+        if (firebasestate) {
+            auth.signOut();
+            sessionStorage.clear();
+    
+            window.location.href = 'http://localhost:3000/'
+    
+        }
+        
         sessionStorage.clear();
         window.location.href = 'http://localhost:3000/'
     }
+
+
+
+
     //    let isLoggedIn = JSON.parse(localStorage.getItem("user"));
 
     return (
