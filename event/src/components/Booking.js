@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import swal from 'sweetalert';
+import { useParams } from 'react-router-dom';
 
 function Booking() {
+    const { id } = useParams();
     const [email, setemail] = useState({});
     const [phone, setphone] = useState({});
     const [date, setdate] = useState({});
     const [hour, sethour] = useState({});
-    const id =sessionStorage.getItem('user_id');
-    const [serviceid, setid] = useState({});
+    const user_id =sessionStorage.getItem('user_id');
+    // const [serviceid, setid] = useState({});
     //  start Add books
     const booking = async (e) => {
         e.preventDefault();
         const response = await fetch(`http://127.0.0.1:8000/api/book`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour,costumer_id:id,service_id:serviceid }),
+            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour,costumer_id:user_id,service_id:id }),
 
         });
 

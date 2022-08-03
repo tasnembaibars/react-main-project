@@ -95,13 +95,13 @@ const NavBar = () => {
                         </div>
                         <div class="col col-lg-5 col-md-12 col-12">
                             <div class="contact-info">
-                                <ul>
-                                    <li><a href="#"><i class="fi flaticon-facebook-app-symbol"></i></a></li>
-                                    <li><a href="#"><i class="fi flaticon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fi flaticon-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fi flaticon-instagram-1"></i></a></li>
-                                    <li><a href="#"><i class="fi flaticon-pinterest"></i></a></li>
-                                    <li><a href="#"><i class="fi flaticon-youtube"></i></a></li>
+                            <ul>
+                                    <li><a href="https://www.facebook.com/"><i class="fi flaticon-facebook-app-symbol"></i></a></li>
+                                    <li><a href="https://twitter.com/i/flow/login"><i class="fi flaticon-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/feed/"><i class="fi flaticon-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/"><i class="fi flaticon-instagram-1"></i></a></li>
+                                    <li><a href="https://www.pinterest.com/"><i class="fi flaticon-pinterest"></i></a></li>
+                                    <li><a href="https://www.google.com/"><i class="fi flaticon-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ const NavBar = () => {
                                             )}
 
                                             <li class="menu-item-has-children" style={{ marginLeft: "220px" }}>
-                                                <a className="nav-link" style={{ color: "#1a3b55", marginLeft: "10px" }}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <a className="nav-link" style={{ color: "#1a3b55", marginLeft: "10px" }}><svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" >
 
                                                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -219,27 +219,7 @@ const NavBar = () => {
 
 
                                         {/* <div class="col-lg-2 col-md-2 col-2"> */}
-                                        <div class="header-right">
-                                            <div class="header-search-form-wrapper">
-                                                <div class="cart-search-contact">
-                                                    <button class="search-toggle-btn"><i
-                                                        class="fi flaticon-search"></i></button>
-                                                    <div class="header-search-form">
-                                                        <form>
-                                                            <div>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Search here..." />
-                                                                <button type="submit"><i
-                                                                    class="fi flaticon-search"></i></button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 {/* </div> */}

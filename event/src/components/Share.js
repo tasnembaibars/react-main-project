@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../Posts.css';
 import axios from "axios";
 import { Link, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function Share() {
     const [post, setPost] = useState('');
@@ -62,9 +63,17 @@ function Share() {
         });
         console.log(post);
         if (response.ok) {
-            window.alert("your post will be posted after admin acceptance")
+            swal({
+                title: "Good job!",
+                text: " post added successfully!",
+                icon: "success",
+                button: "ok!",
+              }) .then(()=> {
+                window.location.href = "http://localhost:3000/share";
+
+            });
         }
-        window.location.href = "http://localhost:3000/share";
+        
     }
 
 
@@ -132,20 +141,7 @@ function Share() {
                      }
                     {/* <!-- end author-box --> */}
 
-                    <div class="more-posts">
-                        <div class="previous-post">
-                            <a href="blog.html">
-                                <span class="post-control-link">Previous Post</span>
-                                <span class="post-name">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
-                            </a>
-                        </div>
-                        <div class="next-post">
-                            <a href="blog-left-sidebar.html">
-                                <span class="post-control-link">Next Post</span>
-                                <span class="post-name">Dignissimos ducimus qui blanditiis praesentiu deleniti atque corrupti quos dolores</span>
-                            </a>
-                        </div>
-                    </div>
+                
 
                     {/* <div class="comments-area">
                         <div class="comments-section">

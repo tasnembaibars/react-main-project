@@ -13,29 +13,22 @@ class BooksController extends Controller
         $Books->phone= $request->phone;
         $Books->hour= $request->hour;
         $Books->date= $request->date;
-        $Books->costumer_id = $request->userid;
-        $Books->service_id= $request->id;
+        $Books->costumer_id = $request->costumer_id;
+        $Books->service_id= $request->service_id;
         $Books->save();
         
      }
 
-    //  public function store(Request $request){
-    //     // Comments_post::create($request->all());
-    //    $comment= new Comments_post;
-    //    $comment->comment= $request->comment;
-    //    $comment->costumer_id= $request->costumer_id;
-    //    $comment->post_id= $request->post_id;
-    //    $comment->save();  
-    // }
 
     public function create($id)
     {
         
-         $comments= Books::select('services.*','services.id as com','costumers.*')
-        ->join('costumers','costumers.id','=','services.costumer_id')
-        ->where('costumers.id',$id)
+        $book= Books::select('books.*','books.id as b','costumers.*')
+        ->join('costumers','costumers.id','=','books.costumer_id')
+        ->join('services','services.id','=','books.service_id')
+        ->where('services.id',$id)
         ->get();
-        return $comments;
+        return $book;
 
 
     }

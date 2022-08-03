@@ -15,22 +15,22 @@ import React from 'react';
                                         Process</p>
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/">
                                                 <i class="ti-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://twitter.com/i/flow/login">
                                                 <i class="ti-twitter-alt"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/">
                                                 <i class="ti-instagram"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.google.com/">
                                                 <i class="ti-google"></i>
                                             </a>
                                         </li>
