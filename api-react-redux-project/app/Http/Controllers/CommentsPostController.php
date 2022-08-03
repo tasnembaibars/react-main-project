@@ -26,9 +26,6 @@ class CommentsPostController extends Controller
         ->get();
         return $comments;
 
-       
-       
-  
 
     }
 

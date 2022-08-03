@@ -91,7 +91,7 @@ Route::put('/viewComments/{id}',[PostsController::class,'viewComments']);
 // Route::post('/post',[CommentsPostController::class,'store']);
 
 
-Route::get('/services/{id}',[ServicesController::class,'view']);
+Route::get('/catogry/{id}',[ServicesController::class,'view']);
 
 Route::get('/product/{id}',[ServicesController::class,'view2']);
 
