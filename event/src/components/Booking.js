@@ -6,14 +6,15 @@ function Booking() {
     const [phone, setphone] = useState({});
     const [date, setdate] = useState({});
     const [hour, sethour] = useState({});
-
+    const id =sessionStorage.getItem('user_id');
+    const [serviceid, setid] = useState({});
     //  start Add books
     const booking = async (e) => {
         e.preventDefault();
         const response = await fetch(`http://127.0.0.1:8000/api/book`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour }),
+            body: JSON.stringify({ email: email, phone: phone, date: date, hour: hour,costumer_id:id,service_id:serviceid }),
 
         });
 
@@ -23,6 +24,8 @@ function Booking() {
                 text: " Booked successfully!",
                 icon: "success",
                 button: "ok!",
+            }).then(function() {
+                window.location = "/";
             })
         }
     }

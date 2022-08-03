@@ -30,7 +30,7 @@ const Sidebar = () => {
           <li className="nav-item">
             <NavLink to='/admin'>
 
-              <div className="nav-link" href="pages/icons/mdi.html">
+              <div className="nav-link" >
                 <span className="icon-bg"><i className="mdi mdi-contacts menu-icon"></i></span>
                 <span className="menu-title">Dashboard</span>
               </div>
@@ -97,6 +97,17 @@ const Sidebar = () => {
                 <i className="mdi mdi-file-document-box menu-icon"></i>
               </span>
                 <span className="menu-title">Posts</span>
+              </div>
+            </NavLink>
+
+          </li>
+          <li className="nav-item">
+            <NavLink to='/admin/chat'>
+              <div className="nav-link">
+              <span className="icon-bg">
+                <i className="mdi mdi-file-document-box menu-icon"></i>
+              </span>
+                <span className="menu-title">Chat</span>
               </div>
             </NavLink>
 

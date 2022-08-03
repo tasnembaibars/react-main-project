@@ -32,6 +32,27 @@ function Share() {
     //  start Add post
     const add_Posts = async (e) => {
         e.preventDefault();
+
+
+        var wordInput = post
+        wordInput = wordInput.toLowerCase();
+
+        // split the words by spaces (" ")
+        var arr = wordInput.split(" ");
+        // bad words to look for, keep this array in lowercase
+        var badWords = ["legos", "cloud", "manifold",'pull'];
+
+        // .toLowerCase will do the case insensitive match!
+        var foundBadWords = arr.filter(el => badWords.includes(el));
+
+        console.log(foundBadWords.join(", "));
+        console.log(foundBadWords.length)
+
+        if(foundBadWords.length > 0){
+            return  window.alert("The post has not been registered. * It contains words that violate our Community Standards ")
+        }
+
+
         const response = await fetch(`http://127.0.0.1:8000/api/post`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -59,7 +80,7 @@ function Share() {
                 <div class="wpo-blog-content">
                     <div class="post format-standard-image mt-5">
                        
-                        <h2 >Share us your favourites  with Nay ...</h2>
+                        <h2 >Share us your favourites  with Memory ...</h2>
                         <p>“I love you without knowing how, or when, or from where. I love you straightforwardly, without complexities or pride; so I love you because I know no other way.”</p>
                    
                          {/* <div class="row"> */}

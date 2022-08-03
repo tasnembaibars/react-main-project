@@ -135,7 +135,6 @@ class ServicesController extends Controller
          return response()->json(['message' => 'No tables found'], 404);
        }
 
-       
        public function view2($id){
         return Services::all()->where('id',$id);
        }
