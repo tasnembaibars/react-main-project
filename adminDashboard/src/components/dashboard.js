@@ -97,7 +97,7 @@ console.log(books)
                                                     <h2 class="mb-4 text-dark font-weight-bold">{books.length}</h2>
                                                     <div class="dashboard-progress dashboard-progress-1 d-flex align-items-center justify-content-center item-parent"><i class="mdi mdi-lightbulb icon-md absolute-center text-dark"></i></div>
                                                     <p class="mt-4 mb-0">Completed</p>
-                                                    <h3 class="mb-0 font-weight-bold mt-2 text-dark">{books.length}</h3>
+                                                    <h3 class="mb-0 font-weight-bold mt-2 text-dark"></h3>
                                                 </div>
                                             </div>
                                         </div>

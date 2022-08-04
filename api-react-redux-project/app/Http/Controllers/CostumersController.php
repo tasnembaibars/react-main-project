@@ -168,7 +168,7 @@ class CostumersController extends Controller
         return Costumers::create([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => request('password'),
+            'password' => Hash::make( request('password')),
             'picture' => request('picture')
 
         ]);
@@ -184,7 +184,7 @@ class CostumersController extends Controller
         return $costumer->update([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => request('password'),
+            'password' =>Hash::make(request('password')),
 
         ]);
 

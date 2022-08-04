@@ -101,7 +101,7 @@ const Sidebar = () => {
             </NavLink>
 
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink to='/admin/chat'>
               <div className="nav-link">
               <span className="icon-bg">
@@ -111,7 +111,7 @@ const Sidebar = () => {
               </div>
             </NavLink>
 
-          </li>
+          </li> */}
           {/* <li className="nav-item">
             <a className="nav-link" href="pages/tables/basic-table.html">
               <span className="icon-bg"><i className="mdi mdi-table-large menu-icon"></i></span>

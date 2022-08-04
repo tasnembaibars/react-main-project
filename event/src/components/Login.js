@@ -76,8 +76,17 @@ function Login() {
 
     }
     const signInWithGoogle = () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider);
+        const provider = new firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider).then(()=>{
+            sessionStorage.setItem("user_id", auth.currentUser.uid);
+            sessionStorage.setItem("ures_name", auth.currentUser.displayName);
+            sessionStorage.setItem("firebasestate", '1')
+
+            navigate(`/`);
+
+            window.location.href = 'http://localhost:3000/'
+        });
+       
 
 
         

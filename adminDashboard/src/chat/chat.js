@@ -26,12 +26,27 @@ const analytics = firebase.analytics();
 
 
 const Chat = () => {
+    const [diplay, setdiplay] = useState('none');
+    const changedis=()=>{
+        if(diplay == 'none'){
+            setdiplay('block')
+
+        }else{
+            setdiplay('none')
+        }
+    }
+
+
     return (
         <>
-        
-            <section>
-                {<ChatRoom />}
-            </section>
+       <h1 className='text-black'> soon ....</h1>
+     <div style={{display:diplay}} >{<ChatRoom />}</div>
+         
+
+<div className='ibtn'><button onClick={changedis} className='btttton btn btn-primary'>Chat</button></div>
+
+
+
 
         </>
     );
@@ -48,7 +63,7 @@ function ChatRoom() {
 
 
     const sendMessage = async (e) => {
-        e.preventDefault();
+
 
         //   const { uid, photoURL } = auth.currentUser;
         const uid = sessionStorage.getItem('admin_id');
@@ -66,8 +81,9 @@ function ChatRoom() {
     }
 
     return (<>
+    {}
 
-        <div>
+        <div className='among' >
             <div id="chat" class="chat_box_wrapper chat_box_small chat_box_active">
                 <div class="chat_box touchscroll chat_box_colors_a">
 
@@ -77,23 +93,7 @@ function ChatRoom() {
                 </div>
             </div>
 
-            <div class="chat_submit_box">
-                <div class="uk-input-group">
-                    <div class="gurdeep-chat-box">
-                        <span style={{ verticalAlign: 'sub' }} class="uk-input-group-addon">
-                            <a href="#"><i class="fa fa-smile-o"></i></a>
-                        </span>
-                        <input type="text" placeholder="Type a message" id="submit_message" name="submit_message" class="md-input" />
-                        <span style={{ verticalAlign: 'sub' }} class="uk-input-group-addon">
-                            <a href="#"><i class="fa fa-camera"></i></a>
-                        </span>
-                    </div>
 
-                    <span class="uk-input-group-addon">
-                        <a href="#"><i class="glyphicon glyphicon-send"></i></a>
-                    </span>
-                </div>
-            </div>
 
             <form onSubmit={sendMessage}>
 
@@ -111,7 +111,7 @@ function ChatRoom() {
 
 function ChatMessage(props) {
     const { text, uid, photoURL } = props.message;
-
+    console.log(uid)
     const messageClass = uid === sessionStorage.getItem('admin_id') ? 'chat_message_wrapper chat_message_right' : 'chat_message_wrapper ';
     const costu = uid === sessionStorage.getItem('admin_id') ? '' : 'costumer service'
     return (<>

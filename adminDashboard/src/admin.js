@@ -56,7 +56,7 @@ function Admin() {
 
               <Route path="/posts" element={<Posts />} />
 
-              <Route path="/chat" element={<Chat />} />
+              {/* <Route path="/chat" element={<Chat />} /> */}
 
 
 

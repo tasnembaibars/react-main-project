@@ -114,7 +114,7 @@ console.log(Persons)
 
                         {successAdd ? successAdd : ''}
 
-                        <form onSubmit={addUser} id="create-course-form" >
+                        {/* <form onSubmit={addUser} id="create-course-form" >
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Post :</label>
                                 <textarea type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} rows="5" className="form-control" ></textarea>
@@ -137,18 +137,14 @@ console.log(Persons)
                                 </div>
 
                                 <div className='col'>
-{/* 
-                                    <div className="form-group">
-                                        <label for="exampleInputPassword1">Date</label>
-                                        <input type="date" name='date' onChange={e => setPass(e.target.value)} defaultValue={pass} className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                    </div> */}
+
                                 </div>
 
                             </div>
 
 
                             <button type='submit' className="btn btn-primary">Submit</button>
-                        </form>
+                        </form> */}
 
                         <hr></hr>
                         <h2 className='mt-3'>Posts :</h2>
@@ -156,7 +152,7 @@ console.log(Persons)
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th> User id</th>
+                                    <th> User </th>
                                     <th> Date</th>
                                     <th> Post</th>
                                     <th> state</th>
