@@ -344,6 +344,7 @@ function About() {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className="col-lg-3 col-md-4 col-sm-6 col-12">
                             <div className="wpo-team-item">
                                 <div className="wpo-team-img">

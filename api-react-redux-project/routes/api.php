@@ -258,6 +258,7 @@ Route::delete('/posts/{post}',[PostsController::class,'destroy1']);
 
 // start Booking
 Route::post('/book',[BooksController::class,'store']);
+Route::get('/books/{id}',[BooksController::class,'create']);
 // end Booking
 //Araa
 

@@ -289,21 +289,7 @@ console.log('p',editComment.comment)
                                 </div>
                             </div>
 
-                            <div class="more-posts mt-5">
-                                <div class="previous-post">
-                                    <a href="blog.html">
-                                        <span class="post-control-link">Previous Post</span>
-                                        <span class="post-name">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
-                                    </a>
-                                </div>
-                                <div class="next-post">
-                                    <a href="blog-left-sidebar.html">
-                                        <span class="post-control-link">Next Post</span>
-                                        <span class="post-name">Dignissimos ducimus qui blanditiis praesentiu deleniti atque corrupti quos dolores</span>
-                                    </a>
-                                </div>
-                            </div>
-
+                           
      
                              {/* <!-- end comments-area --> */}
                         </div>
@@ -319,11 +305,11 @@ console.log('p',editComment.comment)
                                 <h4>{post.name}</h4>
                                 <p>Hi! beautiful people. I`m an authtor of this blog. Read our post - stay with us</p>
                                 <div class="social">
-                                    <ul class="clearfix">
-                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                <ul class="clearfix">
+                                        <li><a href="https://www.facebook.com/"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/i/flow/login"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/feed/"><i class="ti-linkedin"></i></a></li>
+                                        <li><a href="https://www.pinterest.com/"><i class="ti-pinterest"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="aw-shape">
