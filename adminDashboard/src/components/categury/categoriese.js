@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Categoriese = () => {
     let usee = useNavigate();
 
-
+    const [diplay, setdiplay] = useState('none');
     const [Persons, setapi] = useState([]);
     const [name, setName] = useState('');
 
@@ -35,7 +35,14 @@ const Categoriese = () => {
     }
 
 
+    const changedis=()=>{
+        if(diplay == 'none'){
+            setdiplay('block')
 
+        }else{
+            setdiplay('none')
+        }
+    }
     let successAdd = null
 
     const addUser = (e) => {
@@ -68,10 +75,10 @@ const Categoriese = () => {
                     <div className='col'></div>
                     <div className='col-11'>
 
-
+                    <button className='btn btn-primary' onClick={changedis}> Add categury</button>
                         <div>{successAdd ? successAdd : ''}</div>
 
-                        <form onSubmit={addUser}>
+                        <form onSubmit={addUser}  style={{display:diplay}}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Title</label>
                                 <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} required

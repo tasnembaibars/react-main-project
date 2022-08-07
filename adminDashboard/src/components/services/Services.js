@@ -16,7 +16,7 @@ const Services = () => {
     const [Catname, setcatname] = useState([]);
 
 
-
+    const [diplay, setdiplay] = useState('none');
     const [selectedFile, setSelectedFile] = useState();
     const [selectedFile2, setSelectedFile2] = useState();
     const [selectedFile3, setSelectedFile3] = useState();
@@ -124,7 +124,14 @@ const Services = () => {
           
         });
       };
+      const changedis=()=>{
+        if(diplay == 'none'){
+            setdiplay('block')
 
+        }else{
+            setdiplay('none')
+        }
+    }
 
         // console.log(selectedFile)
         // console.log(selectedFile2)
@@ -139,8 +146,8 @@ const Services = () => {
                     <div className='col-11'>
 
                         {successAdd ? successAdd : ''}
-
-                        <form onSubmit={addUser}>
+                        <button className='btn btn-primary' onClick={changedis}> Add Service</button>
+                        <form onSubmit={addUser}   style={{display:diplay}}>
                             <div className="form-group mt-5">
                                 <label for="exampleInputEmail1">Title</label>
                                 <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control"  placeholder="" />

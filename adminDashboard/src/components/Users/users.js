@@ -11,7 +11,7 @@ const Users = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [picture, setImageUrl] = useState("");
-
+    const [diplay, setdiplay] = useState('none');
     const fileBrowseHandler = (event) => {
         let value = URL.createObjectURL(event.target.files[0]);
         setImageUrl(value);
@@ -75,17 +75,27 @@ const Users = () => {
     </div>`
     }
 
+
+    const changedis=()=>{
+        if(diplay == 'none'){
+            setdiplay('block')
+
+        }else{
+            setdiplay('none')
+        }
+    }
+
     return (
         <>
             <div className='container text-black'>
                 <div className='row'>
                     <div className='col'></div>
                     <div className='col-11'>
-   
+                    <button className='btn btn-primary' onClick={changedis}> Add User</button>
                         {successAdd ? successAdd : ''}
 
-                        <form onSubmit={addUser}>
-                            <div className="form-group mt-5">
+                        <form onSubmit={addUser} style={{display:diplay}}>
+                            <div className="form-group mt-5"   >
                                 <label for="exampleInputEmail1">Name</label>
                                 <input type="text" name='name' onChange={e => setName(e.target.value)} defaultValue={name} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" />
                             </div>
@@ -128,7 +138,7 @@ const Users = () => {
 
                                         <td>
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
-                                            <button onClick={() => usee(`/admin/users/${a.id}`)} className='btn btn-secondery'>Edit</button>
+                                            <button onClick={() => usee(`/admin/users/${a.id}`)} className='btn btn-outline-secondary ml-2'>Edit</button>
                                         </td>
 
 

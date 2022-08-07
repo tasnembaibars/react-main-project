@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
-
+const namess=sessionStorage.getItem('admin_name') ;
 
 
 
@@ -46,11 +46,11 @@ const Header = () => {
   return (
     <>
       <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style={{background:'#002642'}}>
           {/* <a className="navbar-brand brand-logo" href="index.html"><img src="%PUBLIC_URL%logo.png" width='100px' alt="logo" /></a>
           <a className="navbar-brand brand-logo-mini" href="index.html"><img src="logo.png" width='100px' alt="logo" /></a> */}
-          <h2 className="navbar-brand brand-logo" >Memory</h2>
-          <h2 className="navbar-brand brand-logo-mini" >M</h2>
+          <h2 className="navbar-brand brand-logo text-white" >Memory</h2>
+          <h2 className="navbar-brand brand-logo-mini text-white" >M</h2>
         </div>
         <div className="navbar-menu-wrapper d-flex align-items-stretch">
           <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -125,7 +125,7 @@ const Header = () => {
 
                 </div>
                 <div className="nav-profile-text">
-                  <p className="mb-1 text-black"> User Name</p>
+                  <p className="mb-1 text-black"> {namess}</p>
                 </div>
               </a>
               <div className="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">

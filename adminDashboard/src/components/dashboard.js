@@ -14,31 +14,32 @@ const Dashboard = () => {
         }
         , []);
 
-        useEffect(
-            () => {
-                axios.get(`http://127.0.0.1:8000/api/posts`)
-                    .then((res) => setPosts(res.data))
-            }
-            , []);
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/posts`)
+                .then((res) => setPosts(res.data))
+        }
+        , []);
 
 
-        useEffect(
-            () => {
-                axios.get(`http://127.0.0.1:8000/api/books`)
-                    .then((res) => setbooks(res.data))
-            }
-            , []);
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/books`)
+                .then((res) => setbooks(res.data))
+        }
+        , []);
 
-            useEffect(
-                () => {
-                    axios.get(`http://127.0.0.1:8000/api/services`)
-                        .then((res) => setservice(res.data))
-                }
-                , []);
+    useEffect(
+        () => {
+            axios.get(`http://127.0.0.1:8000/api/services`)
+                .then((res) => setservice(res.data))
+        }
+        , []);
 
-
-console.log(books)
-
+        const date = new Date();
+        const n = date.toDateString();
+    console.log(books)
+    const time = date.toLocaleTimeString();
     return (
         <>
             <div class="main-panel">
@@ -52,7 +53,7 @@ console.log(books)
                                 <button type="button" class="btn btn-link text-dark py-0 border-right">1 Month</button>
                                 <button type="button" class="btn btn-link text-light py-0">3 Month</button>
                             </div> */}
-                            {/* <div class="dropdown ml-0 ml-md-4 mt-2 mt-lg-0">
+                            {/* <div class="dropdown ml-0 ml-md-4 mt-2 mt-lg-0">           #86a0b6
                                 <button class="btn bg-white dropdown-toggle p-3 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-calendar mr-1"></i>24 Mar 2019 - 24 Mar 2019 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
                                     <h6 class="dropdown-header">Settings</h6>
@@ -135,7 +136,8 @@ console.log(books)
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <div class="row">
+
+                                    <div class="row">
                                         <div class="col-12 grid-margin">
                                             <div class="card">
                                                 <div class="card-body">
@@ -143,19 +145,7 @@ console.log(books)
                                                         <div class="col-sm-12">
                                                             <div class="d-flex justify-content-between align-items-center mb-4">
                                                                 <h4 class="card-title mb-0">Recent Activity</h4>
-                                                                <div class="dropdown dropdown-arrow-none">
-                                                                    <button class="btn p-0 text-dark dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        <i class="mdi mdi-dots-vertical"></i>
-                                                                    </button>
-                                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuIconButton1">
-                                                                        <h6 class="dropdown-header">Settings</h6>
-                                                                        <a class="dropdown-item" href="#">Action</a>
-                                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                                        <div class="dropdown-divider"></div>
-                                                                        <a class="dropdown-item" href="#">Separated link</a>
-                                                                    </div>
-                                                                </div>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3 col-sm-4 grid-margin  grid-margin-lg-0">
@@ -165,7 +155,7 @@ console.log(books)
                                                                     <span class="text-success"><i class="mdi mdi-arrow-up"></i>2.95%</span>
                                                                 </div>
                                                                 <h3 class="mb-0 text-dark font-weight-bold">$ 92556</h3>
-                                                                <canvas id="total-profit"></canvas>
+
                                                             </div>
                                                             <div class="wrapper pt-5">
                                                                 <div class="text-wrapper d-flex align-items-center justify-content-between mb-2">
@@ -173,7 +163,7 @@ console.log(books)
                                                                     <span class="text-success"><i class="mdi mdi-arrow-up"></i>52.95%</span>
                                                                 </div>
                                                                 <h3 class="mb-4 text-dark font-weight-bold">$ 59565</h3>
-                                                                <canvas id="total-expences"></canvas>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-9 col-sm-8 grid-margin  grid-margin-lg-0">
@@ -185,22 +175,38 @@ console.log(books)
                                                                     </div>
                                                                     <div class="d-lg-flex">
                                                                         <p class="mr-2 mb-0">Timezone:</p>
-                                                                        <p class="text-dark font-weight-bold mb-0">GMT-0400 Eastern Delight Time</p>
+                                                                        <p class="text-dark font-weight-bold mb-0">  {`${n}   -   ${time} `}</p>
+                                                                        
                                                                     </div>
                                                                 </div>
                                                                 <div class="graph-custom-legend clearfix" id="device-sales-legend"></div>
-                                                                <canvas id="device-sales"></canvas>
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> */}
-                                    
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>

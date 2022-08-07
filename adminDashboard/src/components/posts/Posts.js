@@ -173,8 +173,8 @@ console.log(Persons)
                                         <td>
 
                                             {a.rule ?
-                                                <button onClick={() => handleactive(a.id, a.rule)} className='btn btn-outline-warning mr-2' >DesActive</button>
-                                                : <button onClick={() => handleactive(a.id, a.rule)} className='btn btn-outline-success mr-2' >Activate</button>}
+                                                <button onClick={() => handleactive(a.id, a.rule)} className='btn btn-outline-warning mr-2' >Ignore</button>
+                                                : <button onClick={() => handleactive(a.id, a.rule)} className='btn btn-outline-success mr-2' >Accept</button>}
 
                                             <button onClick={() => hanldeDelete(a.id)} className='btn btn-danger' >Delete</button>
                                             <button onClick={() => hanldeDelete(a.costumer_id)} className='btn btn-outline-danger ml-2' >Block User</button>

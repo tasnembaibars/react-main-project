@@ -24,14 +24,14 @@ const Sidebar = () => {
 
 
       {/* side bar */}
-      <nav className="sidebar sidebar-offcanvas" id="sidebar">
+      <nav className="sidebar sidebar-offcanvas" id="sidebar"style={{background:'#002642'}} >
         <ul className="nav">
           <li className="nav-item nav-category">Main</li>
           <li className="nav-item">
             <NavLink to='/admin'>
 
               <div className="nav-link" >
-                <span className="icon-bg"><i className="mdi mdi-contacts menu-icon"></i></span>
+                <span className="icon-bg"><i className="mdi mdi-home-variant menu-icon"></i></span>
                 <span className="menu-title">Dashboard</span>
               </div>
 
@@ -66,8 +66,8 @@ const Sidebar = () => {
             <NavLink to='/admin/services'>
 
               <div className="nav-link" href="/admin/services">
-                <span className="icon-bg"><i className="mdi mdi-table-large library-books"></i></span>
-                <span className="menu-title">Products</span>
+                <span className="icon-bg" ><i className="mdi mdi-tag-multiple library-books" ></i></span>
+                <span className="menu-title" >Services</span>
               </div>
 
             </NavLink>
@@ -84,7 +84,7 @@ const Sidebar = () => {
           <li className="nav-item">
             <NavLink to='/admin/categoriese'>
               <div className="nav-link">
-                <span className="icon-bg"><i className="mdi mdi-chart-bar menu-icon"></i></span>
+                <span className="icon-bg"><i className="mdi mdi-animation menu-icon"></i></span>
                 <span className="menu-title">Categoriese</span>
               </div>
             </NavLink>
